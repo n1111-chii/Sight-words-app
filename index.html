@@ -243,7 +243,7 @@
       queue: shuffle(wordsForList(list)), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:true, allowSkip:true,
-      showJa: submode!==3, showSound: submode!==2
+      showJa: submode!==3, showSound: submode!==2, showSpelling: submode===0
     };
   }
   function startUnitTest(list){
@@ -377,6 +377,7 @@
       + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'
         + '<button class="btn mode-btn" data-action="start-reading">① 読み方</button>'
         + '<div class="mode-group"><div class="mode-group-title">② スペル練習</div><div class="submode-row">'
+          + '<button class="btn small" data-action="start-spelling" data-submode="0">見本ありタイピング</button>'
           + '<button class="btn small" data-action="start-spelling" data-submode="1">音+和訳を見る</button>'
           + '<button class="btn small" data-action="start-spelling" data-submode="2">和訳のみ</button>'
           + '<button class="btn small" data-action="start-spelling" data-submode="3">音のみ</button>'
@@ -438,6 +439,7 @@
     return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(title)+esc(listLabel)+'</h2>'
       + '<span class="progress-label">'+(state.index+1)+' / '+total+'</span></div>'
       + '<div class="card word-card">'
+        + (state.showSpelling ? '<div class="word">'+esc(word.word)+'</div>' : '')
         + (state.showJa ? '<div class="ja">'+esc(word.ja)+'</div>' : '')
         + (state.showSound ? '<button class="btn sound-btn" data-action="speak">&#128266; もう一度聞く</button>' : '')
         + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="スペルを入力してEnter" /></div>'
