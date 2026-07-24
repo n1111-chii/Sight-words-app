@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#5b7fff">
-<title>サイトワード練習</title>
+<title>タイ単</title>
 <style>
   :root{
     --bg1:#eef3ff; --bg2:#fff2f8; --primary:#5b7fff; --primary-dark:#3f5fe0;
@@ -371,23 +371,23 @@
       : '<p class="muted">苦手単語はまだありません。</p>';
 
     return ''
-      + '<h1 class="app-title">サイトワード練習</h1>'
+      + '<h1 class="app-title">タイ単</h1>'
       + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
       + '<section class="card"><h2>Listを選ぶ</h2><div class="list-grid">'+listBtns+'</div></section>'
       + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'
-        + '<button class="btn mode-btn" data-action="start-reading">① 読み方</button>'
-        + '<div class="mode-group"><div class="mode-group-title">② スペル練習</div><div class="submode-row">'
-          + '<button class="btn small" data-action="start-spelling" data-submode="0">見本ありタイピング</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="1">音+和訳を見る</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="2">和訳のみ</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="3">音のみ</button>'
+        + '<button class="btn mode-btn" data-action="start-reading">① 読み方(聞く)</button>'
+        + '<div class="mode-group"><div class="mode-group-title">② タイピング練習</div><div class="submode-row">'
+          + '<button class="btn small" data-action="start-spelling" data-submode="0">基本</button>'
+          + '<button class="btn small" data-action="start-spelling" data-submode="1">音＋意味</button>'
+          + '<button class="btn small" data-action="start-spelling" data-submode="3">音</button>'
+          + '<button class="btn small" data-action="start-spelling" data-submode="2">意味</button>'
         + '</div></div>'
-        + '<button class="btn mode-btn" data-action="start-unittest">③ 単元テスト(20問)</button>'
-        + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ 追試 '
+        + '<button class="btn mode-btn" data-action="start-unittest">③ ミニテスト(20問)</button>'
+        + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ リトライ '
           + (retestAvailable ? '('+lastTest.wordIds.length+'問)' : '(前回テスト待ち)') + '</button>'
-        + '<button class="btn mode-btn" data-action="start-review">⑤ 総合復習</button>'
+        + '<button class="btn mode-btn" data-action="start-review">⑤ まとめテスト</button>'
       + '</div></section>'
-      + '<section class="card"><h2>進捗サマリー</h2>'
+      + '<section class="card"><h2>学習記録</h2>'
         + '<div class="summary-row">'
           + '<div class="stat"><span class="num">'+summary.mastered+'</span><span class="label">習得済み</span></div>'
           + '<div class="stat"><span class="num">'+summary.learning+'</span><span class="label">練習中</span></div>'
@@ -400,7 +400,7 @@
   function renderReading(){
     var word = state.queue[state.index];
     if(!word){
-      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方 - List '+state.list+'</h2></div>'
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2></div>'
         + '<div class="card center-card"><p class="big-emoji">&#127881;</p>'
         + '<p>List '+state.list+' を読み終わりました!</p>'
         + '<div class="btn-row">'
@@ -408,7 +408,7 @@
           + '<button class="btn primary" data-action="go-home">ホームへ</button>'
         + '</div></div>';
     }
-    return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方 - List '+state.list+'</h2>'
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2>'
       + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
       + '<div class="card word-card">'
         + '<div class="word">'+esc(word.word)+'</div>'
@@ -417,7 +417,7 @@
       + '<div class="hint-row"><span>Space 発音</span><span>Enter 次へ</span></div>';
   }
 
-  var TITLE_MAP = { spelling:'スペル練習', unittest:'単元テスト', retest:'追試', review:'総合復習' };
+  var TITLE_MAP = { spelling:'タイピング練習', unittest:'ミニテスト', retest:'リトライ', review:'まとめテスト' };
 
   function renderPractice(){
     var word = state.queue[state.index];
@@ -451,7 +451,7 @@
 
   function renderResult(){
     var pct = state.total>0 ? Math.round((state.correctCount/state.total)*100) : 100;
-    var titleMap = { unittest:'単元テスト結果', retest:'追試結果', review:'総合復習結果' };
+    var titleMap = { unittest:'ミニテスト結果', retest:'リトライ結果', review:'まとめテスト結果' };
     var title = titleMap[state.sourceMode] || '結果';
     var wrongHtml = state.wrongWords.length
       ? '<h3>間違えた単語</h3><ul class="weak-list">' + state.wrongWords.map(function(w){
@@ -460,13 +460,13 @@
       : '<p class="big-emoji">&#127881; 全問正解!</p>';
     var btns = '';
     if(state.sourceMode==='unittest' && state.wrongWords.length){
-      btns += '<button class="btn" data-action="go-retest">追試へ</button>';
+      btns += '<button class="btn" data-action="go-retest">リトライへ</button>';
     }
     if(state.sourceMode==='retest' && state.wrongWords.length){
-      btns += '<button class="btn" data-action="go-retest">もう一度追試</button>';
+      btns += '<button class="btn" data-action="go-retest">もう一度リトライ</button>';
     }
     if(state.sourceMode==='review'){
-      btns += '<button class="btn" data-action="go-review-again">もう一度復習</button>';
+      btns += '<button class="btn" data-action="go-review-again">もう一度まとめテスト</button>';
     }
     btns += '<button class="btn primary" data-action="go-home">ホームへ</button>';
 
@@ -522,7 +522,7 @@
         startUnitTest(state.selectedList); render();
         break;
       case 'start-retest':
-        if(!startRetest()){ state.notice = 'まだ単元テストの結果がありません'; render(); }
+        if(!startRetest()){ state.notice = 'まだミニテストの結果がありません'; render(); }
         else render();
         break;
       case 'start-review':
@@ -538,7 +538,7 @@
         startReading(state.list); render();
         break;
       case 'go-retest':
-        if(!startRetest()){ state = { screen:'home', selectedList:null, notice:'追試対象がありません' }; }
+        if(!startRetest()){ state = { screen:'home', selectedList:null, notice:'リトライ対象がありません' }; }
         render();
         break;
       case 'go-review-again':
