@@ -433,6 +433,7 @@
     }
     var hints = [];
     if(state.allowBack) hints.push('<span>&#8592; 前へ</span>');
+    if(state.showSound) hints.push('<span>Space 発音</span>');
     hints.push('<span>Enter 判定</span>');
     if(state.allowSkip) hints.push('<span>&#8594; スキップ</span>');
 
@@ -565,6 +566,12 @@
       return;
     }
     if(state.screen==='spelling' || state.screen==='unittest' || state.screen==='retest' || state.screen==='review'){
+      if(e.code==='Space' && state.showSound){
+        e.preventDefault();
+        var sw = state.queue[state.index];
+        if(sw) speak(sw.word);
+        return;
+      }
       if(e.key==='Enter'){
         e.preventDefault();
         if(state.feedback){
