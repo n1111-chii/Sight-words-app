@@ -1,0 +1,6002 @@
+[
+  {
+    "id": 1,
+    "word": "a",
+    "list": 1,
+    "ja": "1つの"
+  },
+  {
+    "id": 2,
+    "word": "about",
+    "list": 1,
+    "ja": "〜について"
+  },
+  {
+    "id": 3,
+    "word": "all",
+    "list": 1,
+    "ja": "すべての"
+  },
+  {
+    "id": 4,
+    "word": "am",
+    "list": 1,
+    "ja": "(私は)〜です"
+  },
+  {
+    "id": 5,
+    "word": "an",
+    "list": 1,
+    "ja": "1つの"
+  },
+  {
+    "id": 6,
+    "word": "and",
+    "list": 1,
+    "ja": "そして"
+  },
+  {
+    "id": 7,
+    "word": "are",
+    "list": 1,
+    "ja": "(あなたたちは)〜です"
+  },
+  {
+    "id": 8,
+    "word": "as",
+    "list": 1,
+    "ja": "〜として"
+  },
+  {
+    "id": 9,
+    "word": "at",
+    "list": 1,
+    "ja": "〜で"
+  },
+  {
+    "id": 10,
+    "word": "be",
+    "list": 1,
+    "ja": "〜である"
+  },
+  {
+    "id": 11,
+    "word": "been",
+    "list": 1,
+    "ja": "〜だった(beの過去分詞)"
+  },
+  {
+    "id": 12,
+    "word": "but",
+    "list": 1,
+    "ja": "しかし"
+  },
+  {
+    "id": 13,
+    "word": "by",
+    "list": 1,
+    "ja": "〜によって"
+  },
+  {
+    "id": 14,
+    "word": "called",
+    "list": 1,
+    "ja": "呼ばれた"
+  },
+  {
+    "id": 15,
+    "word": "can",
+    "list": 1,
+    "ja": "〜できる"
+  },
+  {
+    "id": 16,
+    "word": "come",
+    "list": 1,
+    "ja": "来る"
+  },
+  {
+    "id": 17,
+    "word": "could",
+    "list": 1,
+    "ja": "〜できた"
+  },
+  {
+    "id": 18,
+    "word": "day",
+    "list": 1,
+    "ja": "日"
+  },
+  {
+    "id": 19,
+    "word": "did",
+    "list": 1,
+    "ja": "した(doの過去形)"
+  },
+  {
+    "id": 20,
+    "word": "do",
+    "list": 1,
+    "ja": "する"
+  },
+  {
+    "id": 21,
+    "word": "down",
+    "list": 1,
+    "ja": "下へ"
+  },
+  {
+    "id": 22,
+    "word": "each",
+    "list": 1,
+    "ja": "それぞれ"
+  },
+  {
+    "id": 23,
+    "word": "find",
+    "list": 1,
+    "ja": "見つける"
+  },
+  {
+    "id": 24,
+    "word": "first",
+    "list": 1,
+    "ja": "最初の"
+  },
+  {
+    "id": 25,
+    "word": "for",
+    "list": 1,
+    "ja": "〜のために"
+  },
+  {
+    "id": 26,
+    "word": "from",
+    "list": 1,
+    "ja": "〜から"
+  },
+  {
+    "id": 27,
+    "word": "get",
+    "list": 1,
+    "ja": "得る"
+  },
+  {
+    "id": 28,
+    "word": "go",
+    "list": 1,
+    "ja": "行く"
+  },
+  {
+    "id": 29,
+    "word": "had",
+    "list": 1,
+    "ja": "持っていた"
+  },
+  {
+    "id": 30,
+    "word": "has",
+    "list": 1,
+    "ja": "持っている"
+  },
+  {
+    "id": 31,
+    "word": "have",
+    "list": 1,
+    "ja": "持っている"
+  },
+  {
+    "id": 32,
+    "word": "he",
+    "list": 1,
+    "ja": "彼は"
+  },
+  {
+    "id": 33,
+    "word": "her",
+    "list": 1,
+    "ja": "彼女の・彼女を"
+  },
+  {
+    "id": 34,
+    "word": "him",
+    "list": 1,
+    "ja": "彼を"
+  },
+  {
+    "id": 35,
+    "word": "his",
+    "list": 1,
+    "ja": "彼の"
+  },
+  {
+    "id": 36,
+    "word": "how",
+    "list": 1,
+    "ja": "どのように"
+  },
+  {
+    "id": 37,
+    "word": "I",
+    "list": 1,
+    "ja": "私は"
+  },
+  {
+    "id": 38,
+    "word": "if",
+    "list": 1,
+    "ja": "もし〜なら"
+  },
+  {
+    "id": 39,
+    "word": "in",
+    "list": 1,
+    "ja": "〜の中に"
+  },
+  {
+    "id": 40,
+    "word": "into",
+    "list": 1,
+    "ja": "〜の中へ"
+  },
+  {
+    "id": 41,
+    "word": "is",
+    "list": 1,
+    "ja": "〜である"
+  },
+  {
+    "id": 42,
+    "word": "it",
+    "list": 1,
+    "ja": "それ"
+  },
+  {
+    "id": 43,
+    "word": "its",
+    "list": 1,
+    "ja": "それの"
+  },
+  {
+    "id": 44,
+    "word": "like",
+    "list": 1,
+    "ja": "好き・〜のように"
+  },
+  {
+    "id": 45,
+    "word": "long",
+    "list": 1,
+    "ja": "長い"
+  },
+  {
+    "id": 46,
+    "word": "look",
+    "list": 1,
+    "ja": "見る"
+  },
+  {
+    "id": 47,
+    "word": "made",
+    "list": 1,
+    "ja": "作った(makeの過去形)"
+  },
+  {
+    "id": 48,
+    "word": "make",
+    "list": 1,
+    "ja": "作る"
+  },
+  {
+    "id": 49,
+    "word": "many",
+    "list": 1,
+    "ja": "たくさんの"
+  },
+  {
+    "id": 50,
+    "word": "may",
+    "list": 1,
+    "ja": "〜かもしれない"
+  },
+  {
+    "id": 51,
+    "word": "more",
+    "list": 1,
+    "ja": "もっと"
+  },
+  {
+    "id": 52,
+    "word": "my",
+    "list": 1,
+    "ja": "私の"
+  },
+  {
+    "id": 53,
+    "word": "no",
+    "list": 1,
+    "ja": "いいえ"
+  },
+  {
+    "id": 54,
+    "word": "not",
+    "list": 1,
+    "ja": "〜でない"
+  },
+  {
+    "id": 55,
+    "word": "now",
+    "list": 1,
+    "ja": "今"
+  },
+  {
+    "id": 56,
+    "word": "number",
+    "list": 1,
+    "ja": "数"
+  },
+  {
+    "id": 57,
+    "word": "of",
+    "list": 1,
+    "ja": "〜の"
+  },
+  {
+    "id": 58,
+    "word": "on",
+    "list": 1,
+    "ja": "〜の上に"
+  },
+  {
+    "id": 59,
+    "word": "one",
+    "list": 1,
+    "ja": "1つ"
+  },
+  {
+    "id": 60,
+    "word": "or",
+    "list": 1,
+    "ja": "または"
+  },
+  {
+    "id": 61,
+    "word": "other",
+    "list": 1,
+    "ja": "他の"
+  },
+  {
+    "id": 62,
+    "word": "out",
+    "list": 1,
+    "ja": "外へ"
+  },
+  {
+    "id": 63,
+    "word": "part",
+    "list": 1,
+    "ja": "部分"
+  },
+  {
+    "id": 64,
+    "word": "people",
+    "list": 1,
+    "ja": "人々"
+  },
+  {
+    "id": 65,
+    "word": "said",
+    "list": 1,
+    "ja": "言った(sayの過去形)"
+  },
+  {
+    "id": 66,
+    "word": "see",
+    "list": 1,
+    "ja": "見る"
+  },
+  {
+    "id": 67,
+    "word": "she",
+    "list": 1,
+    "ja": "彼女は"
+  },
+  {
+    "id": 68,
+    "word": "so",
+    "list": 1,
+    "ja": "だから"
+  },
+  {
+    "id": 69,
+    "word": "some",
+    "list": 1,
+    "ja": "いくつかの"
+  },
+  {
+    "id": 70,
+    "word": "than",
+    "list": 1,
+    "ja": "〜より"
+  },
+  {
+    "id": 71,
+    "word": "that",
+    "list": 1,
+    "ja": "あれ・それ"
+  },
+  {
+    "id": 72,
+    "word": "the",
+    "list": 1,
+    "ja": "その"
+  },
+  {
+    "id": 73,
+    "word": "their",
+    "list": 1,
+    "ja": "彼らの"
+  },
+  {
+    "id": 74,
+    "word": "them",
+    "list": 1,
+    "ja": "彼らを"
+  },
+  {
+    "id": 75,
+    "word": "then",
+    "list": 1,
+    "ja": "それから"
+  },
+  {
+    "id": 76,
+    "word": "there",
+    "list": 1,
+    "ja": "そこに"
+  },
+  {
+    "id": 77,
+    "word": "these",
+    "list": 1,
+    "ja": "これらの"
+  },
+  {
+    "id": 78,
+    "word": "they",
+    "list": 1,
+    "ja": "彼らは"
+  },
+  {
+    "id": 79,
+    "word": "this",
+    "list": 1,
+    "ja": "これ"
+  },
+  {
+    "id": 80,
+    "word": "time",
+    "list": 1,
+    "ja": "時間"
+  },
+  {
+    "id": 81,
+    "word": "to",
+    "list": 1,
+    "ja": "〜へ"
+  },
+  {
+    "id": 82,
+    "word": "two",
+    "list": 1,
+    "ja": "2"
+  },
+  {
+    "id": 83,
+    "word": "up",
+    "list": 1,
+    "ja": "上へ"
+  },
+  {
+    "id": 84,
+    "word": "use",
+    "list": 1,
+    "ja": "使う"
+  },
+  {
+    "id": 85,
+    "word": "was",
+    "list": 1,
+    "ja": "〜だった"
+  },
+  {
+    "id": 86,
+    "word": "water",
+    "list": 1,
+    "ja": "水"
+  },
+  {
+    "id": 87,
+    "word": "way",
+    "list": 1,
+    "ja": "道・方法"
+  },
+  {
+    "id": 88,
+    "word": "we",
+    "list": 1,
+    "ja": "私たちは"
+  },
+  {
+    "id": 89,
+    "word": "were",
+    "list": 1,
+    "ja": "〜だった(複数)"
+  },
+  {
+    "id": 90,
+    "word": "what",
+    "list": 1,
+    "ja": "何"
+  },
+  {
+    "id": 91,
+    "word": "when",
+    "list": 1,
+    "ja": "いつ"
+  },
+  {
+    "id": 92,
+    "word": "which",
+    "list": 1,
+    "ja": "どちら"
+  },
+  {
+    "id": 93,
+    "word": "who",
+    "list": 1,
+    "ja": "誰"
+  },
+  {
+    "id": 94,
+    "word": "will",
+    "list": 1,
+    "ja": "〜だろう"
+  },
+  {
+    "id": 95,
+    "word": "with",
+    "list": 1,
+    "ja": "〜と一緒に"
+  },
+  {
+    "id": 96,
+    "word": "words",
+    "list": 1,
+    "ja": "単語"
+  },
+  {
+    "id": 97,
+    "word": "would",
+    "list": 1,
+    "ja": "〜だろう(wouldの原形)"
+  },
+  {
+    "id": 98,
+    "word": "write",
+    "list": 1,
+    "ja": "書く"
+  },
+  {
+    "id": 99,
+    "word": "you",
+    "list": 1,
+    "ja": "あなた"
+  },
+  {
+    "id": 100,
+    "word": "your",
+    "list": 1,
+    "ja": "あなたの"
+  },
+  {
+    "id": 101,
+    "word": "after",
+    "list": 2,
+    "ja": "〜の後で"
+  },
+  {
+    "id": 102,
+    "word": "again",
+    "list": 2,
+    "ja": "再び"
+  },
+  {
+    "id": 103,
+    "word": "air",
+    "list": 2,
+    "ja": "空気"
+  },
+  {
+    "id": 104,
+    "word": "also",
+    "list": 2,
+    "ja": "〜もまた"
+  },
+  {
+    "id": 105,
+    "word": "America",
+    "list": 2,
+    "ja": "アメリカ"
+  },
+  {
+    "id": 106,
+    "word": "animal",
+    "list": 2,
+    "ja": "動物"
+  },
+  {
+    "id": 107,
+    "word": "another",
+    "list": 2,
+    "ja": "もう1つの"
+  },
+  {
+    "id": 108,
+    "word": "answer",
+    "list": 2,
+    "ja": "答え"
+  },
+  {
+    "id": 109,
+    "word": "any",
+    "list": 2,
+    "ja": "どれでも"
+  },
+  {
+    "id": 110,
+    "word": "around",
+    "list": 2,
+    "ja": "周りに"
+  },
+  {
+    "id": 111,
+    "word": "ask",
+    "list": 2,
+    "ja": "尋ねる"
+  },
+  {
+    "id": 112,
+    "word": "away",
+    "list": 2,
+    "ja": "離れて"
+  },
+  {
+    "id": 113,
+    "word": "back",
+    "list": 2,
+    "ja": "後ろ・戻る"
+  },
+  {
+    "id": 114,
+    "word": "because",
+    "list": 2,
+    "ja": "なぜなら"
+  },
+  {
+    "id": 115,
+    "word": "before",
+    "list": 2,
+    "ja": "〜の前に"
+  },
+  {
+    "id": 116,
+    "word": "big",
+    "list": 2,
+    "ja": "大きい"
+  },
+  {
+    "id": 117,
+    "word": "boy",
+    "list": 2,
+    "ja": "男の子"
+  },
+  {
+    "id": 118,
+    "word": "came",
+    "list": 2,
+    "ja": "来た(comeの過去形)"
+  },
+  {
+    "id": 119,
+    "word": "change",
+    "list": 2,
+    "ja": "変える"
+  },
+  {
+    "id": 120,
+    "word": "different",
+    "list": 2,
+    "ja": "違う"
+  },
+  {
+    "id": 121,
+    "word": "does",
+    "list": 2,
+    "ja": "する(doの三人称単数)"
+  },
+  {
+    "id": 122,
+    "word": "end",
+    "list": 2,
+    "ja": "終わり"
+  },
+  {
+    "id": 123,
+    "word": "even",
+    "list": 2,
+    "ja": "〜さえ"
+  },
+  {
+    "id": 124,
+    "word": "follow",
+    "list": 2,
+    "ja": "従う"
+  },
+  {
+    "id": 125,
+    "word": "form",
+    "list": 2,
+    "ja": "形"
+  },
+  {
+    "id": 126,
+    "word": "found",
+    "list": 2,
+    "ja": "見つけた(findの過去形)"
+  },
+  {
+    "id": 127,
+    "word": "give",
+    "list": 2,
+    "ja": "与える"
+  },
+  {
+    "id": 128,
+    "word": "good",
+    "list": 2,
+    "ja": "良い"
+  },
+  {
+    "id": 129,
+    "word": "great",
+    "list": 2,
+    "ja": "素晴らしい"
+  },
+  {
+    "id": 130,
+    "word": "hand",
+    "list": 2,
+    "ja": "手"
+  },
+  {
+    "id": 131,
+    "word": "help",
+    "list": 2,
+    "ja": "助ける"
+  },
+  {
+    "id": 132,
+    "word": "here",
+    "list": 2,
+    "ja": "ここに"
+  },
+  {
+    "id": 133,
+    "word": "home",
+    "list": 2,
+    "ja": "家"
+  },
+  {
+    "id": 134,
+    "word": "house",
+    "list": 2,
+    "ja": "家"
+  },
+  {
+    "id": 135,
+    "word": "just",
+    "list": 2,
+    "ja": "ちょうど"
+  },
+  {
+    "id": 136,
+    "word": "kind",
+    "list": 2,
+    "ja": "種類・親切な"
+  },
+  {
+    "id": 137,
+    "word": "know",
+    "list": 2,
+    "ja": "知っている"
+  },
+  {
+    "id": 138,
+    "word": "land",
+    "list": 2,
+    "ja": "陸地"
+  },
+  {
+    "id": 139,
+    "word": "large",
+    "list": 2,
+    "ja": "大きい"
+  },
+  {
+    "id": 140,
+    "word": "learn",
+    "list": 2,
+    "ja": "学ぶ"
+  },
+  {
+    "id": 141,
+    "word": "letter",
+    "list": 2,
+    "ja": "手紙・文字"
+  },
+  {
+    "id": 142,
+    "word": "line",
+    "list": 2,
+    "ja": "線"
+  },
+  {
+    "id": 143,
+    "word": "little",
+    "list": 2,
+    "ja": "小さい"
+  },
+  {
+    "id": 144,
+    "word": "live",
+    "list": 2,
+    "ja": "住む"
+  },
+  {
+    "id": 145,
+    "word": "man",
+    "list": 2,
+    "ja": "男性"
+  },
+  {
+    "id": 146,
+    "word": "me",
+    "list": 2,
+    "ja": "私を"
+  },
+  {
+    "id": 147,
+    "word": "means",
+    "list": 2,
+    "ja": "意味する"
+  },
+  {
+    "id": 148,
+    "word": "men",
+    "list": 2,
+    "ja": "男性たち"
+  },
+  {
+    "id": 149,
+    "word": "most",
+    "list": 2,
+    "ja": "最も"
+  },
+  {
+    "id": 150,
+    "word": "mother",
+    "list": 2,
+    "ja": "母"
+  },
+  {
+    "id": 151,
+    "word": "move",
+    "list": 2,
+    "ja": "動く"
+  },
+  {
+    "id": 152,
+    "word": "much",
+    "list": 2,
+    "ja": "たくさんの"
+  },
+  {
+    "id": 153,
+    "word": "must",
+    "list": 2,
+    "ja": "〜しなければならない"
+  },
+  {
+    "id": 154,
+    "word": "name",
+    "list": 2,
+    "ja": "名前"
+  },
+  {
+    "id": 155,
+    "word": "need",
+    "list": 2,
+    "ja": "必要とする"
+  },
+  {
+    "id": 156,
+    "word": "new",
+    "list": 2,
+    "ja": "新しい"
+  },
+  {
+    "id": 157,
+    "word": "off",
+    "list": 2,
+    "ja": "離れて"
+  },
+  {
+    "id": 158,
+    "word": "old",
+    "list": 2,
+    "ja": "古い"
+  },
+  {
+    "id": 159,
+    "word": "only",
+    "list": 2,
+    "ja": "〜だけ"
+  },
+  {
+    "id": 160,
+    "word": "our",
+    "list": 2,
+    "ja": "私たちの"
+  },
+  {
+    "id": 161,
+    "word": "over",
+    "list": 2,
+    "ja": "〜の上に"
+  },
+  {
+    "id": 162,
+    "word": "page",
+    "list": 2,
+    "ja": "ページ"
+  },
+  {
+    "id": 163,
+    "word": "picture",
+    "list": 2,
+    "ja": "絵"
+  },
+  {
+    "id": 164,
+    "word": "place",
+    "list": 2,
+    "ja": "場所"
+  },
+  {
+    "id": 165,
+    "word": "play",
+    "list": 2,
+    "ja": "遊ぶ"
+  },
+  {
+    "id": 166,
+    "word": "point",
+    "list": 2,
+    "ja": "点"
+  },
+  {
+    "id": 167,
+    "word": "put",
+    "list": 2,
+    "ja": "置く"
+  },
+  {
+    "id": 168,
+    "word": "read",
+    "list": 2,
+    "ja": "読む"
+  },
+  {
+    "id": 169,
+    "word": "right",
+    "list": 2,
+    "ja": "正しい・右"
+  },
+  {
+    "id": 170,
+    "word": "same",
+    "list": 2,
+    "ja": "同じ"
+  },
+  {
+    "id": 171,
+    "word": "say",
+    "list": 2,
+    "ja": "言う"
+  },
+  {
+    "id": 172,
+    "word": "sentence",
+    "list": 2,
+    "ja": "文"
+  },
+  {
+    "id": 173,
+    "word": "set",
+    "list": 2,
+    "ja": "置く・セット"
+  },
+  {
+    "id": 174,
+    "word": "should",
+    "list": 2,
+    "ja": "〜すべきだ"
+  },
+  {
+    "id": 175,
+    "word": "show",
+    "list": 2,
+    "ja": "見せる"
+  },
+  {
+    "id": 176,
+    "word": "small",
+    "list": 2,
+    "ja": "小さい"
+  },
+  {
+    "id": 177,
+    "word": "sound",
+    "list": 2,
+    "ja": "音"
+  },
+  {
+    "id": 178,
+    "word": "spell",
+    "list": 2,
+    "ja": "つづる"
+  },
+  {
+    "id": 179,
+    "word": "still",
+    "list": 2,
+    "ja": "まだ"
+  },
+  {
+    "id": 180,
+    "word": "study",
+    "list": 2,
+    "ja": "勉強する"
+  },
+  {
+    "id": 181,
+    "word": "such",
+    "list": 2,
+    "ja": "そのような"
+  },
+  {
+    "id": 182,
+    "word": "take",
+    "list": 2,
+    "ja": "取る"
+  },
+  {
+    "id": 183,
+    "word": "tell",
+    "list": 2,
+    "ja": "伝える"
+  },
+  {
+    "id": 184,
+    "word": "things",
+    "list": 2,
+    "ja": "もの"
+  },
+  {
+    "id": 185,
+    "word": "think",
+    "list": 2,
+    "ja": "考える"
+  },
+  {
+    "id": 186,
+    "word": "three",
+    "list": 2,
+    "ja": "3"
+  },
+  {
+    "id": 187,
+    "word": "through",
+    "list": 2,
+    "ja": "〜を通って"
+  },
+  {
+    "id": 188,
+    "word": "too",
+    "list": 2,
+    "ja": "〜すぎる・〜も"
+  },
+  {
+    "id": 189,
+    "word": "try",
+    "list": 2,
+    "ja": "試す"
+  },
+  {
+    "id": 190,
+    "word": "turn",
+    "list": 2,
+    "ja": "回る"
+  },
+  {
+    "id": 191,
+    "word": "us",
+    "list": 2,
+    "ja": "私たちを"
+  },
+  {
+    "id": 192,
+    "word": "very",
+    "list": 2,
+    "ja": "とても"
+  },
+  {
+    "id": 193,
+    "word": "want",
+    "list": 2,
+    "ja": "欲しい"
+  },
+  {
+    "id": 194,
+    "word": "well",
+    "list": 2,
+    "ja": "よく"
+  },
+  {
+    "id": 195,
+    "word": "went",
+    "list": 2,
+    "ja": "行った(goの過去形)"
+  },
+  {
+    "id": 196,
+    "word": "where",
+    "list": 2,
+    "ja": "どこ"
+  },
+  {
+    "id": 197,
+    "word": "why",
+    "list": 2,
+    "ja": "なぜ"
+  },
+  {
+    "id": 198,
+    "word": "work",
+    "list": 2,
+    "ja": "働く"
+  },
+  {
+    "id": 199,
+    "word": "world",
+    "list": 2,
+    "ja": "世界"
+  },
+  {
+    "id": 200,
+    "word": "years",
+    "list": 2,
+    "ja": "年"
+  },
+  {
+    "id": 201,
+    "word": "above",
+    "list": 3,
+    "ja": "〜の上に"
+  },
+  {
+    "id": 202,
+    "word": "add",
+    "list": 3,
+    "ja": "加える"
+  },
+  {
+    "id": 203,
+    "word": "almost",
+    "list": 3,
+    "ja": "ほとんど"
+  },
+  {
+    "id": 204,
+    "word": "along",
+    "list": 3,
+    "ja": "〜に沿って"
+  },
+  {
+    "id": 205,
+    "word": "always",
+    "list": 3,
+    "ja": "いつも"
+  },
+  {
+    "id": 206,
+    "word": "began",
+    "list": 3,
+    "ja": "始まった(beginの過去形)"
+  },
+  {
+    "id": 207,
+    "word": "begin",
+    "list": 3,
+    "ja": "始める"
+  },
+  {
+    "id": 208,
+    "word": "being",
+    "list": 3,
+    "ja": "〜であること"
+  },
+  {
+    "id": 209,
+    "word": "below",
+    "list": 3,
+    "ja": "〜の下に"
+  },
+  {
+    "id": 210,
+    "word": "between",
+    "list": 3,
+    "ja": "〜の間に"
+  },
+  {
+    "id": 211,
+    "word": "book",
+    "list": 3,
+    "ja": "本"
+  },
+  {
+    "id": 212,
+    "word": "both",
+    "list": 3,
+    "ja": "両方"
+  },
+  {
+    "id": 213,
+    "word": "car",
+    "list": 3,
+    "ja": "車"
+  },
+  {
+    "id": 214,
+    "word": "carry",
+    "list": 3,
+    "ja": "運ぶ"
+  },
+  {
+    "id": 215,
+    "word": "children",
+    "list": 3,
+    "ja": "子どもたち"
+  },
+  {
+    "id": 216,
+    "word": "city",
+    "list": 3,
+    "ja": "都市"
+  },
+  {
+    "id": 217,
+    "word": "close",
+    "list": 3,
+    "ja": "閉じる・近い"
+  },
+  {
+    "id": 218,
+    "word": "country",
+    "list": 3,
+    "ja": "国"
+  },
+  {
+    "id": 219,
+    "word": "cut",
+    "list": 3,
+    "ja": "切る"
+  },
+  {
+    "id": 220,
+    "word": "don't",
+    "list": 3,
+    "ja": "〜しない"
+  },
+  {
+    "id": 221,
+    "word": "earth",
+    "list": 3,
+    "ja": "地球"
+  },
+  {
+    "id": 222,
+    "word": "eat",
+    "list": 3,
+    "ja": "食べる"
+  },
+  {
+    "id": 223,
+    "word": "enough",
+    "list": 3,
+    "ja": "十分な"
+  },
+  {
+    "id": 224,
+    "word": "every",
+    "list": 3,
+    "ja": "すべての"
+  },
+  {
+    "id": 225,
+    "word": "example",
+    "list": 3,
+    "ja": "例"
+  },
+  {
+    "id": 226,
+    "word": "eyes",
+    "list": 3,
+    "ja": "目"
+  },
+  {
+    "id": 227,
+    "word": "face",
+    "list": 3,
+    "ja": "顔"
+  },
+  {
+    "id": 228,
+    "word": "family",
+    "list": 3,
+    "ja": "家族"
+  },
+  {
+    "id": 229,
+    "word": "far",
+    "list": 3,
+    "ja": "遠い"
+  },
+  {
+    "id": 230,
+    "word": "father",
+    "list": 3,
+    "ja": "父"
+  },
+  {
+    "id": 231,
+    "word": "feet",
+    "list": 3,
+    "ja": "足"
+  },
+  {
+    "id": 232,
+    "word": "few",
+    "list": 3,
+    "ja": "少しの"
+  },
+  {
+    "id": 233,
+    "word": "food",
+    "list": 3,
+    "ja": "食べ物"
+  },
+  {
+    "id": 234,
+    "word": "four",
+    "list": 3,
+    "ja": "4"
+  },
+  {
+    "id": 235,
+    "word": "girl",
+    "list": 3,
+    "ja": "女の子"
+  },
+  {
+    "id": 236,
+    "word": "got",
+    "list": 3,
+    "ja": "得た(getの過去形)"
+  },
+  {
+    "id": 237,
+    "word": "group",
+    "list": 3,
+    "ja": "グループ"
+  },
+  {
+    "id": 238,
+    "word": "grow",
+    "list": 3,
+    "ja": "育つ"
+  },
+  {
+    "id": 239,
+    "word": "hard",
+    "list": 3,
+    "ja": "難しい・硬い"
+  },
+  {
+    "id": 240,
+    "word": "head",
+    "list": 3,
+    "ja": "頭"
+  },
+  {
+    "id": 241,
+    "word": "hear",
+    "list": 3,
+    "ja": "聞く"
+  },
+  {
+    "id": 242,
+    "word": "high",
+    "list": 3,
+    "ja": "高い"
+  },
+  {
+    "id": 243,
+    "word": "idea",
+    "list": 3,
+    "ja": "考え"
+  },
+  {
+    "id": 244,
+    "word": "important",
+    "list": 3,
+    "ja": "重要な"
+  },
+  {
+    "id": 245,
+    "word": "Indian",
+    "list": 3,
+    "ja": "インドの"
+  },
+  {
+    "id": 246,
+    "word": "it's",
+    "list": 3,
+    "ja": "それは〜です"
+  },
+  {
+    "id": 247,
+    "word": "keep",
+    "list": 3,
+    "ja": "保つ"
+  },
+  {
+    "id": 248,
+    "word": "last",
+    "list": 3,
+    "ja": "最後の"
+  },
+  {
+    "id": 249,
+    "word": "late",
+    "list": 3,
+    "ja": "遅い"
+  },
+  {
+    "id": 250,
+    "word": "leave",
+    "list": 3,
+    "ja": "去る"
+  },
+  {
+    "id": 251,
+    "word": "left",
+    "list": 3,
+    "ja": "左・去った"
+  },
+  {
+    "id": 252,
+    "word": "let",
+    "list": 3,
+    "ja": "させる"
+  },
+  {
+    "id": 253,
+    "word": "life",
+    "list": 3,
+    "ja": "人生"
+  },
+  {
+    "id": 254,
+    "word": "light",
+    "list": 3,
+    "ja": "光"
+  },
+  {
+    "id": 255,
+    "word": "list",
+    "list": 3,
+    "ja": "リスト"
+  },
+  {
+    "id": 256,
+    "word": "might",
+    "list": 3,
+    "ja": "〜かもしれない"
+  },
+  {
+    "id": 257,
+    "word": "mile",
+    "list": 3,
+    "ja": "マイル"
+  },
+  {
+    "id": 258,
+    "word": "miss",
+    "list": 3,
+    "ja": "逃す・恋しく思う"
+  },
+  {
+    "id": 259,
+    "word": "mountains",
+    "list": 3,
+    "ja": "山々"
+  },
+  {
+    "id": 260,
+    "word": "near",
+    "list": 3,
+    "ja": "近い"
+  },
+  {
+    "id": 261,
+    "word": "never",
+    "list": 3,
+    "ja": "決して〜ない"
+  },
+  {
+    "id": 262,
+    "word": "next",
+    "list": 3,
+    "ja": "次の"
+  },
+  {
+    "id": 263,
+    "word": "night",
+    "list": 3,
+    "ja": "夜"
+  },
+  {
+    "id": 264,
+    "word": "often",
+    "list": 3,
+    "ja": "しばしば"
+  },
+  {
+    "id": 265,
+    "word": "once",
+    "list": 3,
+    "ja": "一度"
+  },
+  {
+    "id": 266,
+    "word": "open",
+    "list": 3,
+    "ja": "開ける"
+  },
+  {
+    "id": 267,
+    "word": "own",
+    "list": 3,
+    "ja": "自分自身の"
+  },
+  {
+    "id": 268,
+    "word": "paper",
+    "list": 3,
+    "ja": "紙"
+  },
+  {
+    "id": 269,
+    "word": "plant",
+    "list": 3,
+    "ja": "植物"
+  },
+  {
+    "id": 270,
+    "word": "real",
+    "list": 3,
+    "ja": "本当の"
+  },
+  {
+    "id": 271,
+    "word": "river",
+    "list": 3,
+    "ja": "川"
+  },
+  {
+    "id": 272,
+    "word": "run",
+    "list": 3,
+    "ja": "走る"
+  },
+  {
+    "id": 273,
+    "word": "saw",
+    "list": 3,
+    "ja": "見た(seeの過去形)"
+  },
+  {
+    "id": 274,
+    "word": "school",
+    "list": 3,
+    "ja": "学校"
+  },
+  {
+    "id": 275,
+    "word": "sea",
+    "list": 3,
+    "ja": "海"
+  },
+  {
+    "id": 276,
+    "word": "second",
+    "list": 3,
+    "ja": "2番目の"
+  },
+  {
+    "id": 277,
+    "word": "seem",
+    "list": 3,
+    "ja": "〜のように見える"
+  },
+  {
+    "id": 278,
+    "word": "side",
+    "list": 3,
+    "ja": "側"
+  },
+  {
+    "id": 279,
+    "word": "something",
+    "list": 3,
+    "ja": "何か"
+  },
+  {
+    "id": 280,
+    "word": "sometimes",
+    "list": 3,
+    "ja": "時々"
+  },
+  {
+    "id": 281,
+    "word": "song",
+    "list": 3,
+    "ja": "歌"
+  },
+  {
+    "id": 282,
+    "word": "soon",
+    "list": 3,
+    "ja": "すぐに"
+  },
+  {
+    "id": 283,
+    "word": "start",
+    "list": 3,
+    "ja": "始める"
+  },
+  {
+    "id": 284,
+    "word": "state",
+    "list": 3,
+    "ja": "州"
+  },
+  {
+    "id": 285,
+    "word": "stop",
+    "list": 3,
+    "ja": "止まる"
+  },
+  {
+    "id": 286,
+    "word": "story",
+    "list": 3,
+    "ja": "物語"
+  },
+  {
+    "id": 287,
+    "word": "talk",
+    "list": 3,
+    "ja": "話す"
+  },
+  {
+    "id": 288,
+    "word": "those",
+    "list": 3,
+    "ja": "あれらの"
+  },
+  {
+    "id": 289,
+    "word": "thought",
+    "list": 3,
+    "ja": "考えた(thinkの過去形)"
+  },
+  {
+    "id": 290,
+    "word": "together",
+    "list": 3,
+    "ja": "一緒に"
+  },
+  {
+    "id": 291,
+    "word": "took",
+    "list": 3,
+    "ja": "取った(takeの過去形)"
+  },
+  {
+    "id": 292,
+    "word": "tree",
+    "list": 3,
+    "ja": "木"
+  },
+  {
+    "id": 293,
+    "word": "under",
+    "list": 3,
+    "ja": "〜の下に"
+  },
+  {
+    "id": 294,
+    "word": "until",
+    "list": 3,
+    "ja": "〜まで"
+  },
+  {
+    "id": 295,
+    "word": "walk",
+    "list": 3,
+    "ja": "歩く"
+  },
+  {
+    "id": 296,
+    "word": "watch",
+    "list": 3,
+    "ja": "見る"
+  },
+  {
+    "id": 297,
+    "word": "while",
+    "list": 3,
+    "ja": "〜する間"
+  },
+  {
+    "id": 298,
+    "word": "white",
+    "list": 3,
+    "ja": "白い"
+  },
+  {
+    "id": 299,
+    "word": "without",
+    "list": 3,
+    "ja": "〜なしで"
+  },
+  {
+    "id": 300,
+    "word": "young",
+    "list": 3,
+    "ja": "若い"
+  },
+  {
+    "id": 301,
+    "word": "across",
+    "list": 4,
+    "ja": "〜を横切って"
+  },
+  {
+    "id": 302,
+    "word": "against",
+    "list": 4,
+    "ja": "〜に対して"
+  },
+  {
+    "id": 303,
+    "word": "area",
+    "list": 4,
+    "ja": "地域"
+  },
+  {
+    "id": 304,
+    "word": "become",
+    "list": 4,
+    "ja": "〜になる"
+  },
+  {
+    "id": 305,
+    "word": "best",
+    "list": 4,
+    "ja": "最も良い"
+  },
+  {
+    "id": 306,
+    "word": "better",
+    "list": 4,
+    "ja": "より良い"
+  },
+  {
+    "id": 307,
+    "word": "birds",
+    "list": 4,
+    "ja": "鳥たち"
+  },
+  {
+    "id": 308,
+    "word": "black",
+    "list": 4,
+    "ja": "黒い"
+  },
+  {
+    "id": 309,
+    "word": "body",
+    "list": 4,
+    "ja": "体"
+  },
+  {
+    "id": 310,
+    "word": "certain",
+    "list": 4,
+    "ja": "確かな"
+  },
+  {
+    "id": 311,
+    "word": "cold",
+    "list": 4,
+    "ja": "寒い"
+  },
+  {
+    "id": 312,
+    "word": "color",
+    "list": 4,
+    "ja": "色"
+  },
+  {
+    "id": 313,
+    "word": "complete",
+    "list": 4,
+    "ja": "完成した"
+  },
+  {
+    "id": 314,
+    "word": "covered",
+    "list": 4,
+    "ja": "覆われた"
+  },
+  {
+    "id": 315,
+    "word": "cried",
+    "list": 4,
+    "ja": "泣いた"
+  },
+  {
+    "id": 316,
+    "word": "didn't",
+    "list": 4,
+    "ja": "〜しなかった"
+  },
+  {
+    "id": 317,
+    "word": "dog",
+    "list": 4,
+    "ja": "犬"
+  },
+  {
+    "id": 318,
+    "word": "door",
+    "list": 4,
+    "ja": "ドア"
+  },
+  {
+    "id": 319,
+    "word": "draw",
+    "list": 4,
+    "ja": "描く"
+  },
+  {
+    "id": 320,
+    "word": "during",
+    "list": 4,
+    "ja": "〜の間"
+  },
+  {
+    "id": 321,
+    "word": "early",
+    "list": 4,
+    "ja": "早く"
+  },
+  {
+    "id": 322,
+    "word": "easy",
+    "list": 4,
+    "ja": "簡単な"
+  },
+  {
+    "id": 323,
+    "word": "ever",
+    "list": 4,
+    "ja": "かつて"
+  },
+  {
+    "id": 324,
+    "word": "fall",
+    "list": 4,
+    "ja": "落ちる・秋"
+  },
+  {
+    "id": 325,
+    "word": "farm",
+    "list": 4,
+    "ja": "農場"
+  },
+  {
+    "id": 326,
+    "word": "fast",
+    "list": 4,
+    "ja": "速い"
+  },
+  {
+    "id": 327,
+    "word": "field",
+    "list": 4,
+    "ja": "畑・分野"
+  },
+  {
+    "id": 328,
+    "word": "figure",
+    "list": 4,
+    "ja": "数字・姿"
+  },
+  {
+    "id": 329,
+    "word": "fire",
+    "list": 4,
+    "ja": "火"
+  },
+  {
+    "id": 330,
+    "word": "fish",
+    "list": 4,
+    "ja": "魚"
+  },
+  {
+    "id": 331,
+    "word": "five",
+    "list": 4,
+    "ja": "5"
+  },
+  {
+    "id": 332,
+    "word": "friends",
+    "list": 4,
+    "ja": "友達"
+  },
+  {
+    "id": 333,
+    "word": "ground",
+    "list": 4,
+    "ja": "地面"
+  },
+  {
+    "id": 334,
+    "word": "happened",
+    "list": 4,
+    "ja": "起こった"
+  },
+  {
+    "id": 335,
+    "word": "heard",
+    "list": 4,
+    "ja": "聞いた"
+  },
+  {
+    "id": 336,
+    "word": "himself",
+    "list": 4,
+    "ja": "彼自身"
+  },
+  {
+    "id": 337,
+    "word": "hold",
+    "list": 4,
+    "ja": "持つ"
+  },
+  {
+    "id": 338,
+    "word": "horse",
+    "list": 4,
+    "ja": "馬"
+  },
+  {
+    "id": 339,
+    "word": "hours",
+    "list": 4,
+    "ja": "時間"
+  },
+  {
+    "id": 340,
+    "word": "however",
+    "list": 4,
+    "ja": "しかしながら"
+  },
+  {
+    "id": 341,
+    "word": "hundred",
+    "list": 4,
+    "ja": "100"
+  },
+  {
+    "id": 342,
+    "word": "I'll",
+    "list": 4,
+    "ja": "私は〜するだろう"
+  },
+  {
+    "id": 343,
+    "word": "king",
+    "list": 4,
+    "ja": "王"
+  },
+  {
+    "id": 344,
+    "word": "knew",
+    "list": 4,
+    "ja": "知っていた"
+  },
+  {
+    "id": 345,
+    "word": "listen",
+    "list": 4,
+    "ja": "聞く"
+  },
+  {
+    "id": 346,
+    "word": "low",
+    "list": 4,
+    "ja": "低い"
+  },
+  {
+    "id": 347,
+    "word": "map",
+    "list": 4,
+    "ja": "地図"
+  },
+  {
+    "id": 348,
+    "word": "mark",
+    "list": 4,
+    "ja": "印"
+  },
+  {
+    "id": 349,
+    "word": "measure",
+    "list": 4,
+    "ja": "測る"
+  },
+  {
+    "id": 350,
+    "word": "money",
+    "list": 4,
+    "ja": "お金"
+  },
+  {
+    "id": 351,
+    "word": "morning",
+    "list": 4,
+    "ja": "朝"
+  },
+  {
+    "id": 352,
+    "word": "music",
+    "list": 4,
+    "ja": "音楽"
+  },
+  {
+    "id": 353,
+    "word": "north",
+    "list": 4,
+    "ja": "北"
+  },
+  {
+    "id": 354,
+    "word": "notice",
+    "list": 4,
+    "ja": "気づく"
+  },
+  {
+    "id": 355,
+    "word": "numeral",
+    "list": 4,
+    "ja": "数字"
+  },
+  {
+    "id": 356,
+    "word": "order",
+    "list": 4,
+    "ja": "順番"
+  },
+  {
+    "id": 357,
+    "word": "passed",
+    "list": 4,
+    "ja": "通過した"
+  },
+  {
+    "id": 358,
+    "word": "pattern",
+    "list": 4,
+    "ja": "模様"
+  },
+  {
+    "id": 359,
+    "word": "piece",
+    "list": 4,
+    "ja": "一片"
+  },
+  {
+    "id": 360,
+    "word": "plan",
+    "list": 4,
+    "ja": "計画"
+  },
+  {
+    "id": 361,
+    "word": "problem",
+    "list": 4,
+    "ja": "問題"
+  },
+  {
+    "id": 362,
+    "word": "products",
+    "list": 4,
+    "ja": "製品"
+  },
+  {
+    "id": 363,
+    "word": "pulled",
+    "list": 4,
+    "ja": "引いた"
+  },
+  {
+    "id": 364,
+    "word": "questions",
+    "list": 4,
+    "ja": "質問"
+  },
+  {
+    "id": 365,
+    "word": "reached",
+    "list": 4,
+    "ja": "到達した"
+  },
+  {
+    "id": 366,
+    "word": "red",
+    "list": 4,
+    "ja": "赤い"
+  },
+  {
+    "id": 367,
+    "word": "remember",
+    "list": 4,
+    "ja": "覚えている"
+  },
+  {
+    "id": 368,
+    "word": "rock",
+    "list": 4,
+    "ja": "岩"
+  },
+  {
+    "id": 369,
+    "word": "room",
+    "list": 4,
+    "ja": "部屋"
+  },
+  {
+    "id": 370,
+    "word": "seen",
+    "list": 4,
+    "ja": "見た(seeの過去分詞)"
+  },
+  {
+    "id": 371,
+    "word": "several",
+    "list": 4,
+    "ja": "いくつかの"
+  },
+  {
+    "id": 372,
+    "word": "ship",
+    "list": 4,
+    "ja": "船"
+  },
+  {
+    "id": 373,
+    "word": "short",
+    "list": 4,
+    "ja": "短い"
+  },
+  {
+    "id": 374,
+    "word": "since",
+    "list": 4,
+    "ja": "〜以来"
+  },
+  {
+    "id": 375,
+    "word": "sing",
+    "list": 4,
+    "ja": "歌う"
+  },
+  {
+    "id": 376,
+    "word": "slowly",
+    "list": 4,
+    "ja": "ゆっくり"
+  },
+  {
+    "id": 377,
+    "word": "south",
+    "list": 4,
+    "ja": "南"
+  },
+  {
+    "id": 378,
+    "word": "space",
+    "list": 4,
+    "ja": "宇宙・空間"
+  },
+  {
+    "id": 379,
+    "word": "stand",
+    "list": 4,
+    "ja": "立つ"
+  },
+  {
+    "id": 380,
+    "word": "step",
+    "list": 4,
+    "ja": "一歩"
+  },
+  {
+    "id": 381,
+    "word": "sun",
+    "list": 4,
+    "ja": "太陽"
+  },
+  {
+    "id": 382,
+    "word": "sure",
+    "list": 4,
+    "ja": "確かな"
+  },
+  {
+    "id": 383,
+    "word": "table",
+    "list": 4,
+    "ja": "テーブル"
+  },
+  {
+    "id": 384,
+    "word": "today",
+    "list": 4,
+    "ja": "今日"
+  },
+  {
+    "id": 385,
+    "word": "told",
+    "list": 4,
+    "ja": "伝えた"
+  },
+  {
+    "id": 386,
+    "word": "top",
+    "list": 4,
+    "ja": "頂上"
+  },
+  {
+    "id": 387,
+    "word": "toward",
+    "list": 4,
+    "ja": "〜の方へ"
+  },
+  {
+    "id": 388,
+    "word": "town",
+    "list": 4,
+    "ja": "町"
+  },
+  {
+    "id": 389,
+    "word": "travel",
+    "list": 4,
+    "ja": "旅行する"
+  },
+  {
+    "id": 390,
+    "word": "true",
+    "list": 4,
+    "ja": "本当の"
+  },
+  {
+    "id": 391,
+    "word": "unit",
+    "list": 4,
+    "ja": "単位"
+  },
+  {
+    "id": 392,
+    "word": "upon",
+    "list": 4,
+    "ja": "〜の上に"
+  },
+  {
+    "id": 393,
+    "word": "usually",
+    "list": 4,
+    "ja": "たいてい"
+  },
+  {
+    "id": 394,
+    "word": "voice",
+    "list": 4,
+    "ja": "声"
+  },
+  {
+    "id": 395,
+    "word": "vowel",
+    "list": 4,
+    "ja": "母音"
+  },
+  {
+    "id": 396,
+    "word": "war",
+    "list": 4,
+    "ja": "戦争"
+  },
+  {
+    "id": 397,
+    "word": "waves",
+    "list": 4,
+    "ja": "波"
+  },
+  {
+    "id": 398,
+    "word": "whole",
+    "list": 4,
+    "ja": "全体の"
+  },
+  {
+    "id": 399,
+    "word": "wind",
+    "list": 4,
+    "ja": "風"
+  },
+  {
+    "id": 400,
+    "word": "wood",
+    "list": 4,
+    "ja": "木材"
+  },
+  {
+    "id": 401,
+    "word": "able",
+    "list": 5,
+    "ja": "できる"
+  },
+  {
+    "id": 402,
+    "word": "ago",
+    "list": 5,
+    "ja": "〜前に"
+  },
+  {
+    "id": 403,
+    "word": "among",
+    "list": 5,
+    "ja": "〜の中で"
+  },
+  {
+    "id": 404,
+    "word": "ball",
+    "list": 5,
+    "ja": "ボール"
+  },
+  {
+    "id": 405,
+    "word": "base",
+    "list": 5,
+    "ja": "土台"
+  },
+  {
+    "id": 406,
+    "word": "became",
+    "list": 5,
+    "ja": "〜になった"
+  },
+  {
+    "id": 407,
+    "word": "behind",
+    "list": 5,
+    "ja": "〜の後ろに"
+  },
+  {
+    "id": 408,
+    "word": "boat",
+    "list": 5,
+    "ja": "船"
+  },
+  {
+    "id": 409,
+    "word": "box",
+    "list": 5,
+    "ja": "箱"
+  },
+  {
+    "id": 410,
+    "word": "bread",
+    "list": 5,
+    "ja": "パン"
+  },
+  {
+    "id": 411,
+    "word": "bring",
+    "list": 5,
+    "ja": "持ってくる"
+  },
+  {
+    "id": 412,
+    "word": "brought",
+    "list": 5,
+    "ja": "持ってきた"
+  },
+  {
+    "id": 413,
+    "word": "building",
+    "list": 5,
+    "ja": "建物"
+  },
+  {
+    "id": 414,
+    "word": "built",
+    "list": 5,
+    "ja": "建てた"
+  },
+  {
+    "id": 415,
+    "word": "cannot",
+    "list": 5,
+    "ja": "〜できない"
+  },
+  {
+    "id": 416,
+    "word": "carefully",
+    "list": 5,
+    "ja": "注意深く"
+  },
+  {
+    "id": 417,
+    "word": "check",
+    "list": 5,
+    "ja": "確認する"
+  },
+  {
+    "id": 418,
+    "word": "circle",
+    "list": 5,
+    "ja": "円"
+  },
+  {
+    "id": 419,
+    "word": "class",
+    "list": 5,
+    "ja": "クラス"
+  },
+  {
+    "id": 420,
+    "word": "clear",
+    "list": 5,
+    "ja": "明確な"
+  },
+  {
+    "id": 421,
+    "word": "common",
+    "list": 5,
+    "ja": "一般的な"
+  },
+  {
+    "id": 422,
+    "word": "contain",
+    "list": 5,
+    "ja": "含む"
+  },
+  {
+    "id": 423,
+    "word": "correct",
+    "list": 5,
+    "ja": "正しい"
+  },
+  {
+    "id": 424,
+    "word": "course",
+    "list": 5,
+    "ja": "進路・コース"
+  },
+  {
+    "id": 425,
+    "word": "dark",
+    "list": 5,
+    "ja": "暗い"
+  },
+  {
+    "id": 426,
+    "word": "decided",
+    "list": 5,
+    "ja": "決めた"
+  },
+  {
+    "id": 427,
+    "word": "deep",
+    "list": 5,
+    "ja": "深い"
+  },
+  {
+    "id": 428,
+    "word": "done",
+    "list": 5,
+    "ja": "終わった(doの過去分詞)"
+  },
+  {
+    "id": 429,
+    "word": "dry",
+    "list": 5,
+    "ja": "乾いた"
+  },
+  {
+    "id": 430,
+    "word": "English",
+    "list": 5,
+    "ja": "英語"
+  },
+  {
+    "id": 431,
+    "word": "equation",
+    "list": 5,
+    "ja": "方程式"
+  },
+  {
+    "id": 432,
+    "word": "explain",
+    "list": 5,
+    "ja": "説明する"
+  },
+  {
+    "id": 433,
+    "word": "fact",
+    "list": 5,
+    "ja": "事実"
+  },
+  {
+    "id": 434,
+    "word": "feel",
+    "list": 5,
+    "ja": "感じる"
+  },
+  {
+    "id": 435,
+    "word": "filled",
+    "list": 5,
+    "ja": "満たされた"
+  },
+  {
+    "id": 436,
+    "word": "finally",
+    "list": 5,
+    "ja": "ついに"
+  },
+  {
+    "id": 437,
+    "word": "fine",
+    "list": 5,
+    "ja": "元気な・良い"
+  },
+  {
+    "id": 438,
+    "word": "fly",
+    "list": 5,
+    "ja": "飛ぶ"
+  },
+  {
+    "id": 439,
+    "word": "force",
+    "list": 5,
+    "ja": "力"
+  },
+  {
+    "id": 440,
+    "word": "front",
+    "list": 5,
+    "ja": "前"
+  },
+  {
+    "id": 441,
+    "word": "full",
+    "list": 5,
+    "ja": "満ちた"
+  },
+  {
+    "id": 442,
+    "word": "game",
+    "list": 5,
+    "ja": "ゲーム"
+  },
+  {
+    "id": 443,
+    "word": "gave",
+    "list": 5,
+    "ja": "与えた"
+  },
+  {
+    "id": 444,
+    "word": "government",
+    "list": 5,
+    "ja": "政府"
+  },
+  {
+    "id": 445,
+    "word": "green",
+    "list": 5,
+    "ja": "緑"
+  },
+  {
+    "id": 446,
+    "word": "half",
+    "list": 5,
+    "ja": "半分"
+  },
+  {
+    "id": 447,
+    "word": "heat",
+    "list": 5,
+    "ja": "熱"
+  },
+  {
+    "id": 448,
+    "word": "heavy",
+    "list": 5,
+    "ja": "重い"
+  },
+  {
+    "id": 449,
+    "word": "hot",
+    "list": 5,
+    "ja": "熱い"
+  },
+  {
+    "id": 450,
+    "word": "inches",
+    "list": 5,
+    "ja": "インチ"
+  },
+  {
+    "id": 451,
+    "word": "include",
+    "list": 5,
+    "ja": "含む"
+  },
+  {
+    "id": 452,
+    "word": "inside",
+    "list": 5,
+    "ja": "内側に"
+  },
+  {
+    "id": 453,
+    "word": "island",
+    "list": 5,
+    "ja": "島"
+  },
+  {
+    "id": 454,
+    "word": "known",
+    "list": 5,
+    "ja": "知られている"
+  },
+  {
+    "id": 455,
+    "word": "language",
+    "list": 5,
+    "ja": "言語"
+  },
+  {
+    "id": 456,
+    "word": "less",
+    "list": 5,
+    "ja": "より少ない"
+  },
+  {
+    "id": 457,
+    "word": "machine",
+    "list": 5,
+    "ja": "機械"
+  },
+  {
+    "id": 458,
+    "word": "material",
+    "list": 5,
+    "ja": "材料"
+  },
+  {
+    "id": 459,
+    "word": "minutes",
+    "list": 5,
+    "ja": "分"
+  },
+  {
+    "id": 460,
+    "word": "note",
+    "list": 5,
+    "ja": "メモ"
+  },
+  {
+    "id": 461,
+    "word": "nothing",
+    "list": 5,
+    "ja": "何も〜ない"
+  },
+  {
+    "id": 462,
+    "word": "noun",
+    "list": 5,
+    "ja": "名詞"
+  },
+  {
+    "id": 463,
+    "word": "object",
+    "list": 5,
+    "ja": "物・目的"
+  },
+  {
+    "id": 464,
+    "word": "ocean",
+    "list": 5,
+    "ja": "海洋"
+  },
+  {
+    "id": 465,
+    "word": "oh",
+    "list": 5,
+    "ja": "おお"
+  },
+  {
+    "id": 466,
+    "word": "pair",
+    "list": 5,
+    "ja": "一組"
+  },
+  {
+    "id": 467,
+    "word": "person",
+    "list": 5,
+    "ja": "人"
+  },
+  {
+    "id": 468,
+    "word": "plane",
+    "list": 5,
+    "ja": "飛行機"
+  },
+  {
+    "id": 469,
+    "word": "power",
+    "list": 5,
+    "ja": "力"
+  },
+  {
+    "id": 470,
+    "word": "produce",
+    "list": 5,
+    "ja": "生産する"
+  },
+  {
+    "id": 471,
+    "word": "quickly",
+    "list": 5,
+    "ja": "すばやく"
+  },
+  {
+    "id": 472,
+    "word": "ran",
+    "list": 5,
+    "ja": "走った"
+  },
+  {
+    "id": 473,
+    "word": "rest",
+    "list": 5,
+    "ja": "休む・残り"
+  },
+  {
+    "id": 474,
+    "word": "road",
+    "list": 5,
+    "ja": "道路"
+  },
+  {
+    "id": 475,
+    "word": "round",
+    "list": 5,
+    "ja": "丸い"
+  },
+  {
+    "id": 476,
+    "word": "rule",
+    "list": 5,
+    "ja": "規則"
+  },
+  {
+    "id": 477,
+    "word": "scientists",
+    "list": 5,
+    "ja": "科学者たち"
+  },
+  {
+    "id": 478,
+    "word": "shape",
+    "list": 5,
+    "ja": "形"
+  },
+  {
+    "id": 479,
+    "word": "shown",
+    "list": 5,
+    "ja": "示された"
+  },
+  {
+    "id": 480,
+    "word": "six",
+    "list": 5,
+    "ja": "6"
+  },
+  {
+    "id": 481,
+    "word": "size",
+    "list": 5,
+    "ja": "大きさ"
+  },
+  {
+    "id": 482,
+    "word": "special",
+    "list": 5,
+    "ja": "特別な"
+  },
+  {
+    "id": 483,
+    "word": "stars",
+    "list": 5,
+    "ja": "星"
+  },
+  {
+    "id": 484,
+    "word": "stay",
+    "list": 5,
+    "ja": "滞在する"
+  },
+  {
+    "id": 485,
+    "word": "stood",
+    "list": 5,
+    "ja": "立った"
+  },
+  {
+    "id": 486,
+    "word": "street",
+    "list": 5,
+    "ja": "通り"
+  },
+  {
+    "id": 487,
+    "word": "strong",
+    "list": 5,
+    "ja": "強い"
+  },
+  {
+    "id": 488,
+    "word": "surface",
+    "list": 5,
+    "ja": "表面"
+  },
+  {
+    "id": 489,
+    "word": "system",
+    "list": 5,
+    "ja": "システム"
+  },
+  {
+    "id": 490,
+    "word": "ten",
+    "list": 5,
+    "ja": "10"
+  },
+  {
+    "id": 491,
+    "word": "though",
+    "list": 5,
+    "ja": "〜だけれども"
+  },
+  {
+    "id": 492,
+    "word": "thousands",
+    "list": 5,
+    "ja": "何千もの"
+  },
+  {
+    "id": 493,
+    "word": "understand",
+    "list": 5,
+    "ja": "理解する"
+  },
+  {
+    "id": 494,
+    "word": "verb",
+    "list": 5,
+    "ja": "動詞"
+  },
+  {
+    "id": 495,
+    "word": "wait",
+    "list": 5,
+    "ja": "待つ"
+  },
+  {
+    "id": 496,
+    "word": "warm",
+    "list": 5,
+    "ja": "暖かい"
+  },
+  {
+    "id": 497,
+    "word": "week",
+    "list": 5,
+    "ja": "週"
+  },
+  {
+    "id": 498,
+    "word": "wheels",
+    "list": 5,
+    "ja": "車輪"
+  },
+  {
+    "id": 499,
+    "word": "yes",
+    "list": 5,
+    "ja": "はい"
+  },
+  {
+    "id": 500,
+    "word": "yet",
+    "list": 5,
+    "ja": "まだ"
+  },
+  {
+    "id": 501,
+    "word": "anything",
+    "list": 6,
+    "ja": "何でも"
+  },
+  {
+    "id": 502,
+    "word": "arms",
+    "list": 6,
+    "ja": "腕"
+  },
+  {
+    "id": 503,
+    "word": "beautiful",
+    "list": 6,
+    "ja": "美しい"
+  },
+  {
+    "id": 504,
+    "word": "believe",
+    "list": 6,
+    "ja": "信じる"
+  },
+  {
+    "id": 505,
+    "word": "beside",
+    "list": 6,
+    "ja": "〜のそばに"
+  },
+  {
+    "id": 506,
+    "word": "bill",
+    "list": 6,
+    "ja": "請求書"
+  },
+  {
+    "id": 507,
+    "word": "blue",
+    "list": 6,
+    "ja": "青い"
+  },
+  {
+    "id": 508,
+    "word": "brother",
+    "list": 6,
+    "ja": "兄弟"
+  },
+  {
+    "id": 509,
+    "word": "can't",
+    "list": 6,
+    "ja": "〜できない"
+  },
+  {
+    "id": 510,
+    "word": "cause",
+    "list": 6,
+    "ja": "原因"
+  },
+  {
+    "id": 511,
+    "word": "cells",
+    "list": 6,
+    "ja": "細胞"
+  },
+  {
+    "id": 512,
+    "word": "center",
+    "list": 6,
+    "ja": "中心"
+  },
+  {
+    "id": 513,
+    "word": "clothes",
+    "list": 6,
+    "ja": "服"
+  },
+  {
+    "id": 514,
+    "word": "dance",
+    "list": 6,
+    "ja": "踊る"
+  },
+  {
+    "id": 515,
+    "word": "describe",
+    "list": 6,
+    "ja": "説明する"
+  },
+  {
+    "id": 516,
+    "word": "developed",
+    "list": 6,
+    "ja": "発展した"
+  },
+  {
+    "id": 517,
+    "word": "difference",
+    "list": 6,
+    "ja": "違い"
+  },
+  {
+    "id": 518,
+    "word": "direction",
+    "list": 6,
+    "ja": "方向"
+  },
+  {
+    "id": 519,
+    "word": "discovered",
+    "list": 6,
+    "ja": "発見した"
+  },
+  {
+    "id": 520,
+    "word": "distance",
+    "list": 6,
+    "ja": "距離"
+  },
+  {
+    "id": 521,
+    "word": "divided",
+    "list": 6,
+    "ja": "分けられた"
+  },
+  {
+    "id": 522,
+    "word": "drive",
+    "list": 6,
+    "ja": "運転する"
+  },
+  {
+    "id": 523,
+    "word": "drop",
+    "list": 6,
+    "ja": "落とす"
+  },
+  {
+    "id": 524,
+    "word": "edge",
+    "list": 6,
+    "ja": "端"
+  },
+  {
+    "id": 525,
+    "word": "eggs",
+    "list": 6,
+    "ja": "卵"
+  },
+  {
+    "id": 526,
+    "word": "energy",
+    "list": 6,
+    "ja": "エネルギー"
+  },
+  {
+    "id": 527,
+    "word": "Europe",
+    "list": 6,
+    "ja": "ヨーロッパ"
+  },
+  {
+    "id": 528,
+    "word": "exercise",
+    "list": 6,
+    "ja": "運動"
+  },
+  {
+    "id": 529,
+    "word": "farmers",
+    "list": 6,
+    "ja": "農家の人々"
+  },
+  {
+    "id": 530,
+    "word": "felt",
+    "list": 6,
+    "ja": "感じた"
+  },
+  {
+    "id": 531,
+    "word": "finished",
+    "list": 6,
+    "ja": "終わった"
+  },
+  {
+    "id": 532,
+    "word": "flowers",
+    "list": 6,
+    "ja": "花"
+  },
+  {
+    "id": 533,
+    "word": "forest",
+    "list": 6,
+    "ja": "森"
+  },
+  {
+    "id": 534,
+    "word": "general",
+    "list": 6,
+    "ja": "一般的な"
+  },
+  {
+    "id": 535,
+    "word": "gone",
+    "list": 6,
+    "ja": "行ってしまった"
+  },
+  {
+    "id": 536,
+    "word": "grass",
+    "list": 6,
+    "ja": "草"
+  },
+  {
+    "id": 537,
+    "word": "happy",
+    "list": 6,
+    "ja": "幸せな"
+  },
+  {
+    "id": 538,
+    "word": "heart",
+    "list": 6,
+    "ja": "心・心臓"
+  },
+  {
+    "id": 539,
+    "word": "held",
+    "list": 6,
+    "ja": "持っていた"
+  },
+  {
+    "id": 540,
+    "word": "instruments",
+    "list": 6,
+    "ja": "楽器"
+  },
+  {
+    "id": 541,
+    "word": "interest",
+    "list": 6,
+    "ja": "興味"
+  },
+  {
+    "id": 542,
+    "word": "job",
+    "list": 6,
+    "ja": "仕事"
+  },
+  {
+    "id": 543,
+    "word": "kept",
+    "list": 6,
+    "ja": "保った"
+  },
+  {
+    "id": 544,
+    "word": "lay",
+    "list": 6,
+    "ja": "横たわる"
+  },
+  {
+    "id": 545,
+    "word": "legs",
+    "list": 6,
+    "ja": "脚"
+  },
+  {
+    "id": 546,
+    "word": "length",
+    "list": 6,
+    "ja": "長さ"
+  },
+  {
+    "id": 547,
+    "word": "love",
+    "list": 6,
+    "ja": "愛する"
+  },
+  {
+    "id": 548,
+    "word": "main",
+    "list": 6,
+    "ja": "主な"
+  },
+  {
+    "id": 549,
+    "word": "matter",
+    "list": 6,
+    "ja": "問題・物質"
+  },
+  {
+    "id": 550,
+    "word": "meet",
+    "list": 6,
+    "ja": "会う"
+  },
+  {
+    "id": 551,
+    "word": "members",
+    "list": 6,
+    "ja": "メンバー"
+  },
+  {
+    "id": 552,
+    "word": "million",
+    "list": 6,
+    "ja": "100万"
+  },
+  {
+    "id": 553,
+    "word": "mind",
+    "list": 6,
+    "ja": "心"
+  },
+  {
+    "id": 554,
+    "word": "months",
+    "list": 6,
+    "ja": "月々"
+  },
+  {
+    "id": 555,
+    "word": "moon",
+    "list": 6,
+    "ja": "月"
+  },
+  {
+    "id": 556,
+    "word": "paint",
+    "list": 6,
+    "ja": "絵の具・塗る"
+  },
+  {
+    "id": 557,
+    "word": "paragraph",
+    "list": 6,
+    "ja": "段落"
+  },
+  {
+    "id": 558,
+    "word": "past",
+    "list": 6,
+    "ja": "過去"
+  },
+  {
+    "id": 559,
+    "word": "perhaps",
+    "list": 6,
+    "ja": "たぶん"
+  },
+  {
+    "id": 560,
+    "word": "picked",
+    "list": 6,
+    "ja": "選んだ"
+  },
+  {
+    "id": 561,
+    "word": "present",
+    "list": 6,
+    "ja": "現在・贈り物"
+  },
+  {
+    "id": 562,
+    "word": "probably",
+    "list": 6,
+    "ja": "おそらく"
+  },
+  {
+    "id": 563,
+    "word": "race",
+    "list": 6,
+    "ja": "競争・人種"
+  },
+  {
+    "id": 564,
+    "word": "rain",
+    "list": 6,
+    "ja": "雨"
+  },
+  {
+    "id": 565,
+    "word": "raised",
+    "list": 6,
+    "ja": "上げた"
+  },
+  {
+    "id": 566,
+    "word": "ready",
+    "list": 6,
+    "ja": "準備ができた"
+  },
+  {
+    "id": 567,
+    "word": "reason",
+    "list": 6,
+    "ja": "理由"
+  },
+  {
+    "id": 568,
+    "word": "record",
+    "list": 6,
+    "ja": "記録"
+  },
+  {
+    "id": 569,
+    "word": "region",
+    "list": 6,
+    "ja": "地域"
+  },
+  {
+    "id": 570,
+    "word": "represent",
+    "list": 6,
+    "ja": "表す"
+  },
+  {
+    "id": 571,
+    "word": "return",
+    "list": 6,
+    "ja": "戻る"
+  },
+  {
+    "id": 572,
+    "word": "root",
+    "list": 6,
+    "ja": "根"
+  },
+  {
+    "id": 573,
+    "word": "sat",
+    "list": 6,
+    "ja": "座った"
+  },
+  {
+    "id": 574,
+    "word": "shall",
+    "list": 6,
+    "ja": "〜だろう"
+  },
+  {
+    "id": 575,
+    "word": "sign",
+    "list": 6,
+    "ja": "標識・署名する"
+  },
+  {
+    "id": 576,
+    "word": "simple",
+    "list": 6,
+    "ja": "単純な"
+  },
+  {
+    "id": 577,
+    "word": "site",
+    "list": 6,
+    "ja": "場所"
+  },
+  {
+    "id": 578,
+    "word": "sky",
+    "list": 6,
+    "ja": "空"
+  },
+  {
+    "id": 579,
+    "word": "soft",
+    "list": 6,
+    "ja": "柔らかい"
+  },
+  {
+    "id": 580,
+    "word": "square",
+    "list": 6,
+    "ja": "正方形"
+  },
+  {
+    "id": 581,
+    "word": "store",
+    "list": 6,
+    "ja": "店"
+  },
+  {
+    "id": 582,
+    "word": "subject",
+    "list": 6,
+    "ja": "主題"
+  },
+  {
+    "id": 583,
+    "word": "suddenly",
+    "list": 6,
+    "ja": "突然"
+  },
+  {
+    "id": 584,
+    "word": "sum",
+    "list": 6,
+    "ja": "合計"
+  },
+  {
+    "id": 585,
+    "word": "summer",
+    "list": 6,
+    "ja": "夏"
+  },
+  {
+    "id": 586,
+    "word": "syllables",
+    "list": 6,
+    "ja": "音節"
+  },
+  {
+    "id": 587,
+    "word": "teacher",
+    "list": 6,
+    "ja": "先生"
+  },
+  {
+    "id": 588,
+    "word": "test",
+    "list": 6,
+    "ja": "テスト"
+  },
+  {
+    "id": 589,
+    "word": "third",
+    "list": 6,
+    "ja": "3番目の"
+  },
+  {
+    "id": 590,
+    "word": "train",
+    "list": 6,
+    "ja": "電車"
+  },
+  {
+    "id": 591,
+    "word": "wall",
+    "list": 6,
+    "ja": "壁"
+  },
+  {
+    "id": 592,
+    "word": "weather",
+    "list": 6,
+    "ja": "天気"
+  },
+  {
+    "id": 593,
+    "word": "west",
+    "list": 6,
+    "ja": "西"
+  },
+  {
+    "id": 594,
+    "word": "whether",
+    "list": 6,
+    "ja": "〜かどうか"
+  },
+  {
+    "id": 595,
+    "word": "wide",
+    "list": 6,
+    "ja": "広い"
+  },
+  {
+    "id": 596,
+    "word": "wild",
+    "list": 6,
+    "ja": "野生の"
+  },
+  {
+    "id": 597,
+    "word": "window",
+    "list": 6,
+    "ja": "窓"
+  },
+  {
+    "id": 598,
+    "word": "winter",
+    "list": 6,
+    "ja": "冬"
+  },
+  {
+    "id": 599,
+    "word": "wish",
+    "list": 6,
+    "ja": "願う"
+  },
+  {
+    "id": 600,
+    "word": "written",
+    "list": 6,
+    "ja": "書かれた"
+  },
+  {
+    "id": 601,
+    "word": "act",
+    "list": 7,
+    "ja": "行動する"
+  },
+  {
+    "id": 602,
+    "word": "Africa",
+    "list": 7,
+    "ja": "アフリカ"
+  },
+  {
+    "id": 603,
+    "word": "age",
+    "list": 7,
+    "ja": "年齢"
+  },
+  {
+    "id": 604,
+    "word": "already",
+    "list": 7,
+    "ja": "すでに"
+  },
+  {
+    "id": 605,
+    "word": "although",
+    "list": 7,
+    "ja": "〜だけれども"
+  },
+  {
+    "id": 606,
+    "word": "amount",
+    "list": 7,
+    "ja": "量"
+  },
+  {
+    "id": 607,
+    "word": "angle",
+    "list": 7,
+    "ja": "角度"
+  },
+  {
+    "id": 608,
+    "word": "appear",
+    "list": 7,
+    "ja": "現れる"
+  },
+  {
+    "id": 609,
+    "word": "baby",
+    "list": 7,
+    "ja": "赤ちゃん"
+  },
+  {
+    "id": 610,
+    "word": "bear",
+    "list": 7,
+    "ja": "クマ・耐える"
+  },
+  {
+    "id": 611,
+    "word": "beat",
+    "list": 7,
+    "ja": "打つ"
+  },
+  {
+    "id": 612,
+    "word": "bed",
+    "list": 7,
+    "ja": "ベッド"
+  },
+  {
+    "id": 613,
+    "word": "bottom",
+    "list": 7,
+    "ja": "底"
+  },
+  {
+    "id": 614,
+    "word": "bright",
+    "list": 7,
+    "ja": "明るい"
+  },
+  {
+    "id": 615,
+    "word": "broken",
+    "list": 7,
+    "ja": "壊れた"
+  },
+  {
+    "id": 616,
+    "word": "build",
+    "list": 7,
+    "ja": "建てる"
+  },
+  {
+    "id": 617,
+    "word": "buy",
+    "list": 7,
+    "ja": "買う"
+  },
+  {
+    "id": 618,
+    "word": "care",
+    "list": 7,
+    "ja": "世話・気にする"
+  },
+  {
+    "id": 619,
+    "word": "case",
+    "list": 7,
+    "ja": "場合"
+  },
+  {
+    "id": 620,
+    "word": "cat",
+    "list": 7,
+    "ja": "猫"
+  },
+  {
+    "id": 621,
+    "word": "century",
+    "list": 7,
+    "ja": "世紀"
+  },
+  {
+    "id": 622,
+    "word": "consonant",
+    "list": 7,
+    "ja": "子音"
+  },
+  {
+    "id": 623,
+    "word": "copy",
+    "list": 7,
+    "ja": "コピーする"
+  },
+  {
+    "id": 624,
+    "word": "couldn't",
+    "list": 7,
+    "ja": "〜できなかった"
+  },
+  {
+    "id": 625,
+    "word": "count",
+    "list": 7,
+    "ja": "数える"
+  },
+  {
+    "id": 626,
+    "word": "cross",
+    "list": 7,
+    "ja": "横切る・十字"
+  },
+  {
+    "id": 627,
+    "word": "dictionary",
+    "list": 7,
+    "ja": "辞書"
+  },
+  {
+    "id": 628,
+    "word": "died",
+    "list": 7,
+    "ja": "死んだ"
+  },
+  {
+    "id": 629,
+    "word": "dress",
+    "list": 7,
+    "ja": "ドレス"
+  },
+  {
+    "id": 630,
+    "word": "either",
+    "list": 7,
+    "ja": "どちらか"
+  },
+  {
+    "id": 631,
+    "word": "everyone",
+    "list": 7,
+    "ja": "みんな"
+  },
+  {
+    "id": 632,
+    "word": "everything",
+    "list": 7,
+    "ja": "すべて"
+  },
+  {
+    "id": 633,
+    "word": "exactly",
+    "list": 7,
+    "ja": "正確に"
+  },
+  {
+    "id": 634,
+    "word": "factors",
+    "list": 7,
+    "ja": "要因"
+  },
+  {
+    "id": 635,
+    "word": "fight",
+    "list": 7,
+    "ja": "戦う"
+  },
+  {
+    "id": 636,
+    "word": "fingers",
+    "list": 7,
+    "ja": "指"
+  },
+  {
+    "id": 637,
+    "word": "floor",
+    "list": 7,
+    "ja": "床"
+  },
+  {
+    "id": 638,
+    "word": "fraction",
+    "list": 7,
+    "ja": "分数"
+  },
+  {
+    "id": 639,
+    "word": "free",
+    "list": 7,
+    "ja": "自由な"
+  },
+  {
+    "id": 640,
+    "word": "French",
+    "list": 7,
+    "ja": "フランスの"
+  },
+  {
+    "id": 641,
+    "word": "gold",
+    "list": 7,
+    "ja": "金"
+  },
+  {
+    "id": 642,
+    "word": "hair",
+    "list": 7,
+    "ja": "髪"
+  },
+  {
+    "id": 643,
+    "word": "hill",
+    "list": 7,
+    "ja": "丘"
+  },
+  {
+    "id": 644,
+    "word": "hole",
+    "list": 7,
+    "ja": "穴"
+  },
+  {
+    "id": 645,
+    "word": "hope",
+    "list": 7,
+    "ja": "希望する"
+  },
+  {
+    "id": 646,
+    "word": "ice",
+    "list": 7,
+    "ja": "氷"
+  },
+  {
+    "id": 647,
+    "word": "instead",
+    "list": 7,
+    "ja": "代わりに"
+  },
+  {
+    "id": 648,
+    "word": "iron",
+    "list": 7,
+    "ja": "鉄"
+  },
+  {
+    "id": 649,
+    "word": "jumped",
+    "list": 7,
+    "ja": "跳んだ"
+  },
+  {
+    "id": 650,
+    "word": "killed",
+    "list": 7,
+    "ja": "殺した"
+  },
+  {
+    "id": 651,
+    "word": "lake",
+    "list": 7,
+    "ja": "湖"
+  },
+  {
+    "id": 652,
+    "word": "laughed",
+    "list": 7,
+    "ja": "笑った"
+  },
+  {
+    "id": 653,
+    "word": "lead",
+    "list": 7,
+    "ja": "導く"
+  },
+  {
+    "id": 654,
+    "word": "let's",
+    "list": 7,
+    "ja": "〜しよう"
+  },
+  {
+    "id": 655,
+    "word": "lot",
+    "list": 7,
+    "ja": "たくさん"
+  },
+  {
+    "id": 656,
+    "word": "melody",
+    "list": 7,
+    "ja": "メロディー"
+  },
+  {
+    "id": 657,
+    "word": "metal",
+    "list": 7,
+    "ja": "金属"
+  },
+  {
+    "id": 658,
+    "word": "method",
+    "list": 7,
+    "ja": "方法"
+  },
+  {
+    "id": 659,
+    "word": "middle",
+    "list": 7,
+    "ja": "真ん中"
+  },
+  {
+    "id": 660,
+    "word": "milk",
+    "list": 7,
+    "ja": "牛乳"
+  },
+  {
+    "id": 661,
+    "word": "moment",
+    "list": 7,
+    "ja": "瞬間"
+  },
+  {
+    "id": 662,
+    "word": "nation",
+    "list": 7,
+    "ja": "国家"
+  },
+  {
+    "id": 663,
+    "word": "natural",
+    "list": 7,
+    "ja": "自然の"
+  },
+  {
+    "id": 664,
+    "word": "outside",
+    "list": 7,
+    "ja": "外側に"
+  },
+  {
+    "id": 665,
+    "word": "per",
+    "list": 7,
+    "ja": "〜につき"
+  },
+  {
+    "id": 666,
+    "word": "phrase",
+    "list": 7,
+    "ja": "フレーズ"
+  },
+  {
+    "id": 667,
+    "word": "poor",
+    "list": 7,
+    "ja": "貧しい"
+  },
+  {
+    "id": 668,
+    "word": "possible",
+    "list": 7,
+    "ja": "可能な"
+  },
+  {
+    "id": 669,
+    "word": "pounds",
+    "list": 7,
+    "ja": "ポンド"
+  },
+  {
+    "id": 670,
+    "word": "pushed",
+    "list": 7,
+    "ja": "押した"
+  },
+  {
+    "id": 671,
+    "word": "quiet",
+    "list": 7,
+    "ja": "静かな"
+  },
+  {
+    "id": 672,
+    "word": "quite",
+    "list": 7,
+    "ja": "かなり"
+  },
+  {
+    "id": 673,
+    "word": "remain",
+    "list": 7,
+    "ja": "残る"
+  },
+  {
+    "id": 674,
+    "word": "result",
+    "list": 7,
+    "ja": "結果"
+  },
+  {
+    "id": 675,
+    "word": "ride",
+    "list": 7,
+    "ja": "乗る"
+  },
+  {
+    "id": 676,
+    "word": "rolled",
+    "list": 7,
+    "ja": "転がった"
+  },
+  {
+    "id": 677,
+    "word": "sail",
+    "list": 7,
+    "ja": "帆・航海する"
+  },
+  {
+    "id": 678,
+    "word": "scale",
+    "list": 7,
+    "ja": "規模・目盛り"
+  },
+  {
+    "id": 679,
+    "word": "section",
+    "list": 7,
+    "ja": "部分"
+  },
+  {
+    "id": 680,
+    "word": "sleep",
+    "list": 7,
+    "ja": "眠る"
+  },
+  {
+    "id": 681,
+    "word": "smiled",
+    "list": 7,
+    "ja": "微笑んだ"
+  },
+  {
+    "id": 682,
+    "word": "snow",
+    "list": 7,
+    "ja": "雪"
+  },
+  {
+    "id": 683,
+    "word": "soil",
+    "list": 7,
+    "ja": "土"
+  },
+  {
+    "id": 684,
+    "word": "solve",
+    "list": 7,
+    "ja": "解決する"
+  },
+  {
+    "id": 685,
+    "word": "someone",
+    "list": 7,
+    "ja": "誰か"
+  },
+  {
+    "id": 686,
+    "word": "son",
+    "list": 7,
+    "ja": "息子"
+  },
+  {
+    "id": 687,
+    "word": "speak",
+    "list": 7,
+    "ja": "話す"
+  },
+  {
+    "id": 688,
+    "word": "speed",
+    "list": 7,
+    "ja": "速さ"
+  },
+  {
+    "id": 689,
+    "word": "spring",
+    "list": 7,
+    "ja": "春"
+  },
+  {
+    "id": 690,
+    "word": "stone",
+    "list": 7,
+    "ja": "石"
+  },
+  {
+    "id": 691,
+    "word": "surprise",
+    "list": 7,
+    "ja": "驚き"
+  },
+  {
+    "id": 692,
+    "word": "tall",
+    "list": 7,
+    "ja": "背が高い"
+  },
+  {
+    "id": 693,
+    "word": "temperature",
+    "list": 7,
+    "ja": "温度"
+  },
+  {
+    "id": 694,
+    "word": "themselves",
+    "list": 7,
+    "ja": "彼ら自身"
+  },
+  {
+    "id": 695,
+    "word": "tiny",
+    "list": 7,
+    "ja": "とても小さい"
+  },
+  {
+    "id": 696,
+    "word": "trip",
+    "list": 7,
+    "ja": "旅行"
+  },
+  {
+    "id": 697,
+    "word": "type",
+    "list": 7,
+    "ja": "種類"
+  },
+  {
+    "id": 698,
+    "word": "village",
+    "list": 7,
+    "ja": "村"
+  },
+  {
+    "id": 699,
+    "word": "within",
+    "list": 7,
+    "ja": "〜以内に"
+  },
+  {
+    "id": 700,
+    "word": "wonder",
+    "list": 7,
+    "ja": "不思議に思う"
+  },
+  {
+    "id": 701,
+    "word": "alone",
+    "list": 8,
+    "ja": "1人で"
+  },
+  {
+    "id": 702,
+    "word": "art",
+    "list": 8,
+    "ja": "芸術"
+  },
+  {
+    "id": 703,
+    "word": "bad",
+    "list": 8,
+    "ja": "悪い"
+  },
+  {
+    "id": 704,
+    "word": "bank",
+    "list": 8,
+    "ja": "銀行"
+  },
+  {
+    "id": 705,
+    "word": "bit",
+    "list": 8,
+    "ja": "少し"
+  },
+  {
+    "id": 706,
+    "word": "break",
+    "list": 8,
+    "ja": "壊す"
+  },
+  {
+    "id": 707,
+    "word": "brown",
+    "list": 8,
+    "ja": "茶色"
+  },
+  {
+    "id": 708,
+    "word": "burning",
+    "list": 8,
+    "ja": "燃えている"
+  },
+  {
+    "id": 709,
+    "word": "business",
+    "list": 8,
+    "ja": "仕事・事業"
+  },
+  {
+    "id": 710,
+    "word": "captain",
+    "list": 8,
+    "ja": "船長"
+  },
+  {
+    "id": 711,
+    "word": "catch",
+    "list": 8,
+    "ja": "つかまえる"
+  },
+  {
+    "id": 712,
+    "word": "caught",
+    "list": 8,
+    "ja": "つかまえた"
+  },
+  {
+    "id": 713,
+    "word": "cents",
+    "list": 8,
+    "ja": "セント"
+  },
+  {
+    "id": 714,
+    "word": "child",
+    "list": 8,
+    "ja": "子ども"
+  },
+  {
+    "id": 715,
+    "word": "choose",
+    "list": 8,
+    "ja": "選ぶ"
+  },
+  {
+    "id": 716,
+    "word": "clean",
+    "list": 8,
+    "ja": "きれいな"
+  },
+  {
+    "id": 717,
+    "word": "climbed",
+    "list": 8,
+    "ja": "登った"
+  },
+  {
+    "id": 718,
+    "word": "cloud",
+    "list": 8,
+    "ja": "雲"
+  },
+  {
+    "id": 719,
+    "word": "coast",
+    "list": 8,
+    "ja": "海岸"
+  },
+  {
+    "id": 720,
+    "word": "continued",
+    "list": 8,
+    "ja": "続いた"
+  },
+  {
+    "id": 721,
+    "word": "control",
+    "list": 8,
+    "ja": "制御する"
+  },
+  {
+    "id": 722,
+    "word": "cool",
+    "list": 8,
+    "ja": "涼しい"
+  },
+  {
+    "id": 723,
+    "word": "cost",
+    "list": 8,
+    "ja": "費用"
+  },
+  {
+    "id": 724,
+    "word": "decimal",
+    "list": 8,
+    "ja": "小数"
+  },
+  {
+    "id": 725,
+    "word": "desert",
+    "list": 8,
+    "ja": "砂漠"
+  },
+  {
+    "id": 726,
+    "word": "design",
+    "list": 8,
+    "ja": "デザイン"
+  },
+  {
+    "id": 727,
+    "word": "direct",
+    "list": 8,
+    "ja": "直接の"
+  },
+  {
+    "id": 728,
+    "word": "drawing",
+    "list": 8,
+    "ja": "描くこと・絵"
+  },
+  {
+    "id": 729,
+    "word": "ears",
+    "list": 8,
+    "ja": "耳"
+  },
+  {
+    "id": 730,
+    "word": "east",
+    "list": 8,
+    "ja": "東"
+  },
+  {
+    "id": 731,
+    "word": "else",
+    "list": 8,
+    "ja": "他に"
+  },
+  {
+    "id": 732,
+    "word": "engine",
+    "list": 8,
+    "ja": "エンジン"
+  },
+  {
+    "id": 733,
+    "word": "England",
+    "list": 8,
+    "ja": "イングランド"
+  },
+  {
+    "id": 734,
+    "word": "equal",
+    "list": 8,
+    "ja": "等しい"
+  },
+  {
+    "id": 735,
+    "word": "experiment",
+    "list": 8,
+    "ja": "実験"
+  },
+  {
+    "id": 736,
+    "word": "express",
+    "list": 8,
+    "ja": "表現する"
+  },
+  {
+    "id": 737,
+    "word": "feeling",
+    "list": 8,
+    "ja": "感じ"
+  },
+  {
+    "id": 738,
+    "word": "fell",
+    "list": 8,
+    "ja": "落ちた"
+  },
+  {
+    "id": 739,
+    "word": "flow",
+    "list": 8,
+    "ja": "流れる"
+  },
+  {
+    "id": 740,
+    "word": "foot",
+    "list": 8,
+    "ja": "足"
+  },
+  {
+    "id": 741,
+    "word": "garden",
+    "list": 8,
+    "ja": "庭"
+  },
+  {
+    "id": 742,
+    "word": "gas",
+    "list": 8,
+    "ja": "気体・ガス"
+  },
+  {
+    "id": 743,
+    "word": "glass",
+    "list": 8,
+    "ja": "ガラス"
+  },
+  {
+    "id": 744,
+    "word": "God",
+    "list": 8,
+    "ja": "神"
+  },
+  {
+    "id": 745,
+    "word": "grew",
+    "list": 8,
+    "ja": "育った"
+  },
+  {
+    "id": 746,
+    "word": "history",
+    "list": 8,
+    "ja": "歴史"
+  },
+  {
+    "id": 747,
+    "word": "human",
+    "list": 8,
+    "ja": "人間"
+  },
+  {
+    "id": 748,
+    "word": "hunting",
+    "list": 8,
+    "ja": "狩り"
+  },
+  {
+    "id": 749,
+    "word": "increase",
+    "list": 8,
+    "ja": "増やす"
+  },
+  {
+    "id": 750,
+    "word": "information",
+    "list": 8,
+    "ja": "情報"
+  },
+  {
+    "id": 751,
+    "word": "itself",
+    "list": 8,
+    "ja": "それ自身"
+  },
+  {
+    "id": 752,
+    "word": "joined",
+    "list": 8,
+    "ja": "加わった"
+  },
+  {
+    "id": 753,
+    "word": "key",
+    "list": 8,
+    "ja": "鍵"
+  },
+  {
+    "id": 754,
+    "word": "lady",
+    "list": 8,
+    "ja": "女性"
+  },
+  {
+    "id": 755,
+    "word": "law",
+    "list": 8,
+    "ja": "法律"
+  },
+  {
+    "id": 756,
+    "word": "least",
+    "list": 8,
+    "ja": "最も少ない"
+  },
+  {
+    "id": 757,
+    "word": "lost",
+    "list": 8,
+    "ja": "失った"
+  },
+  {
+    "id": 758,
+    "word": "maybe",
+    "list": 8,
+    "ja": "たぶん"
+  },
+  {
+    "id": 759,
+    "word": "mouth",
+    "list": 8,
+    "ja": "口"
+  },
+  {
+    "id": 760,
+    "word": "party",
+    "list": 8,
+    "ja": "パーティー"
+  },
+  {
+    "id": 761,
+    "word": "pay",
+    "list": 8,
+    "ja": "支払う"
+  },
+  {
+    "id": 762,
+    "word": "period",
+    "list": 8,
+    "ja": "期間"
+  },
+  {
+    "id": 763,
+    "word": "plains",
+    "list": 8,
+    "ja": "平原"
+  },
+  {
+    "id": 764,
+    "word": "please",
+    "list": 8,
+    "ja": "どうぞ"
+  },
+  {
+    "id": 765,
+    "word": "practice",
+    "list": 8,
+    "ja": "練習する"
+  },
+  {
+    "id": 766,
+    "word": "president",
+    "list": 8,
+    "ja": "大統領"
+  },
+  {
+    "id": 767,
+    "word": "received",
+    "list": 8,
+    "ja": "受け取った"
+  },
+  {
+    "id": 768,
+    "word": "report",
+    "list": 8,
+    "ja": "報告"
+  },
+  {
+    "id": 769,
+    "word": "ring",
+    "list": 8,
+    "ja": "指輪"
+  },
+  {
+    "id": 770,
+    "word": "rise",
+    "list": 8,
+    "ja": "上がる"
+  },
+  {
+    "id": 771,
+    "word": "row",
+    "list": 8,
+    "ja": "列"
+  },
+  {
+    "id": 772,
+    "word": "save",
+    "list": 8,
+    "ja": "救う"
+  },
+  {
+    "id": 773,
+    "word": "seeds",
+    "list": 8,
+    "ja": "種"
+  },
+  {
+    "id": 774,
+    "word": "sent",
+    "list": 8,
+    "ja": "送った"
+  },
+  {
+    "id": 775,
+    "word": "separate",
+    "list": 8,
+    "ja": "分ける"
+  },
+  {
+    "id": 776,
+    "word": "serve",
+    "list": 8,
+    "ja": "仕える"
+  },
+  {
+    "id": 777,
+    "word": "shouted",
+    "list": 8,
+    "ja": "叫んだ"
+  },
+  {
+    "id": 778,
+    "word": "single",
+    "list": 8,
+    "ja": "1つの"
+  },
+  {
+    "id": 779,
+    "word": "skin",
+    "list": 8,
+    "ja": "皮膚"
+  },
+  {
+    "id": 780,
+    "word": "statement",
+    "list": 8,
+    "ja": "声明"
+  },
+  {
+    "id": 781,
+    "word": "stick",
+    "list": 8,
+    "ja": "棒"
+  },
+  {
+    "id": 782,
+    "word": "straight",
+    "list": 8,
+    "ja": "まっすぐな"
+  },
+  {
+    "id": 783,
+    "word": "strange",
+    "list": 8,
+    "ja": "奇妙な"
+  },
+  {
+    "id": 784,
+    "word": "students",
+    "list": 8,
+    "ja": "生徒たち"
+  },
+  {
+    "id": 785,
+    "word": "suppose",
+    "list": 8,
+    "ja": "思う・仮定する"
+  },
+  {
+    "id": 786,
+    "word": "symbols",
+    "list": 8,
+    "ja": "記号"
+  },
+  {
+    "id": 787,
+    "word": "team",
+    "list": 8,
+    "ja": "チーム"
+  },
+  {
+    "id": 788,
+    "word": "touch",
+    "list": 8,
+    "ja": "触る"
+  },
+  {
+    "id": 789,
+    "word": "trouble",
+    "list": 8,
+    "ja": "トラブル"
+  },
+  {
+    "id": 790,
+    "word": "uncle",
+    "list": 8,
+    "ja": "おじ"
+  },
+  {
+    "id": 791,
+    "word": "valley",
+    "list": 8,
+    "ja": "谷"
+  },
+  {
+    "id": 792,
+    "word": "visit",
+    "list": 8,
+    "ja": "訪れる"
+  },
+  {
+    "id": 793,
+    "word": "wear",
+    "list": 8,
+    "ja": "着る"
+  },
+  {
+    "id": 794,
+    "word": "whose",
+    "list": 8,
+    "ja": "誰の"
+  },
+  {
+    "id": 795,
+    "word": "wire",
+    "list": 8,
+    "ja": "針金"
+  },
+  {
+    "id": 796,
+    "word": "woman",
+    "list": 8,
+    "ja": "女性"
+  },
+  {
+    "id": 797,
+    "word": "wrote",
+    "list": 8,
+    "ja": "書いた"
+  },
+  {
+    "id": 798,
+    "word": "yard",
+    "list": 8,
+    "ja": "庭・ヤード"
+  },
+  {
+    "id": 799,
+    "word": "you're",
+    "list": 8,
+    "ja": "あなたは〜です"
+  },
+  {
+    "id": 800,
+    "word": "yourself",
+    "list": 8,
+    "ja": "あなた自身"
+  },
+  {
+    "id": 801,
+    "word": "addition",
+    "list": 9,
+    "ja": "足し算・追加"
+  },
+  {
+    "id": 802,
+    "word": "army",
+    "list": 9,
+    "ja": "軍隊"
+  },
+  {
+    "id": 803,
+    "word": "bell",
+    "list": 9,
+    "ja": "ベル"
+  },
+  {
+    "id": 804,
+    "word": "belong",
+    "list": 9,
+    "ja": "属する"
+  },
+  {
+    "id": 805,
+    "word": "block",
+    "list": 9,
+    "ja": "ブロック"
+  },
+  {
+    "id": 806,
+    "word": "blood",
+    "list": 9,
+    "ja": "血"
+  },
+  {
+    "id": 807,
+    "word": "blow",
+    "list": 9,
+    "ja": "吹く"
+  },
+  {
+    "id": 808,
+    "word": "board",
+    "list": 9,
+    "ja": "板"
+  },
+  {
+    "id": 809,
+    "word": "bones",
+    "list": 9,
+    "ja": "骨"
+  },
+  {
+    "id": 810,
+    "word": "branches",
+    "list": 9,
+    "ja": "枝"
+  },
+  {
+    "id": 811,
+    "word": "cattle",
+    "list": 9,
+    "ja": "牛"
+  },
+  {
+    "id": 812,
+    "word": "chief",
+    "list": 9,
+    "ja": "主要な・長"
+  },
+  {
+    "id": 813,
+    "word": "compare",
+    "list": 9,
+    "ja": "比較する"
+  },
+  {
+    "id": 814,
+    "word": "compound",
+    "list": 9,
+    "ja": "化合物"
+  },
+  {
+    "id": 815,
+    "word": "consider",
+    "list": 9,
+    "ja": "考慮する"
+  },
+  {
+    "id": 816,
+    "word": "cook",
+    "list": 9,
+    "ja": "料理する"
+  },
+  {
+    "id": 817,
+    "word": "corner",
+    "list": 9,
+    "ja": "角"
+  },
+  {
+    "id": 818,
+    "word": "crops",
+    "list": 9,
+    "ja": "作物"
+  },
+  {
+    "id": 819,
+    "word": "crowd",
+    "list": 9,
+    "ja": "群衆"
+  },
+  {
+    "id": 820,
+    "word": "current",
+    "list": 9,
+    "ja": "現在の・電流"
+  },
+  {
+    "id": 821,
+    "word": "doctor",
+    "list": 9,
+    "ja": "医者"
+  },
+  {
+    "id": 822,
+    "word": "dollars",
+    "list": 9,
+    "ja": "ドル"
+  },
+  {
+    "id": 823,
+    "word": "eight",
+    "list": 9,
+    "ja": "8"
+  },
+  {
+    "id": 824,
+    "word": "electric",
+    "list": 9,
+    "ja": "電気の"
+  },
+  {
+    "id": 825,
+    "word": "elements",
+    "list": 9,
+    "ja": "要素"
+  },
+  {
+    "id": 826,
+    "word": "enjoy",
+    "list": 9,
+    "ja": "楽しむ"
+  },
+  {
+    "id": 827,
+    "word": "entered",
+    "list": 9,
+    "ja": "入った"
+  },
+  {
+    "id": 828,
+    "word": "except",
+    "list": 9,
+    "ja": "〜を除いて"
+  },
+  {
+    "id": 829,
+    "word": "exciting",
+    "list": 9,
+    "ja": "わくわくする"
+  },
+  {
+    "id": 830,
+    "word": "expect",
+    "list": 9,
+    "ja": "期待する"
+  },
+  {
+    "id": 831,
+    "word": "famous",
+    "list": 9,
+    "ja": "有名な"
+  },
+  {
+    "id": 832,
+    "word": "fit",
+    "list": 9,
+    "ja": "合う"
+  },
+  {
+    "id": 833,
+    "word": "flat",
+    "list": 9,
+    "ja": "平らな"
+  },
+  {
+    "id": 834,
+    "word": "fruit",
+    "list": 9,
+    "ja": "果物"
+  },
+  {
+    "id": 835,
+    "word": "fun",
+    "list": 9,
+    "ja": "楽しみ"
+  },
+  {
+    "id": 836,
+    "word": "guess",
+    "list": 9,
+    "ja": "推測する"
+  },
+  {
+    "id": 837,
+    "word": "hat",
+    "list": 9,
+    "ja": "帽子"
+  },
+  {
+    "id": 838,
+    "word": "hit",
+    "list": 9,
+    "ja": "打つ"
+  },
+  {
+    "id": 839,
+    "word": "indicate",
+    "list": 9,
+    "ja": "示す"
+  },
+  {
+    "id": 840,
+    "word": "industry",
+    "list": 9,
+    "ja": "産業"
+  },
+  {
+    "id": 841,
+    "word": "insects",
+    "list": 9,
+    "ja": "昆虫"
+  },
+  {
+    "id": 842,
+    "word": "interesting",
+    "list": 9,
+    "ja": "面白い"
+  },
+  {
+    "id": 843,
+    "word": "Japanese",
+    "list": 9,
+    "ja": "日本の・日本語"
+  },
+  {
+    "id": 844,
+    "word": "lie",
+    "list": 9,
+    "ja": "嘘・横たわる"
+  },
+  {
+    "id": 845,
+    "word": "lifted",
+    "list": 9,
+    "ja": "持ち上げた"
+  },
+  {
+    "id": 846,
+    "word": "loud",
+    "list": 9,
+    "ja": "うるさい"
+  },
+  {
+    "id": 847,
+    "word": "major",
+    "list": 9,
+    "ja": "主要な"
+  },
+  {
+    "id": 848,
+    "word": "mall",
+    "list": 9,
+    "ja": "ショッピングモール"
+  },
+  {
+    "id": 849,
+    "word": "meat",
+    "list": 9,
+    "ja": "肉"
+  },
+  {
+    "id": 850,
+    "word": "mine",
+    "list": 9,
+    "ja": "私のもの"
+  },
+  {
+    "id": 851,
+    "word": "modern",
+    "list": 9,
+    "ja": "現代の"
+  },
+  {
+    "id": 852,
+    "word": "movement",
+    "list": 9,
+    "ja": "動き"
+  },
+  {
+    "id": 853,
+    "word": "necessary",
+    "list": 9,
+    "ja": "必要な"
+  },
+  {
+    "id": 854,
+    "word": "observe",
+    "list": 9,
+    "ja": "観察する"
+  },
+  {
+    "id": 855,
+    "word": "park",
+    "list": 9,
+    "ja": "公園"
+  },
+  {
+    "id": 856,
+    "word": "particular",
+    "list": 9,
+    "ja": "特定の"
+  },
+  {
+    "id": 857,
+    "word": "planets",
+    "list": 9,
+    "ja": "惑星"
+  },
+  {
+    "id": 858,
+    "word": "poem",
+    "list": 9,
+    "ja": "詩"
+  },
+  {
+    "id": 859,
+    "word": "pole",
+    "list": 9,
+    "ja": "棒・極"
+  },
+  {
+    "id": 860,
+    "word": "position",
+    "list": 9,
+    "ja": "位置"
+  },
+  {
+    "id": 861,
+    "word": "process",
+    "list": 9,
+    "ja": "過程"
+  },
+  {
+    "id": 862,
+    "word": "property",
+    "list": 9,
+    "ja": "財産"
+  },
+  {
+    "id": 863,
+    "word": "provide",
+    "list": 9,
+    "ja": "提供する"
+  },
+  {
+    "id": 864,
+    "word": "rather",
+    "list": 9,
+    "ja": "むしろ"
+  },
+  {
+    "id": 865,
+    "word": "rhythm",
+    "list": 9,
+    "ja": "リズム"
+  },
+  {
+    "id": 866,
+    "word": "rich",
+    "list": 9,
+    "ja": "裕福な"
+  },
+  {
+    "id": 867,
+    "word": "safe",
+    "list": 9,
+    "ja": "安全な"
+  },
+  {
+    "id": 868,
+    "word": "sand",
+    "list": 9,
+    "ja": "砂"
+  },
+  {
+    "id": 869,
+    "word": "science",
+    "list": 9,
+    "ja": "科学"
+  },
+  {
+    "id": 870,
+    "word": "sell",
+    "list": 9,
+    "ja": "売る"
+  },
+  {
+    "id": 871,
+    "word": "send",
+    "list": 9,
+    "ja": "送る"
+  },
+  {
+    "id": 872,
+    "word": "sense",
+    "list": 9,
+    "ja": "感覚"
+  },
+  {
+    "id": 873,
+    "word": "seven",
+    "list": 9,
+    "ja": "7"
+  },
+  {
+    "id": 874,
+    "word": "sharp",
+    "list": 9,
+    "ja": "鋭い"
+  },
+  {
+    "id": 875,
+    "word": "shoulder",
+    "list": 9,
+    "ja": "肩"
+  },
+  {
+    "id": 876,
+    "word": "sight",
+    "list": 9,
+    "ja": "視力・見ること"
+  },
+  {
+    "id": 877,
+    "word": "silent",
+    "list": 9,
+    "ja": "静かな"
+  },
+  {
+    "id": 878,
+    "word": "soldiers",
+    "list": 9,
+    "ja": "兵士たち"
+  },
+  {
+    "id": 879,
+    "word": "spot",
+    "list": 9,
+    "ja": "場所・斑点"
+  },
+  {
+    "id": 880,
+    "word": "spread",
+    "list": 9,
+    "ja": "広げる"
+  },
+  {
+    "id": 881,
+    "word": "stream",
+    "list": 9,
+    "ja": "小川"
+  },
+  {
+    "id": 882,
+    "word": "string",
+    "list": 9,
+    "ja": "ひも"
+  },
+  {
+    "id": 883,
+    "word": "suggested",
+    "list": 9,
+    "ja": "提案した"
+  },
+  {
+    "id": 884,
+    "word": "supply",
+    "list": 9,
+    "ja": "供給する"
+  },
+  {
+    "id": 885,
+    "word": "swim",
+    "list": 9,
+    "ja": "泳ぐ"
+  },
+  {
+    "id": 886,
+    "word": "terms",
+    "list": 9,
+    "ja": "用語"
+  },
+  {
+    "id": 887,
+    "word": "thick",
+    "list": 9,
+    "ja": "厚い"
+  },
+  {
+    "id": 888,
+    "word": "thin",
+    "list": 9,
+    "ja": "薄い"
+  },
+  {
+    "id": 889,
+    "word": "thus",
+    "list": 9,
+    "ja": "このように"
+  },
+  {
+    "id": 890,
+    "word": "tied",
+    "list": 9,
+    "ja": "結んだ"
+  },
+  {
+    "id": 891,
+    "word": "tone",
+    "list": 9,
+    "ja": "音色"
+  },
+  {
+    "id": 892,
+    "word": "trade",
+    "list": 9,
+    "ja": "貿易"
+  },
+  {
+    "id": 893,
+    "word": "tube",
+    "list": 9,
+    "ja": "管"
+  },
+  {
+    "id": 894,
+    "word": "value",
+    "list": 9,
+    "ja": "価値"
+  },
+  {
+    "id": 895,
+    "word": "wash",
+    "list": 9,
+    "ja": "洗う"
+  },
+  {
+    "id": 896,
+    "word": "wasn't",
+    "list": 9,
+    "ja": "〜ではなかった"
+  },
+  {
+    "id": 897,
+    "word": "weight",
+    "list": 9,
+    "ja": "重さ"
+  },
+  {
+    "id": 898,
+    "word": "wife",
+    "list": 9,
+    "ja": "妻"
+  },
+  {
+    "id": 899,
+    "word": "wings",
+    "list": 9,
+    "ja": "翼"
+  },
+  {
+    "id": 900,
+    "word": "won't",
+    "list": 9,
+    "ja": "〜しないだろう"
+  },
+  {
+    "id": 901,
+    "word": "action",
+    "list": 10,
+    "ja": "行動"
+  },
+  {
+    "id": 902,
+    "word": "actually",
+    "list": 10,
+    "ja": "実際に"
+  },
+  {
+    "id": 903,
+    "word": "adjective",
+    "list": 10,
+    "ja": "形容詞"
+  },
+  {
+    "id": 904,
+    "word": "afraid",
+    "list": 10,
+    "ja": "恐れている"
+  },
+  {
+    "id": 905,
+    "word": "agreed",
+    "list": 10,
+    "ja": "同意した"
+  },
+  {
+    "id": 906,
+    "word": "ahead",
+    "list": 10,
+    "ja": "前方に"
+  },
+  {
+    "id": 907,
+    "word": "allow",
+    "list": 10,
+    "ja": "許す"
+  },
+  {
+    "id": 908,
+    "word": "apple",
+    "list": 10,
+    "ja": "りんご"
+  },
+  {
+    "id": 909,
+    "word": "arrived",
+    "list": 10,
+    "ja": "到着した"
+  },
+  {
+    "id": 910,
+    "word": "born",
+    "list": 10,
+    "ja": "生まれた"
+  },
+  {
+    "id": 911,
+    "word": "bought",
+    "list": 10,
+    "ja": "買った"
+  },
+  {
+    "id": 912,
+    "word": "British",
+    "list": 10,
+    "ja": "イギリスの"
+  },
+  {
+    "id": 913,
+    "word": "capital",
+    "list": 10,
+    "ja": "首都"
+  },
+  {
+    "id": 914,
+    "word": "chance",
+    "list": 10,
+    "ja": "チャンス"
+  },
+  {
+    "id": 915,
+    "word": "chart",
+    "list": 10,
+    "ja": "図表"
+  },
+  {
+    "id": 916,
+    "word": "church",
+    "list": 10,
+    "ja": "教会"
+  },
+  {
+    "id": 917,
+    "word": "column",
+    "list": 10,
+    "ja": "列・柱"
+  },
+  {
+    "id": 918,
+    "word": "company",
+    "list": 10,
+    "ja": "会社"
+  },
+  {
+    "id": 919,
+    "word": "conditions",
+    "list": 10,
+    "ja": "状態"
+  },
+  {
+    "id": 920,
+    "word": "corn",
+    "list": 10,
+    "ja": "トウモロコシ"
+  },
+  {
+    "id": 921,
+    "word": "cotton",
+    "list": 10,
+    "ja": "綿"
+  },
+  {
+    "id": 922,
+    "word": "cows",
+    "list": 10,
+    "ja": "牛"
+  },
+  {
+    "id": 923,
+    "word": "create",
+    "list": 10,
+    "ja": "作り出す"
+  },
+  {
+    "id": 924,
+    "word": "dead",
+    "list": 10,
+    "ja": "死んだ"
+  },
+  {
+    "id": 925,
+    "word": "deal",
+    "list": 10,
+    "ja": "取引"
+  },
+  {
+    "id": 926,
+    "word": "death",
+    "list": 10,
+    "ja": "死"
+  },
+  {
+    "id": 927,
+    "word": "details",
+    "list": 10,
+    "ja": "詳細"
+  },
+  {
+    "id": 928,
+    "word": "determine",
+    "list": 10,
+    "ja": "決定する"
+  },
+  {
+    "id": 929,
+    "word": "difficult",
+    "list": 10,
+    "ja": "難しい"
+  },
+  {
+    "id": 930,
+    "word": "division",
+    "list": 10,
+    "ja": "分割"
+  },
+  {
+    "id": 931,
+    "word": "doesn't",
+    "list": 10,
+    "ja": "〜しない"
+  },
+  {
+    "id": 932,
+    "word": "effect",
+    "list": 10,
+    "ja": "効果"
+  },
+  {
+    "id": 933,
+    "word": "entire",
+    "list": 10,
+    "ja": "全体の"
+  },
+  {
+    "id": 934,
+    "word": "especially",
+    "list": 10,
+    "ja": "特に"
+  },
+  {
+    "id": 935,
+    "word": "evening",
+    "list": 10,
+    "ja": "夕方"
+  },
+  {
+    "id": 936,
+    "word": "experience",
+    "list": 10,
+    "ja": "経験"
+  },
+  {
+    "id": 937,
+    "word": "factories",
+    "list": 10,
+    "ja": "工場"
+  },
+  {
+    "id": 938,
+    "word": "fair",
+    "list": 10,
+    "ja": "公平な"
+  },
+  {
+    "id": 939,
+    "word": "fear",
+    "list": 10,
+    "ja": "恐れ"
+  },
+  {
+    "id": 940,
+    "word": "fig",
+    "list": 10,
+    "ja": "イチジク"
+  },
+  {
+    "id": 941,
+    "word": "forward",
+    "list": 10,
+    "ja": "前へ"
+  },
+  {
+    "id": 942,
+    "word": "France",
+    "list": 10,
+    "ja": "フランス"
+  },
+  {
+    "id": 943,
+    "word": "fresh",
+    "list": 10,
+    "ja": "新鮮な"
+  },
+  {
+    "id": 944,
+    "word": "Greek",
+    "list": 10,
+    "ja": "ギリシャの"
+  },
+  {
+    "id": 945,
+    "word": "gun",
+    "list": 10,
+    "ja": "銃"
+  },
+  {
+    "id": 946,
+    "word": "hoe",
+    "list": 10,
+    "ja": "くわ"
+  },
+  {
+    "id": 947,
+    "word": "huge",
+    "list": 10,
+    "ja": "巨大な"
+  },
+  {
+    "id": 948,
+    "word": "isn't",
+    "list": 10,
+    "ja": "〜ではない"
+  },
+  {
+    "id": 949,
+    "word": "led",
+    "list": 10,
+    "ja": "導いた"
+  },
+  {
+    "id": 950,
+    "word": "level",
+    "list": 10,
+    "ja": "レベル"
+  },
+  {
+    "id": 951,
+    "word": "located",
+    "list": 10,
+    "ja": "位置している"
+  },
+  {
+    "id": 952,
+    "word": "march",
+    "list": 10,
+    "ja": "行進する"
+  },
+  {
+    "id": 953,
+    "word": "match",
+    "list": 10,
+    "ja": "試合・マッチ"
+  },
+  {
+    "id": 954,
+    "word": "molecules",
+    "list": 10,
+    "ja": "分子"
+  },
+  {
+    "id": 955,
+    "word": "northern",
+    "list": 10,
+    "ja": "北の"
+  },
+  {
+    "id": 956,
+    "word": "nose",
+    "list": 10,
+    "ja": "鼻"
+  },
+  {
+    "id": 957,
+    "word": "office",
+    "list": 10,
+    "ja": "事務所"
+  },
+  {
+    "id": 958,
+    "word": "opposite",
+    "list": 10,
+    "ja": "反対の"
+  },
+  {
+    "id": 959,
+    "word": "oxygen",
+    "list": 10,
+    "ja": "酸素"
+  },
+  {
+    "id": 960,
+    "word": "plural",
+    "list": 10,
+    "ja": "複数の"
+  },
+  {
+    "id": 961,
+    "word": "prepared",
+    "list": 10,
+    "ja": "準備した"
+  },
+  {
+    "id": 962,
+    "word": "pretty",
+    "list": 10,
+    "ja": "かわいい・かなり"
+  },
+  {
+    "id": 963,
+    "word": "printed",
+    "list": 10,
+    "ja": "印刷した"
+  },
+  {
+    "id": 964,
+    "word": "radio",
+    "list": 10,
+    "ja": "ラジオ"
+  },
+  {
+    "id": 965,
+    "word": "repeated",
+    "list": 10,
+    "ja": "繰り返した"
+  },
+  {
+    "id": 966,
+    "word": "rope",
+    "list": 10,
+    "ja": "ロープ"
+  },
+  {
+    "id": 967,
+    "word": "rose",
+    "list": 10,
+    "ja": "バラ・上がった"
+  },
+  {
+    "id": 968,
+    "word": "score",
+    "list": 10,
+    "ja": "得点"
+  },
+  {
+    "id": 969,
+    "word": "seat",
+    "list": 10,
+    "ja": "座席"
+  },
+  {
+    "id": 970,
+    "word": "settled",
+    "list": 10,
+    "ja": "定住した"
+  },
+  {
+    "id": 971,
+    "word": "shoes",
+    "list": 10,
+    "ja": "靴"
+  },
+  {
+    "id": 972,
+    "word": "shop",
+    "list": 10,
+    "ja": "店"
+  },
+  {
+    "id": 973,
+    "word": "similar",
+    "list": 10,
+    "ja": "似ている"
+  },
+  {
+    "id": 974,
+    "word": "sir",
+    "list": 10,
+    "ja": "(男性への敬称)"
+  },
+  {
+    "id": 975,
+    "word": "sister",
+    "list": 10,
+    "ja": "姉妹"
+  },
+  {
+    "id": 976,
+    "word": "smell",
+    "list": 10,
+    "ja": "匂い"
+  },
+  {
+    "id": 977,
+    "word": "solution",
+    "list": 10,
+    "ja": "解決策"
+  },
+  {
+    "id": 978,
+    "word": "southern",
+    "list": 10,
+    "ja": "南の"
+  },
+  {
+    "id": 979,
+    "word": "steel",
+    "list": 10,
+    "ja": "鋼鉄"
+  },
+  {
+    "id": 980,
+    "word": "stretched",
+    "list": 10,
+    "ja": "伸ばした"
+  },
+  {
+    "id": 981,
+    "word": "substances",
+    "list": 10,
+    "ja": "物質"
+  },
+  {
+    "id": 982,
+    "word": "suffix",
+    "list": 10,
+    "ja": "接尾辞"
+  },
+  {
+    "id": 983,
+    "word": "sugar",
+    "list": 10,
+    "ja": "砂糖"
+  },
+  {
+    "id": 984,
+    "word": "tools",
+    "list": 10,
+    "ja": "道具"
+  },
+  {
+    "id": 985,
+    "word": "total",
+    "list": 10,
+    "ja": "合計"
+  },
+  {
+    "id": 986,
+    "word": "track",
+    "list": 10,
+    "ja": "線路・跡"
+  },
+  {
+    "id": 987,
+    "word": "triangle",
+    "list": 10,
+    "ja": "三角形"
+  },
+  {
+    "id": 988,
+    "word": "truck",
+    "list": 10,
+    "ja": "トラック"
+  },
+  {
+    "id": 989,
+    "word": "underline",
+    "list": 10,
+    "ja": "下線を引く"
+  },
+  {
+    "id": 990,
+    "word": "various",
+    "list": 10,
+    "ja": "様々な"
+  },
+  {
+    "id": 991,
+    "word": "view",
+    "list": 10,
+    "ja": "眺め・見解"
+  },
+  {
+    "id": 992,
+    "word": "Washington",
+    "list": 10,
+    "ja": "ワシントン"
+  },
+  {
+    "id": 993,
+    "word": "we'll",
+    "list": 10,
+    "ja": "私たちは〜するだろう"
+  },
+  {
+    "id": 994,
+    "word": "western",
+    "list": 10,
+    "ja": "西の"
+  },
+  {
+    "id": 995,
+    "word": "win",
+    "list": 10,
+    "ja": "勝つ"
+  },
+  {
+    "id": 996,
+    "word": "women",
+    "list": 10,
+    "ja": "女性たち"
+  },
+  {
+    "id": 997,
+    "word": "workers",
+    "list": 10,
+    "ja": "労働者たち"
+  },
+  {
+    "id": 998,
+    "word": "wouldn't",
+    "list": 10,
+    "ja": "〜しないだろう"
+  },
+  {
+    "id": 999,
+    "word": "wrong",
+    "list": 10,
+    "ja": "間違った"
+  },
+  {
+    "id": 1000,
+    "word": "yellow",
+    "list": 10,
+    "ja": "黄色"
+  }
+]

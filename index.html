@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#5b7fff">
+<title>サイトワード練習</title>
+<style>
+  :root{
+    --bg1:#eef3ff; --bg2:#fff2f8; --primary:#5b7fff; --primary-dark:#3f5fe0;
+    --accent:#ff8fa3; --good:#2fb768; --bad:#ef5757; --text:#2b2d42;
+    --card-bg:#ffffff; --muted:#8a8fa3; --radius:20px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+    background:linear-gradient(160deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  #app{max-width:900px;margin:0 auto;padding:20px 16px 60px;}
+  h1,h2,h3{margin:0 0 12px;}
+  .app-title{font-size:clamp(1.5rem,4vw,2.2rem);text-align:center;margin-bottom:20px;}
+  .card{
+    background:var(--card-bg);border-radius:var(--radius);
+    padding:20px;margin-bottom:18px;
+    box-shadow:0 6px 20px rgba(80,90,160,.12);
+  }
+  .center-card{text-align:center;}
+  .notice{
+    background:#fff3cd;color:#7a5b00;padding:12px 16px;border-radius:14px;
+    margin-bottom:14px;text-align:center;font-weight:600;
+  }
+  .btn{
+    font-size:1rem;font-weight:700;padding:14px 18px;border:none;border-radius:16px;
+    background:#eef1ff;color:var(--primary-dark);cursor:pointer;
+    transition:transform .08s ease, background .15s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn:active{transform:scale(0.96);}
+  .btn.primary{background:var(--primary);color:#fff;}
+  .btn.ghost{background:transparent;color:var(--primary-dark);padding:8px 12px;}
+  .btn.small{font-size:.85rem;padding:10px 12px;}
+  .btn.disabled{opacity:.45;pointer-events:none;}
+  .list-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+  .list-btn.selected{background:var(--primary);color:#fff;}
+  .mode-grid{display:flex;flex-direction:column;gap:14px;}
+  .mode-btn{width:100%;text-align:left;}
+  .mode-group{background:#f7f8ff;border-radius:14px;padding:12px;}
+  .mode-group-title{font-weight:700;margin-bottom:8px;color:var(--primary-dark);}
+  .submode-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .summary-row{display:flex;gap:14px;justify-content:space-around;margin-bottom:14px;flex-wrap:wrap;}
+  .stat{text-align:center;}
+  .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--primary);}
+  .stat .label{font-size:.85rem;color:var(--muted);}
+  .weak-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px;}
+  .weak-list li{background:#fff0f3;border-radius:12px;padding:8px 12px;font-weight:700;}
+  .ja-small{display:block;font-weight:400;font-size:.8rem;color:var(--muted);}
+  .muted{color:var(--muted);}
+  .topbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .topbar h2{margin:0;flex:1;font-size:1.2rem;}
+  .progress-label{font-weight:700;color:var(--muted);}
+  .word-card{text-align:center;padding:40px 20px;}
+  .word{font-size:clamp(2.2rem,8vw,4rem);font-weight:800;letter-spacing:.02em;color:var(--text);word-break:break-word;}
+  .ja{font-size:clamp(1.1rem,3.5vw,1.5rem);color:var(--primary-dark);margin-top:10px;}
+  .sound-btn{margin-top:20px;font-size:1.1rem;}
+  .answer-input{
+    margin-top:24px;width:100%;max-width:420px;font-size:1.5rem;text-align:center;
+    padding:14px;border-radius:16px;border:2px solid #dfe3f7;outline:none;
+  }
+  .answer-input:focus{border-color:var(--primary);}
+  .feedback{margin-top:18px;font-size:1.2rem;font-weight:700;}
+  .feedback.ok{color:var(--good);}
+  .feedback.bad{color:var(--bad);}
+  .hint-row{display:flex;justify-content:center;gap:18px;color:var(--muted);font-size:.85rem;flex-wrap:wrap;}
+  .btn-row{display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap;}
+  .big-emoji{font-size:3rem;margin:10px 0;}
+  .score{font-size:3rem;font-weight:800;color:var(--primary);margin:6px 0;}
+  @media (max-width:480px){
+    .list-grid{grid-template-columns:repeat(5,1fr);}
+    .list-btn{padding:10px 4px;font-size:.85rem;}
+  }
+</style>
+</head>
+<body>
+<div id="app"><p style="text-align:center;padding-top:40px;">読み込み中...</p></div>
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- utilities ---------- */
+  function esc(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function todayStr(){ return new Date().toISOString().slice(0,10); }
+  function shuffle(arr){
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+  function normalize(s){
+    return String(s).trim().toLowerCase().replace(/[‘’ʼ′]/g, "'");
+  }
+  function checkAnswer(input, target){ return normalize(input) === normalize(target); }
+  function dedupeById(arr){
+    var seen = {}; var out = [];
+    arr.forEach(function(w){ if(!seen[w.id]){ seen[w.id]=true; out.push(w); } });
+    return out;
+  }
+
+  /* ---------- speech ---------- */
+  function speak(word){
+    if(!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    var utter = new SpeechSynthesisUtterance(word);
+    utter.lang = 'en-US';
+    utter.rate = 0.9;
+    window.speechSynthesis.speak(utter);
+  }
+
+  /* ---------- audio feedback (game-ish beep) ---------- */
+  var audioCtx = null;
+  function getAudioCtx(){
+    if(!audioCtx){
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if(!Ctx) return null;
+      audioCtx = new Ctx();
+    }
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+  function playTone(correct){
+    try{
+      var ctx = getAudioCtx();
+      if(!ctx) return;
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = correct ? 880 : 220;
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.3);
+    }catch(e){ /* ignore */ }
+  }
+
+  /* ---------- storage ---------- */
+  var PROGRESS_KEY = 'swa_progress';
+  var LAST_TEST_KEY = 'swa_last_unit_test';
+
+  function loadProgress(){
+    try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveProgress(){
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+  }
+  function defaultProgress(){
+    return { status:'new', correctStreak:0, correct:0, wrong:0, lastSeen:null, wrongInLastTest:false };
+  }
+  function getProgress(word){
+    if(!progress[word]) progress[word] = defaultProgress();
+    return progress[word];
+  }
+  function recordAnswer(word, isCorrect){
+    var p = getProgress(word);
+    if(p.status === 'new') p.status = 'learning';
+    p.lastSeen = todayStr();
+    if(isCorrect){
+      p.correct++; p.correctStreak++; p.wrongInLastTest = false;
+      if(p.correctStreak >= 3) p.status = 'mastered';
+    }else{
+      p.wrong++; p.correctStreak = 0; p.status = 'learning'; p.wrongInLastTest = true;
+    }
+    saveProgress();
+  }
+  function saveLastUnitTest(obj){ localStorage.setItem(LAST_TEST_KEY, JSON.stringify(obj)); }
+  function loadLastUnitTest(){
+    try{ return JSON.parse(localStorage.getItem(LAST_TEST_KEY)); }
+    catch(e){ return null; }
+  }
+
+  function computeSummary(){
+    var mastered=0, learning=0, newCount=0, weak=[];
+    WORDS.forEach(function(w){
+      var p = progress[w.word];
+      if(!p){ newCount++; return; }
+      if(p.status==='mastered') mastered++;
+      else if(p.status==='learning'){ learning++; weak.push({w:w,p:p}); }
+      else newCount++;
+    });
+    weak.sort(function(a,b){ return (b.p.wrong-b.p.correct) - (a.p.wrong-a.p.correct); });
+    return { mastered:mastered, learning:learning, newCount:newCount, weakTop: weak.slice(0,10) };
+  }
+
+  function pickReviewWords(n){
+    var pool = WORDS.map(function(w){
+      var p = progress[w.word] || defaultProgress();
+      var weight = p.status==='mastered' ? 1 : (p.status==='learning' ? 6 : 3);
+      if(p.wrong > p.correct) weight += 4;
+      return { w:w, weight:weight };
+    });
+    var working = pool.slice();
+    var picked = [];
+    for(var i=0;i<n && working.length>0;i++){
+      var totalWeight = working.reduce(function(s,x){return s+x.weight;},0);
+      var r = Math.random()*totalWeight;
+      var idx = 0;
+      for(;idx<working.length;idx++){ r -= working[idx].weight; if(r<=0) break; }
+      if(idx>=working.length) idx = working.length-1;
+      picked.push(working[idx].w);
+      working.splice(idx,1);
+      if(working.length===0) working = pool.slice();
+    }
+    return picked;
+  }
+
+  function wordsForList(listNum){
+    return WORDS.filter(function(w){ return w.list===listNum; }).sort(function(a,b){ return a.id-b.id; });
+  }
+
+  /* ---------- state ---------- */
+  var WORDS = [];
+  var progress = loadProgress();
+  var state = { screen:'loading' };
+  var pendingAdvanceTimer = null;
+
+  function startReading(list){
+    state = { screen:'reading', list:list, queue: wordsForList(list), index:0 };
+  }
+  function startSpelling(list, submode){
+    state = {
+      screen:'spelling', list:list, submode:submode,
+      queue: shuffle(wordsForList(list)), index:0, feedback:null,
+      correctCount:0, total:0, wrongWords:[],
+      allowBack:true, allowSkip:true,
+      showJa: submode!==3, showSound: submode!==2
+    };
+  }
+  function startUnitTest(list){
+    var pool = shuffle(wordsForList(list)).slice(0,20);
+    state = {
+      screen:'unittest', list:list, queue:pool, index:0, feedback:null,
+      correctCount:0, total:0, wrongWords:[],
+      allowBack:false, allowSkip:false, showJa:true, showSound:true
+    };
+  }
+  function startRetest(){
+    var last = loadLastUnitTest();
+    if(!last || !last.wordIds || !last.wordIds.length) return false;
+    var words = last.wordIds.map(function(id){
+      return WORDS.filter(function(w){ return w.id===id; })[0];
+    }).filter(Boolean);
+    if(!words.length) return false;
+    state = {
+      screen:'retest', list:last.listId, queue: shuffle(words), index:0, feedback:null,
+      correctCount:0, total:0, wrongWords:[],
+      allowBack:false, allowSkip:false, showJa:true, showSound:true,
+      round:1, maxRounds:5, roundWrong:[]
+    };
+    return true;
+  }
+  function startReview(){
+    state = {
+      screen:'review', list:null, queue: pickReviewWords(20), index:0, feedback:null,
+      correctCount:0, total:0, wrongWords:[],
+      allowBack:false, allowSkip:false, showJa:true, showSound:true
+    };
+  }
+
+  function submitAnswer(val){
+    var word = state.queue[state.index];
+    if(!word) return;
+    var isCorrect = checkAnswer(val, word.word);
+    recordAnswer(word.word, isCorrect);
+    state.total++;
+    if(isCorrect){ state.correctCount++; }
+    else{
+      state.wrongWords.push(word);
+      if(state.screen==='retest') state.roundWrong.push(word);
+    }
+    playTone(isCorrect);
+    state.feedback = { correct:isCorrect, correctSpelling: word.word };
+    render();
+    pendingAdvanceTimer = setTimeout(function(){
+      pendingAdvanceTimer = null;
+      advanceQueue();
+    }, isCorrect ? 500 : 1300);
+  }
+
+  function advanceQueue(){
+    state.feedback = null;
+    state.index++;
+    if(state.index >= state.queue.length){
+      if(state.screen==='retest' && state.roundWrong.length>0 && state.round < state.maxRounds){
+        state.round++;
+        state.queue = shuffle(state.roundWrong);
+        state.roundWrong = [];
+        state.index = 0;
+        render();
+        return;
+      }
+      finishSession();
+      return;
+    }
+    render();
+  }
+
+  function goBack(){
+    if(!state.allowBack || state.index<=0) return;
+    state.feedback = null;
+    state.index--;
+    render();
+  }
+  function skipCurrent(){
+    if(!state.allowSkip) return;
+    state.feedback = null;
+    state.index++;
+    if(state.index >= state.queue.length){ finishSession(); return; }
+    render();
+  }
+
+  function finishSession(){
+    var sourceMode = state.screen;
+    var list = state.list;
+    var dedupWrong = dedupeById(state.wrongWords);
+    if(sourceMode==='unittest'){
+      saveLastUnitTest({ listId:list, date:todayStr(), wordIds: dedupWrong.map(function(w){return w.id;}) });
+    }
+    state = {
+      screen:'result', sourceMode:sourceMode, list:list,
+      correctCount: state.correctCount, total: state.total,
+      wrongWords: dedupWrong
+    };
+    render();
+  }
+
+  function nextReadingWord(){
+    state.index++;
+    render();
+  }
+
+  /* ---------- rendering ---------- */
+  function homeBtnHtml(){
+    return '<button class="btn ghost" data-action="go-home">&#127968; ホーム</button>';
+  }
+
+  function renderHome(){
+    var summary = computeSummary();
+    var lastTest = loadLastUnitTest();
+    var retestAvailable = !!(lastTest && lastTest.wordIds && lastTest.wordIds.length>0);
+    var listBtns = '';
+    for(var n=1;n<=10;n++){
+      listBtns += '<button class="btn list-btn ' + (state.selectedList===n?'selected':'') +
+        '" data-action="select-list" data-list="'+n+'">List '+n+'</button>';
+    }
+    var weakHtml = summary.weakTop.length ?
+      '<h3>苦手単語</h3><ul class="weak-list">' +
+      summary.weakTop.map(function(x){
+        return '<li>'+esc(x.w.word)+'<span class="ja-small">'+esc(x.w.ja)+'</span></li>';
+      }).join('') + '</ul>'
+      : '<p class="muted">苦手単語はまだありません。</p>';
+
+    return ''
+      + '<h1 class="app-title">サイトワード練習</h1>'
+      + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
+      + '<section class="card"><h2>Listを選ぶ</h2><div class="list-grid">'+listBtns+'</div></section>'
+      + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'
+        + '<button class="btn mode-btn" data-action="start-reading">① 読み方</button>'
+        + '<div class="mode-group"><div class="mode-group-title">② スペル練習</div><div class="submode-row">'
+          + '<button class="btn small" data-action="start-spelling" data-submode="1">音+和訳を見る</button>'
+          + '<button class="btn small" data-action="start-spelling" data-submode="2">和訳のみ</button>'
+          + '<button class="btn small" data-action="start-spelling" data-submode="3">音のみ</button>'
+        + '</div></div>'
+        + '<button class="btn mode-btn" data-action="start-unittest">③ 単元テスト(20問)</button>'
+        + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ 追試 '
+          + (retestAvailable ? '('+lastTest.wordIds.length+'問)' : '(前回テスト待ち)') + '</button>'
+        + '<button class="btn mode-btn" data-action="start-review">⑤ 総合復習</button>'
+      + '</div></section>'
+      + '<section class="card"><h2>進捗サマリー</h2>'
+        + '<div class="summary-row">'
+          + '<div class="stat"><span class="num">'+summary.mastered+'</span><span class="label">習得済み</span></div>'
+          + '<div class="stat"><span class="num">'+summary.learning+'</span><span class="label">練習中</span></div>'
+          + '<div class="stat"><span class="num">'+summary.newCount+'</span><span class="label">未着手</span></div>'
+        + '</div>'
+        + weakHtml
+      + '</section>';
+  }
+
+  function renderReading(){
+    var word = state.queue[state.index];
+    if(!word){
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方 - List '+state.list+'</h2></div>'
+        + '<div class="card center-card"><p class="big-emoji">&#127881;</p>'
+        + '<p>List '+state.list+' を読み終わりました!</p>'
+        + '<div class="btn-row">'
+          + '<button class="btn" data-action="restart-reading">もう一度</button>'
+          + '<button class="btn primary" data-action="go-home">ホームへ</button>'
+        + '</div></div>';
+    }
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方 - List '+state.list+'</h2>'
+      + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
+      + '<div class="card word-card">'
+        + '<div class="word">'+esc(word.word)+'</div>'
+        + '<div class="ja">'+esc(word.ja)+'</div>'
+      + '</div>'
+      + '<div class="hint-row"><span>Space 発音</span><span>Enter 次へ</span></div>';
+  }
+
+  var TITLE_MAP = { spelling:'スペル練習', unittest:'単元テスト', retest:'追試', review:'総合復習' };
+
+  function renderPractice(){
+    var word = state.queue[state.index];
+    var total = state.queue.length;
+    var title = TITLE_MAP[state.screen] || '';
+    if(state.screen==='retest' && state.round>1) title += '('+state.round+'周目)';
+    var listLabel = state.list ? ' - List '+state.list : '';
+    var feedbackHtml = '';
+    if(state.feedback){
+      feedbackHtml = state.feedback.correct
+        ? '<div class="feedback ok">&#127881; 正解!</div>'
+        : '<div class="feedback bad">正解は: <strong>'+esc(state.feedback.correctSpelling)+'</strong></div>';
+    }
+    var hints = [];
+    if(state.allowBack) hints.push('<span>&#8592; 前へ</span>');
+    hints.push('<span>Enter 判定</span>');
+    if(state.allowSkip) hints.push('<span>&#8594; スキップ</span>');
+
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(title)+esc(listLabel)+'</h2>'
+      + '<span class="progress-label">'+(state.index+1)+' / '+total+'</span></div>'
+      + '<div class="card word-card">'
+        + (state.showJa ? '<div class="ja">'+esc(word.ja)+'</div>' : '')
+        + (state.showSound ? '<button class="btn sound-btn" data-action="speak">&#128266; もう一度聞く</button>' : '')
+        + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="スペルを入力してEnter" /></div>'
+        + feedbackHtml
+      + '</div>'
+      + '<div class="hint-row">'+hints.join('')+'</div>';
+  }
+
+  function renderResult(){
+    var pct = state.total>0 ? Math.round((state.correctCount/state.total)*100) : 100;
+    var titleMap = { unittest:'単元テスト結果', retest:'追試結果', review:'総合復習結果' };
+    var title = titleMap[state.sourceMode] || '結果';
+    var wrongHtml = state.wrongWords.length
+      ? '<h3>間違えた単語</h3><ul class="weak-list">' + state.wrongWords.map(function(w){
+          return '<li>'+esc(w.word)+'<span class="ja-small">'+esc(w.ja)+'</span></li>';
+        }).join('') + '</ul>'
+      : '<p class="big-emoji">&#127881; 全問正解!</p>';
+    var btns = '';
+    if(state.sourceMode==='unittest' && state.wrongWords.length){
+      btns += '<button class="btn" data-action="go-retest">追試へ</button>';
+    }
+    if(state.sourceMode==='retest' && state.wrongWords.length){
+      btns += '<button class="btn" data-action="go-retest">もう一度追試</button>';
+    }
+    if(state.sourceMode==='review'){
+      btns += '<button class="btn" data-action="go-review-again">もう一度復習</button>';
+    }
+    btns += '<button class="btn primary" data-action="go-home">ホームへ</button>';
+
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(title)+'</h2></div>'
+      + '<div class="card center-card">'
+        + '<p class="score">'+pct+'%</p>'
+        + '<p>'+state.correctCount+' / '+state.total+' 問正解</p>'
+        + wrongHtml
+        + '<div class="btn-row">'+btns+'</div>'
+      + '</div>';
+  }
+
+  function render(){
+    var app = document.getElementById('app');
+    var html;
+    switch(state.screen){
+      case 'home': html = renderHome(); break;
+      case 'reading': html = renderReading(); break;
+      case 'spelling': case 'unittest': case 'retest': case 'review': html = renderPractice(); break;
+      case 'result': html = renderResult(); break;
+      default: html = '<p style="text-align:center;padding-top:40px;">読み込み中...</p>';
+    }
+    app.innerHTML = html;
+    var input = document.getElementById('answerInput');
+    if(input) input.focus();
+  }
+
+  function currentPracticeWord(){
+    return state.queue ? state.queue[state.index] : null;
+  }
+
+  /* ---------- click delegation ---------- */
+  document.getElementById('app').addEventListener('click', function(e){
+    var el = e.target.closest('[data-action]');
+    if(!el) return;
+    var action = el.dataset.action;
+    switch(action){
+      case 'select-list':
+        state.selectedList = Number(el.dataset.list);
+        state.notice = null;
+        render();
+        break;
+      case 'start-reading':
+        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+        startReading(state.selectedList); render();
+        break;
+      case 'start-spelling':
+        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+        startSpelling(state.selectedList, Number(el.dataset.submode)); render();
+        break;
+      case 'start-unittest':
+        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+        startUnitTest(state.selectedList); render();
+        break;
+      case 'start-retest':
+        if(!startRetest()){ state.notice = 'まだ単元テストの結果がありません'; render(); }
+        else render();
+        break;
+      case 'start-review':
+        startReview(); render();
+        break;
+      case 'go-home': {
+        var keepList = state.selectedList || state.list || null;
+        state = { screen:'home', selectedList: keepList, notice:null };
+        render();
+        break;
+      }
+      case 'restart-reading':
+        startReading(state.list); render();
+        break;
+      case 'go-retest':
+        if(!startRetest()){ state = { screen:'home', selectedList:null, notice:'追試対象がありません' }; }
+        render();
+        break;
+      case 'go-review-again':
+        startReview(); render();
+        break;
+      case 'speak': {
+        var w = currentPracticeWord();
+        if(w) speak(w.word);
+        break;
+      }
+    }
+  });
+
+  /* ---------- keyboard ---------- */
+  document.addEventListener('keydown', function(e){
+    if(state.screen==='reading'){
+      if(e.code==='Space'){
+        e.preventDefault();
+        var w = state.queue[state.index];
+        if(w) speak(w.word);
+      }else if(e.key==='Enter'){
+        e.preventDefault();
+        nextReadingWord();
+      }
+      return;
+    }
+    if(state.screen==='spelling' || state.screen==='unittest' || state.screen==='retest' || state.screen==='review'){
+      if(e.key==='Enter'){
+        e.preventDefault();
+        if(state.feedback){
+          if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer=null; }
+          advanceQueue();
+        }else{
+          var input = document.getElementById('answerInput');
+          var val = input ? input.value : '';
+          if(val.trim()==='') return;
+          submitAnswer(val);
+        }
+        return;
+      }
+      if(state.screen==='spelling' && e.key==='ArrowLeft'){
+        e.preventDefault(); goBack(); return;
+      }
+      if(state.screen==='spelling' && e.key==='ArrowRight'){
+        e.preventDefault(); skipCurrent(); return;
+      }
+    }
+  });
+
+  /* ---------- init ---------- */
+  fetch('fry_words.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      WORDS = data;
+      state = { screen:'home', selectedList:null, notice:null };
+      render();
+    })
+    .catch(function(err){
+      document.getElementById('app').innerHTML =
+        '<p style="text-align:center;padding-top:40px;">単語データの読み込みに失敗しました: '+esc(String(err))+'</p>';
+    });
+})();
+</script>
+</body>
+</html>
