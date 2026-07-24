@@ -77,6 +77,9 @@
   .feedback.bad{color:var(--bad);}
   .hint-row{display:flex;justify-content:center;gap:18px;color:var(--muted);font-size:.85rem;flex-wrap:wrap;}
   .btn-row{display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap;}
+  .modal-overlay{position:fixed;inset:0;background:rgba(30,30,50,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50;}
+  .modal-box{background:#fff;border-radius:20px;padding:24px;max-width:360px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+  .modal-box p{margin:0 0 6px;font-weight:700;line-height:1.5;}
   .big-emoji{font-size:3rem;margin:10px 0;}
   .score{font-size:3rem;font-weight:800;color:var(--primary);margin:6px 0;}
   @media (max-width:480px){
@@ -234,8 +237,10 @@
   var state = { screen:'loading' };
   var pendingAdvanceTimer = null;
 
+  var SEGMENT_SIZE = 20;
+
   function startReading(list){
-    state = { screen:'reading', list:list, queue: wordsForList(list), index:0 };
+    state = { screen:'reading', list:list, queue: wordsForList(list), index:0, checkpoint:false };
   }
   function startSpelling(list, submode){
     state = {
@@ -243,7 +248,8 @@
       queue: shuffle(wordsForList(list)), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:true, allowSkip:true,
-      showJa: submode!==3, showSound: submode!==2, showSpelling: submode===0
+      showJa: submode!==3, showSound: submode!==2, showSpelling: submode===0,
+      checkpoint:false, checkpointBaseTotal:0, checkpointBaseCorrect:0
     };
   }
   function startUnitTest(list){
@@ -297,9 +303,23 @@
     }, isCorrect ? 500 : 1300);
   }
 
+  function triggerSpellingCheckpointIfNeeded(){
+    if(state.screen==='spelling' && state.index < state.queue.length && state.index % SEGMENT_SIZE === 0){
+      state.checkpointStats = {
+        correct: state.correctCount - (state.checkpointBaseCorrect||0),
+        total: state.total - (state.checkpointBaseTotal||0)
+      };
+      state.checkpoint = true;
+      render();
+      return true;
+    }
+    return false;
+  }
+
   function advanceQueue(){
     state.feedback = null;
     state.index++;
+    if(triggerSpellingCheckpointIfNeeded()) return;
     if(state.index >= state.queue.length){
       if(state.screen==='retest' && state.roundWrong.length>0 && state.round < state.maxRounds){
         state.round++;
@@ -325,11 +345,13 @@
     if(!state.allowSkip) return;
     state.feedback = null;
     state.index++;
+    if(triggerSpellingCheckpointIfNeeded()) return;
     if(state.index >= state.queue.length){ finishSession(); return; }
     render();
   }
 
   function finishSession(){
+    if(state.screen==='result') return;
     var sourceMode = state.screen;
     var list = state.list;
     var dedupWrong = dedupeById(state.wrongWords);
@@ -346,7 +368,25 @@
 
   function nextReadingWord(){
     state.index++;
+    if(state.index < state.queue.length && state.index % SEGMENT_SIZE === 0){
+      state.checkpoint = true;
+    }
     render();
+  }
+
+  /* ---------- reset ---------- */
+  function resetAllProgress(){
+    progress = {};
+    saveProgress();
+    localStorage.removeItem(LAST_TEST_KEY);
+  }
+  function resetListProgress(listNum){
+    wordsForList(listNum).forEach(function(w){ delete progress[w.word]; });
+    saveProgress();
+    var last = loadLastUnitTest();
+    if(last && last.listId === listNum){
+      localStorage.removeItem(LAST_TEST_KEY);
+    }
   }
 
   /* ---------- rendering ---------- */
@@ -394,10 +434,41 @@
           + '<div class="stat"><span class="num">'+summary.newCount+'</span><span class="label">未着手</span></div>'
         + '</div>'
         + weakHtml
-      + '</section>';
+      + '</section>'
+      + '<section class="card"><h2>データのリセット</h2>'
+        + '<div class="btn-row">'
+          + '<button class="btn '+(state.selectedList?'':'disabled')+'" data-action="confirm-reset-list">この Listをリセット'
+            + (state.selectedList ? '(List '+state.selectedList+')' : '') + '</button>'
+          + '<button class="btn" data-action="confirm-reset-all">全データをリセット</button>'
+        + '</div>'
+      + '</section>'
+      + renderResetModal();
+  }
+
+  function renderResetModal(){
+    if(!state.confirmReset) return '';
+    var label = state.confirmReset === 'all' ? '全データ' : ('List '+state.confirmReset.list);
+    return '<div class="modal-overlay">'
+      + '<div class="modal-box">'
+        + '<p>'+esc(label)+'の記録を本当にリセットしますか?<br>元に戻せません。</p>'
+        + '<div class="btn-row">'
+          + '<button class="btn" data-action="reset-cancel">キャンセル</button>'
+          + '<button class="btn primary" data-action="reset-confirm">リセットする</button>'
+        + '</div>'
+      + '</div>'
+    + '</div>';
   }
 
   function renderReading(){
+    if(state.checkpoint){
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2></div>'
+        + '<div class="card center-card"><p class="big-emoji">&#127880;</p>'
+        + '<p>'+state.index+' / '+state.queue.length+' 語まで読みました!</p>'
+        + '<div class="btn-row">'
+          + '<button class="btn primary" data-action="reading-continue">続ける</button>'
+          + '<button class="btn" data-action="go-home">トップに戻る</button>'
+        + '</div></div>';
+    }
     var word = state.queue[state.index];
     if(!word){
       return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2></div>'
@@ -449,6 +520,19 @@
       + '<div class="hint-row">'+hints.join('')+'</div>';
   }
 
+  function renderSpellingCheckpoint(){
+    var stats = state.checkpointStats || {correct:0,total:0};
+    var pct = stats.total>0 ? Math.round((stats.correct/stats.total)*100) : 100;
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>タイピング練習 - List '+state.list+'</h2></div>'
+      + '<div class="card center-card"><p class="big-emoji">&#127880;</p>'
+      + '<p>'+state.index+' / '+state.queue.length+' 問まで終わりました!</p>'
+      + '<p class="muted">この区切り: '+stats.correct+' / '+stats.total+' 問正解('+pct+'%)</p>'
+      + '<div class="btn-row">'
+        + '<button class="btn primary" data-action="spelling-continue">続ける</button>'
+        + '<button class="btn" data-action="go-home">トップに戻る</button>'
+      + '</div></div>';
+  }
+
   function renderResult(){
     var pct = state.total>0 ? Math.round((state.correctCount/state.total)*100) : 100;
     var titleMap = { unittest:'ミニテスト結果', retest:'リトライ結果', review:'まとめテスト結果' };
@@ -485,7 +569,8 @@
     switch(state.screen){
       case 'home': html = renderHome(); break;
       case 'reading': html = renderReading(); break;
-      case 'spelling': case 'unittest': case 'retest': case 'review': html = renderPractice(); break;
+      case 'spelling': html = state.checkpoint ? renderSpellingCheckpoint() : renderPractice(); break;
+      case 'unittest': case 'retest': case 'review': html = renderPractice(); break;
       case 'result': html = renderResult(); break;
       default: html = '<p style="text-align:center;padding-top:40px;">読み込み中...</p>';
     }
@@ -543,6 +628,39 @@
         break;
       case 'go-review-again':
         startReview(); render();
+        break;
+      case 'reading-continue':
+        state.checkpoint = false;
+        render();
+        break;
+      case 'spelling-continue':
+        state.checkpointBaseTotal = state.total;
+        state.checkpointBaseCorrect = state.correctCount;
+        state.checkpoint = false;
+        render();
+        break;
+      case 'confirm-reset-all':
+        state.confirmReset = 'all';
+        render();
+        break;
+      case 'confirm-reset-list':
+        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+        state.confirmReset = { list: state.selectedList };
+        render();
+        break;
+      case 'reset-cancel':
+        state.confirmReset = null;
+        render();
+        break;
+      case 'reset-confirm':
+        if(state.confirmReset === 'all'){
+          resetAllProgress();
+        }else if(state.confirmReset && state.confirmReset.list){
+          resetListProgress(state.confirmReset.list);
+        }
+        state.confirmReset = null;
+        state.notice = 'リセットしました';
+        render();
         break;
       case 'speak': {
         var w = currentPracticeWord();
