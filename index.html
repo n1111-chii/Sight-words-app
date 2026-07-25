@@ -52,6 +52,16 @@
   .mode-group{background:#f7f8ff;border-radius:14px;padding:12px;}
   .mode-group-title{font-weight:700;margin-bottom:8px;color:var(--primary-dark);}
   .submode-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .fast-toggle{display:block;margin-bottom:8px;font-size:.85rem;color:var(--muted);}
+  .section-toggle{display:flex;gap:10px;}
+  .blank-placeholder{display:inline-block;min-width:3em;border-bottom:3px solid var(--primary);color:var(--muted);}
+  .sentence-text{font-size:clamp(1.3rem,4.5vw,2rem);font-weight:700;color:var(--text);line-height:1.5;word-break:break-word;}
+  .diff-row{margin-top:16px;font-size:1.1rem;line-height:1.9;}
+  .diff-ok{color:var(--good);font-weight:700;}
+  .diff-bad{color:var(--bad);font-weight:700;text-decoration:underline;}
+  .reference-sentence{margin-top:8px;color:var(--muted);font-size:.95rem;}
+  .tricky-highlight{color:var(--accent);font-weight:900;}
+  .tricky-note{margin-top:10px;font-size:.85rem;color:#7a5b00;background:#fff3cd;padding:8px 12px;border-radius:12px;display:inline-block;}
   .summary-row{display:flex;gap:14px;justify-content:space-around;margin-bottom:14px;flex-wrap:wrap;}
   .stat{text-align:center;}
   .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--primary);}
@@ -118,6 +128,11 @@
     arr.forEach(function(w){ if(!seen[w.id]){ seen[w.id]=true; out.push(w); } });
     return out;
   }
+  function dedupeByKey(arr, keyFn){
+    var seen = {}; var out = [];
+    arr.forEach(function(x){ var k = keyFn(x); if(!seen[k]){ seen[k]=true; out.push(x); } });
+    return out;
+  }
 
   /* ---------- speech ---------- */
   function speak(word){
@@ -159,6 +174,7 @@
   /* ---------- storage ---------- */
   var PROGRESS_KEY = 'swa_progress';
   var LAST_TEST_KEY = 'swa_last_unit_test';
+  var BASIC_LAST_TEST_KEY = 'basic_last_unit_test';
 
   function loadProgress(){
     try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
@@ -186,16 +202,83 @@
     }
     saveProgress();
   }
-  function saveLastUnitTest(obj){ localStorage.setItem(LAST_TEST_KEY, JSON.stringify(obj)); }
-  function loadLastUnitTest(){
-    try{ return JSON.parse(localStorage.getItem(LAST_TEST_KEY)); }
+  function saveLastUnitTest(obj, source){
+    var key = source === 'basic' ? BASIC_LAST_TEST_KEY : LAST_TEST_KEY;
+    localStorage.setItem(key, JSON.stringify(obj));
+  }
+  function loadLastUnitTest(source){
+    var key = source === 'basic' ? BASIC_LAST_TEST_KEY : LAST_TEST_KEY;
+    try{ return JSON.parse(localStorage.getItem(key)); }
     catch(e){ return null; }
   }
 
-  function computeSummary(){
+  /* ---------- sentence progress (separate storage from word progress) ---------- */
+  var SENTENCE_PROGRESS_KEY = 'sentence_progress';
+  var sentenceProgress = loadSentenceProgress();
+
+  function loadSentenceProgress(){
+    try{ return JSON.parse(localStorage.getItem(SENTENCE_PROGRESS_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveSentenceProgress(){
+    localStorage.setItem(SENTENCE_PROGRESS_KEY, JSON.stringify(sentenceProgress));
+  }
+  function sentenceProgressKey(item){ return item.list + ':' + item.word; }
+  function getSentenceProgress(item){
+    var k = sentenceProgressKey(item);
+    if(!sentenceProgress[k]) sentenceProgress[k] = { status:'new', correctStreak:0, correct:0, wrong:0, lastSeen:null };
+    return sentenceProgress[k];
+  }
+  function recordSentenceAnswer(item, isCorrect){
+    var p = getSentenceProgress(item);
+    if(p.status === 'new') p.status = 'learning';
+    p.lastSeen = todayStr();
+    if(isCorrect){
+      p.correct++; p.correctStreak++;
+      if(p.correctStreak >= 3) p.status = 'mastered';
+    }else{
+      p.wrong++; p.correctStreak = 0; p.status = 'learning';
+    }
+    saveSentenceProgress();
+  }
+
+  /* ---------- basic progress (separate storage from word/sentence progress) ---------- */
+  var BASIC_PROGRESS_KEY = 'basic_progress';
+  var basicProgress = loadBasicProgress();
+
+  function loadBasicProgress(){
+    try{ return JSON.parse(localStorage.getItem(BASIC_PROGRESS_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveBasicProgress(){
+    localStorage.setItem(BASIC_PROGRESS_KEY, JSON.stringify(basicProgress));
+  }
+  function getBasicProgress(word){
+    if(!basicProgress[word]) basicProgress[word] = defaultProgress();
+    return basicProgress[word];
+  }
+  function recordBasicAnswer(word, isCorrect){
+    var p = getBasicProgress(word);
+    if(p.status === 'new') p.status = 'learning';
+    p.lastSeen = todayStr();
+    if(isCorrect){
+      p.correct++; p.correctStreak++; p.wrongInLastTest = false;
+      if(p.correctStreak >= 3) p.status = 'mastered';
+    }else{
+      p.wrong++; p.correctStreak = 0; p.status = 'learning'; p.wrongInLastTest = true;
+    }
+    saveBasicProgress();
+  }
+
+  function poolFor(source){ return source === 'basic' ? BASIC_WORDS : WORDS; }
+  function progressStoreFor(source){ return source === 'basic' ? basicProgress : progress; }
+
+  function computeSummary(source){
+    source = source || 'word';
+    var pool = poolFor(source), store = progressStoreFor(source);
     var mastered=0, learning=0, newCount=0, weak=[];
-    WORDS.forEach(function(w){
-      var p = progress[w.word];
+    pool.forEach(function(w){
+      var p = store[w.word];
       if(!p){ newCount++; return; }
       if(p.status==='mastered') mastered++;
       else if(p.status==='learning'){ learning++; weak.push({w:w,p:p}); }
@@ -205,14 +288,16 @@
     return { mastered:mastered, learning:learning, newCount:newCount, weakTop: weak.slice(0,10) };
   }
 
-  function pickReviewWords(n){
-    var pool = WORDS.map(function(w){
-      var p = progress[w.word] || defaultProgress();
+  function pickReviewWords(n, source){
+    source = source || 'word';
+    var pool = poolFor(source), store = progressStoreFor(source);
+    var weighted = pool.map(function(w){
+      var p = store[w.word] || defaultProgress();
       var weight = p.status==='mastered' ? 1 : (p.status==='learning' ? 6 : 3);
       if(p.wrong > p.correct) weight += 4;
       return { w:w, weight:weight };
     });
-    var working = pool.slice();
+    var working = weighted.slice();
     var picked = [];
     for(var i=0;i<n && working.length>0;i++){
       var totalWeight = working.reduce(function(s,x){return s+x.weight;},0);
@@ -222,13 +307,102 @@
       if(idx>=working.length) idx = working.length-1;
       picked.push(working[idx].w);
       working.splice(idx,1);
-      if(working.length===0) working = pool.slice();
+      if(working.length===0) working = weighted.slice();
     }
     return picked;
   }
 
   function wordsForList(listNum){
     return WORDS.filter(function(w){ return w.list===listNum; }).sort(function(a,b){ return a.id-b.id; });
+  }
+  function wordsForCategory(cat){
+    return BASIC_WORDS.filter(function(w){ return w.category===cat; }).sort(function(a,b){ return a.id-b.id; });
+  }
+  function wordsForUnit(source, unit){
+    return source === 'basic' ? wordsForCategory(unit) : wordsForList(unit);
+  }
+  function basicCategoryCount(cat){
+    return BASIC_WORDS.filter(function(w){ return w.category===cat; }).length;
+  }
+  function groupForCategory(cat){
+    for(var i=0;i<BASIC_GROUPS.length;i++){
+      if(BASIC_GROUPS[i].categories.indexOf(cat) !== -1) return BASIC_GROUPS[i].key;
+    }
+    return null;
+  }
+  function unitLabelFor(source, unit){
+    return source === 'basic' ? String(unit) : ('List ' + unit);
+  }
+
+  /* ---------- basic (school words diff) data ---------- */
+  var BASIC_GROUPS = [
+    { key:'学校生活', categories:['学校','色','形'] },
+    { key:'数・時間', categories:['数','時間・日・月','季節・方角'] },
+    { key:'生き物・自然', categories:['動物','自然'] },
+    { key:'食べ物', categories:['食べ物・飲み物'] },
+    { key:'人・仕事', categories:['人','体','仕事','国'] },
+    { key:'スポーツ・趣味', categories:['スポーツ・趣味'] },
+    { key:'くらし', categories:['生活','施設'] },
+    { key:'ことば', categories:['動詞','形容詞','副詞','前置詞','代名詞','その他'] }
+  ];
+  var BASIC_WORDS = [];
+  function loadBasicWords(){
+    return fetch('basic_words_diff.json')
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(data){
+        data.forEach(function(w, i){ w.id = i + 1; });
+        BASIC_WORDS = data;
+      })
+      .catch(function(err){ /* 未取得でもアプリ全体は壊さない */ });
+  }
+
+  /* ---------- phonics (tricky word) data ---------- */
+  var PHONICS = {};
+  function loadPhonics(){
+    return fetch('fry_phonics.json')
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(data){
+        data.forEach(function(p){ PHONICS[p.word.toLowerCase()] = p; });
+      })
+      .catch(function(err){ /* 未取得でもアプリ全体は壊さない */ });
+  }
+  function phonicsInfo(word){
+    var info = PHONICS[String(word).toLowerCase()];
+    return (info && info.tricky) ? info : null;
+  }
+  function highlightedWordHtml(word){
+    var info = phonicsInfo(word);
+    if(!info || !info.highlight) return esc(word);
+    var idx = word.toLowerCase().indexOf(info.highlight.toLowerCase());
+    if(idx === -1) return esc(word);
+    var before = word.slice(0, idx), mid = word.slice(idx, idx+info.highlight.length), after = word.slice(idx+info.highlight.length);
+    return esc(before) + '<span class="tricky-highlight">'+esc(mid)+'</span>' + esc(after);
+  }
+  function trickyNoteHtml(word){
+    var info = phonicsInfo(word);
+    if(!info || !info.note) return '';
+    return '<p class="tricky-note">&#128161; '+esc(info.note)+'</p>';
+  }
+
+  /* ---------- sentence data ---------- */
+  var SENTENCE_LIST_MANIFEST = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var SENTENCES = [];
+  var sentenceListsLoaded = [];
+
+  function sentencesForList(listNum){
+    return SENTENCES.filter(function(s){ return s.list===listNum; });
+  }
+  function loadSentenceLists(){
+    return Promise.all(SENTENCE_LIST_MANIFEST.map(function(listNum){
+      return fetch('list'+listNum+'_sentences.json')
+        .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+        .then(function(data){
+          data.forEach(function(item){ item.list = listNum; });
+          SENTENCES = SENTENCES.concat(data);
+          sentenceListsLoaded.push(listNum);
+        })
+        .catch(function(err){ /* 未追加のリストファイルはアプリ全体を壊さないよう握りつぶす */ });
+    }));
   }
 
   /* ---------- state ---------- */
@@ -239,55 +413,304 @@
 
   var SEGMENT_SIZE = 20;
 
-  function startReading(list){
-    state = { screen:'reading', list:list, queue: wordsForList(list), index:0, checkpoint:false };
+  /* ---------- timers (pausable/cancelable) ---------- */
+  var READING_SPEED_SLOW_MS = 3500;
+  var READING_SPEED_FAST_MS = 1300;
+  var SPELLING_REVEAL_MS = 1800;
+  var REVIEW_FLASH_MS = 1300;
+  var ANSWER_DEADLINE_MS = 5000;
+
+  function makeTimer(durationMs, onFire){
+    var remaining = durationMs, startedAt = null, handle = null, paused = false, fired = false;
+    function fire(){ if(fired) return; fired = true; handle = null; onFire(); }
+    function start(){ startedAt = Date.now(); handle = setTimeout(fire, remaining); }
+    function pause(){
+      if(paused || fired || handle===null) return;
+      clearTimeout(handle); handle = null;
+      remaining -= (Date.now() - startedAt);
+      if(remaining < 0) remaining = 0;
+      paused = true;
+    }
+    function resume(){
+      if(!paused || fired) return;
+      paused = false; startedAt = Date.now();
+      handle = setTimeout(fire, remaining);
+    }
+    function cancel(){ if(handle!==null) clearTimeout(handle); handle = null; fired = true; }
+    start();
+    return { pause:pause, resume:resume, cancel:cancel };
   }
-  function startSpelling(list, submode){
+
+  var readingAutoTimer = null;
+  var revealTimer = null;
+  var answerDeadlineTimer = null;
+
+  function clearAllTimers(){
+    if(readingAutoTimer){ readingAutoTimer.cancel(); readingAutoTimer = null; }
+    if(revealTimer){ revealTimer.cancel(); revealTimer = null; }
+    if(answerDeadlineTimer){ answerDeadlineTimer.cancel(); answerDeadlineTimer = null; }
+    if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer = null; }
+  }
+
+  function presentPracticeWord(){
+    if(revealTimer){ revealTimer.cancel(); revealTimer = null; }
+    if(answerDeadlineTimer){ answerDeadlineTimer.cancel(); answerDeadlineTimer = null; }
+    if(!state.fastMode){ render(); return; }
+    var word = state.queue[state.index];
+    if(!word){ render(); return; }
+    if(state.revealShow === null){
+      state.revealPhase = false;
+      render();
+      speak(word.word);
+      startAnswerDeadline();
+    }else{
+      state.revealPhase = true;
+      render();
+      revealTimer = makeTimer(state.revealDurationMs, function(){
+        revealTimer = null;
+        state.revealPhase = false;
+        render();
+        startAnswerDeadline();
+      });
+    }
+  }
+  function startAnswerDeadline(){
+    answerDeadlineTimer = makeTimer(ANSWER_DEADLINE_MS, function(){
+      answerDeadlineTimer = null;
+      submitAnswer('');
+    });
+  }
+
+  function startReading(list, mode, speed, source){
+    source = source || 'word';
+    clearAllTimers();
     state = {
-      screen:'spelling', list:list, submode:submode,
-      queue: shuffle(wordsForList(list)), index:0, feedback:null,
+      screen:'reading', list:list, source:source, unitLabel: unitLabelFor(source, list),
+      queue: wordsForUnit(source, list), index:0, checkpoint:false,
+      readingMode: mode || 'jikkuri', readingSpeed: speed || null, paused:false
+    };
+    if(state.readingMode === 'speed') beginSpeedReadingWord();
+    else render();
+  }
+  function beginSpeedReadingWord(){
+    if(readingAutoTimer){ readingAutoTimer.cancel(); readingAutoTimer = null; }
+    var word = state.queue[state.index];
+    render();
+    if(!word) return;
+    if(state.readingSpeed === 'slow') speak(word.word);
+    var dur = state.readingSpeed === 'slow' ? READING_SPEED_SLOW_MS : READING_SPEED_FAST_MS;
+    readingAutoTimer = makeTimer(dur, function(){
+      readingAutoTimer = null;
+      advanceReadingWord();
+    });
+  }
+  function advanceReadingWord(){
+    state.index++;
+    if(state.index < state.queue.length && state.index % SEGMENT_SIZE === 0){
+      state.checkpoint = true; render(); return;
+    }
+    if(state.index >= state.queue.length){ render(); return; }
+    beginSpeedReadingWord();
+  }
+  function pauseSpeedReading(){
+    if(readingAutoTimer) readingAutoTimer.pause();
+    state.paused = true; render();
+  }
+  function resumeSpeedReading(){
+    state.paused = false;
+    if(readingAutoTimer){ readingAutoTimer.resume(); render(); }
+    else beginSpeedReadingWord();
+  }
+  function manualStepReading(delta){
+    if(readingAutoTimer){ readingAutoTimer.cancel(); readingAutoTimer = null; }
+    var n = state.index + delta;
+    if(n < 0) n = 0;
+    if(n >= state.queue.length) n = state.queue.length - 1;
+    state.index = n; render();
+  }
+  function startSpelling(list, submode, fastMode, source){
+    source = source || 'word';
+    clearAllTimers();
+    var useFast = !!fastMode && submode !== 1;
+    state = {
+      screen:'spelling', list:list, source:source, unitLabel: unitLabelFor(source, list), submode:submode,
+      queue: shuffle(wordsForUnit(source, list)), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:true, allowSkip:true,
       showJa: submode!==3, showSound: submode!==2, showSpelling: submode===0,
-      checkpoint:false, checkpointBaseTotal:0, checkpointBaseCorrect:0
+      checkpoint:false, checkpointBaseTotal:0, checkpointBaseCorrect:0,
+      fastMode: useFast,
+      revealShow: submode===0 ? 'spelling' : (submode===2 ? 'ja' : null),
+      revealPhase: false,
+      revealDurationMs: SPELLING_REVEAL_MS
     };
+    presentPracticeWord();
   }
-  function startUnitTest(list){
-    var pool = shuffle(wordsForList(list)).slice(0,20);
+  function startUnitTest(list, source){
+    source = source || 'word';
+    var pool = shuffle(wordsForUnit(source, list)).slice(0,20);
     state = {
-      screen:'unittest', list:list, queue:pool, index:0, feedback:null,
+      screen:'unittest', list:list, source:source, unitLabel: unitLabelFor(source, list),
+      queue:pool, index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:false, allowSkip:false, showJa:true, showSound:true
     };
   }
-  function startRetest(){
-    var last = loadLastUnitTest();
+  function startRetest(source){
+    source = source || 'word';
+    var last = loadLastUnitTest(source);
     if(!last || !last.wordIds || !last.wordIds.length) return false;
+    var pool = poolFor(source);
     var words = last.wordIds.map(function(id){
-      return WORDS.filter(function(w){ return w.id===id; })[0];
+      return pool.filter(function(w){ return w.id===id; })[0];
     }).filter(Boolean);
     if(!words.length) return false;
     state = {
-      screen:'retest', list:last.listId, queue: shuffle(words), index:0, feedback:null,
+      screen:'retest', list:last.listId, source:source, unitLabel: unitLabelFor(source, last.listId),
+      queue: shuffle(words), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:false, allowSkip:false, showJa:true, showSound:true,
       round:1, maxRounds:5, roundWrong:[]
     };
     return true;
   }
-  function startReview(){
+  function startReview(difficulty, source){
+    source = source || 'word';
+    clearAllTimers();
+    var high = difficulty === 'high';
     state = {
-      screen:'review', list:null, queue: pickReviewWords(20), index:0, feedback:null,
+      screen:'review', list:null, source:source, unitLabel:null,
+      queue: pickReviewWords(20, source), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
-      allowBack:false, allowSkip:false, showJa:true, showSound:true
+      allowBack:false, allowSkip:false,
+      showJa: !high, showSound: !high, showSpelling: high,
+      fastMode: high, revealShow: high ? 'spelling' : null, revealPhase:false,
+      revealDurationMs: REVIEW_FLASH_MS,
+      reviewDifficulty: difficulty || 'normal'
     };
+    presentPracticeWord();
+  }
+
+  /* ---------- sentence practice: 穴埋めタイピング ---------- */
+  function startSentenceBlank(list){
+    clearAllTimers();
+    state = {
+      screen:'sentence-blank', list:list,
+      queue: shuffle(sentencesForList(list)), index:0,
+      feedback:null, correctCount:0, total:0, wrongItems:[]
+    };
+    render();
+  }
+  function currentSentenceItem(){
+    return state.queue ? state.queue[state.index] : null;
+  }
+  function blankedSentenceHtml(item){
+    var tokens = item.sentence.split(/\s+/).map(esc);
+    tokens[item.blank_index] = '<span class="blank-placeholder">&#65295;&#65295;&#65295;&#65295;</span>';
+    return tokens.join(' ');
+  }
+  function submitSentenceBlank(val){
+    var item = state.queue[state.index];
+    if(!item) return;
+    var isCorrect = checkAnswer(val, item.word);
+    recordSentenceAnswer(item, isCorrect);
+    state.total++;
+    if(isCorrect){ state.correctCount++; } else{ state.wrongItems.push(item); }
+    playTone(isCorrect);
+    state.feedback = { correct:isCorrect, correctWord:item.word };
+    render();
+    pendingAdvanceTimer = setTimeout(function(){
+      pendingAdvanceTimer = null;
+      advanceSentenceBlank();
+    }, isCorrect ? 500 : 1300);
+  }
+  function advanceSentenceBlank(){
+    state.feedback = null;
+    state.index++;
+    if(state.index >= state.queue.length){ finishSentenceBlank(); return; }
+    render();
+  }
+  function finishSentenceBlank(){
+    state = {
+      screen:'sentence-result', sourceMode:'sentence-blank', list:state.list,
+      correctCount: state.correctCount, total: state.total,
+      wrongItems: dedupeByKey(state.wrongItems, function(it){ return it.list+':'+it.word; })
+    };
+    render();
+  }
+
+  /* ---------- sentence practice: 全文タイピング ---------- */
+  var SENTENCE_FULL_TIERS = {
+    0: { showSentence:true,  showJa:true,  showSound:true  },
+    1: { showSentence:false, showJa:true,  showSound:true  },
+    2: { showSentence:false, showJa:true,  showSound:false },
+    3: { showSentence:false, showJa:false, showSound:true  }
+  };
+  function startSentenceFull(list, tier){
+    clearAllTimers();
+    var flags = SENTENCE_FULL_TIERS[tier] || SENTENCE_FULL_TIERS[0];
+    state = {
+      screen:'sentence-full', list:list, tier:tier,
+      queue: shuffle(sentencesForList(list)), index:0,
+      feedback:null, correctCount:0, total:0, wrongItems:[],
+      showSentence: flags.showSentence, showJa: flags.showJa, showSound: flags.showSound
+    };
+    render();
+  }
+  function normalizeToken(tok){
+    return normalize(tok).replace(/^[.,!?;:"'()]+|[.,!?;:"'()]+$/g, '');
+  }
+  function diffSentenceWords(correctSentence, typedText){
+    var correctTokens = correctSentence.split(/\s+/).filter(Boolean);
+    var typedTokens = typedText.split(/\s+/).filter(Boolean);
+    var len = Math.max(correctTokens.length, typedTokens.length);
+    var perWord = [];
+    var allMatch = typedTokens.length === correctTokens.length;
+    for(var i=0;i<len;i++){
+      var c = correctTokens[i], t = typedTokens[i];
+      var ok = c!==undefined && t!==undefined && normalizeToken(c)===normalizeToken(t);
+      if(!ok) allMatch = false;
+      perWord.push({ token: t!==undefined ? t : '', ok: ok });
+    }
+    return { perWord:perWord, correct:allMatch };
+  }
+  function submitSentenceFull(val){
+    var item = state.queue[state.index];
+    if(!item) return;
+    var diff = diffSentenceWords(item.sentence, val);
+    recordSentenceAnswer(item, diff.correct);
+    state.total++;
+    if(diff.correct){ state.correctCount++; } else{ state.wrongItems.push(item); }
+    playTone(diff.correct);
+    state.feedback = { correct:diff.correct, perWord:diff.perWord, correctSentence:item.sentence };
+    render();
+    pendingAdvanceTimer = setTimeout(function(){
+      pendingAdvanceTimer = null;
+      advanceSentenceFull();
+    }, diff.correct ? 500 : 1800);
+  }
+  function advanceSentenceFull(){
+    state.feedback = null;
+    state.index++;
+    if(state.index >= state.queue.length){ finishSentenceFull(); return; }
+    render();
+  }
+  function finishSentenceFull(){
+    state = {
+      screen:'sentence-result', sourceMode:'sentence-full', list:state.list, tier:state.tier,
+      correctCount: state.correctCount, total: state.total,
+      wrongItems: dedupeByKey(state.wrongItems, function(it){ return it.list+':'+it.word; })
+    };
+    render();
   }
 
   function submitAnswer(val){
+    if(answerDeadlineTimer){ answerDeadlineTimer.cancel(); answerDeadlineTimer = null; }
     var word = state.queue[state.index];
     if(!word) return;
     var isCorrect = checkAnswer(val, word.word);
-    recordAnswer(word.word, isCorrect);
+    if(state.source === 'basic') recordBasicAnswer(word.word, isCorrect);
+    else recordAnswer(word.word, isCorrect);
     state.total++;
     if(isCorrect){ state.correctCount++; }
     else{
@@ -305,6 +728,8 @@
 
   function triggerSpellingCheckpointIfNeeded(){
     if(state.screen==='spelling' && state.index < state.queue.length && state.index % SEGMENT_SIZE === 0){
+      if(revealTimer){ revealTimer.cancel(); revealTimer = null; }
+      if(answerDeadlineTimer){ answerDeadlineTimer.cancel(); answerDeadlineTimer = null; }
       state.checkpointStats = {
         correct: state.correctCount - (state.checkpointBaseCorrect||0),
         total: state.total - (state.checkpointBaseTotal||0)
@@ -326,20 +751,20 @@
         state.queue = shuffle(state.roundWrong);
         state.roundWrong = [];
         state.index = 0;
-        render();
+        presentPracticeWord();
         return;
       }
       finishSession();
       return;
     }
-    render();
+    presentPracticeWord();
   }
 
   function goBack(){
     if(!state.allowBack || state.index<=0) return;
     state.feedback = null;
     state.index--;
-    render();
+    presentPracticeWord();
   }
   function skipCurrent(){
     if(!state.allowSkip) return;
@@ -347,21 +772,24 @@
     state.index++;
     if(triggerSpellingCheckpointIfNeeded()) return;
     if(state.index >= state.queue.length){ finishSession(); return; }
-    render();
+    presentPracticeWord();
   }
 
   function finishSession(){
     if(state.screen==='result') return;
     var sourceMode = state.screen;
     var list = state.list;
+    var source = state.source || 'word';
     var dedupWrong = dedupeById(state.wrongWords);
+    var reviewDifficulty = state.reviewDifficulty;
     if(sourceMode==='unittest'){
-      saveLastUnitTest({ listId:list, date:todayStr(), wordIds: dedupWrong.map(function(w){return w.id;}) });
+      saveLastUnitTest({ listId:list, date:todayStr(), wordIds: dedupWrong.map(function(w){return w.id;}) }, source);
     }
     state = {
-      screen:'result', sourceMode:sourceMode, list:list,
+      screen:'result', sourceMode:sourceMode, list:list, source:source,
       correctCount: state.correctCount, total: state.total,
-      wrongWords: dedupWrong
+      wrongWords: dedupWrong,
+      reviewDifficulty: reviewDifficulty
     };
     render();
   }
@@ -395,12 +823,15 @@
   }
 
   function renderHome(){
-    var summary = computeSummary();
-    var lastTest = loadLastUnitTest();
+    var summary = computeSummary('word');
+    var lastTest = loadLastUnitTest('word');
     var retestAvailable = !!(lastTest && lastTest.wordIds && lastTest.wordIds.length>0);
+    var isSentence = state.homeSection === 'sentence';
+    var isBasic = state.homeSection === 'basic';
     var listBtns = '';
     for(var n=1;n<=10;n++){
-      listBtns += '<button class="btn list-btn ' + (state.selectedList===n?'selected':'') +
+      var locked = isSentence && sentenceListsLoaded.indexOf(n)===-1;
+      listBtns += '<button class="btn list-btn ' + (state.selectedList===n?'selected':'') + (locked?' disabled':'') +
         '" data-action="select-list" data-list="'+n+'">List '+n+'</button>';
     }
     var weakHtml = summary.weakTop.length ?
@@ -410,23 +841,7 @@
       }).join('') + '</ul>'
       : '<p class="muted">苦手単語はまだありません。</p>';
 
-    return ''
-      + '<h1 class="app-title">タイ単</h1>'
-      + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
-      + '<section class="card"><h2>Listを選ぶ</h2><div class="list-grid">'+listBtns+'</div></section>'
-      + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'
-        + '<button class="btn mode-btn" data-action="start-reading">① 読み方(聞く)</button>'
-        + '<div class="mode-group"><div class="mode-group-title">② タイピング練習</div><div class="submode-row">'
-          + '<button class="btn small" data-action="start-spelling" data-submode="0">基本</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="1">音＋意味</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="3">音</button>'
-          + '<button class="btn small" data-action="start-spelling" data-submode="2">意味</button>'
-        + '</div></div>'
-        + '<button class="btn mode-btn" data-action="start-unittest">③ ミニテスト(20問)</button>'
-        + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ リトライ '
-          + (retestAvailable ? '('+lastTest.wordIds.length+'問)' : '(前回テスト待ち)') + '</button>'
-        + '<button class="btn mode-btn" data-action="start-review">⑤ まとめテスト</button>'
-      + '</div></section>'
+    var wordStatsHtml = ''
       + '<section class="card"><h2>学習記録</h2>'
         + '<div class="summary-row">'
           + '<div class="stat"><span class="num">'+summary.mastered+'</span><span class="label">習得済み</span></div>'
@@ -441,8 +856,112 @@
             + (state.selectedList ? '(List '+state.selectedList+')' : '') + '</button>'
           + '<button class="btn" data-action="confirm-reset-all">全データをリセット</button>'
         + '</div>'
-      + '</section>'
+      + '</section>';
+
+    var basicSummary = computeSummary('basic');
+    var basicLastTest = loadLastUnitTest('basic');
+    var basicRetestAvailable = !!(basicLastTest && basicLastTest.wordIds && basicLastTest.wordIds.length>0);
+    var basicWeakHtml = basicSummary.weakTop.length ?
+      '<h3>苦手単語</h3><ul class="weak-list">' +
+      basicSummary.weakTop.map(function(x){
+        return '<li>'+esc(x.w.word)+'<span class="ja-small">'+esc(x.w.ja)+'</span></li>';
+      }).join('') + '</ul>'
+      : '<p class="muted">苦手単語はまだありません。</p>';
+    var basicStatsHtml = ''
+      + '<section class="card"><h2>学習記録(Basic)</h2>'
+        + '<div class="summary-row">'
+          + '<div class="stat"><span class="num">'+basicSummary.mastered+'</span><span class="label">習得済み</span></div>'
+          + '<div class="stat"><span class="num">'+basicSummary.learning+'</span><span class="label">練習中</span></div>'
+          + '<div class="stat"><span class="num">'+basicSummary.newCount+'</span><span class="label">未着手</span></div>'
+        + '</div>'
+        + basicWeakHtml
+      + '</section>';
+
+    var unitPickerTitle = isBasic ? 'グループを選ぶ' : 'Listを選ぶ';
+    var unitPickerHtml = isBasic ? renderBasicPicker() : ('<div class="list-grid">'+listBtns+'</div>');
+    var modeGridHtml = isSentence ? renderSentenceModeGrid()
+                      : isBasic ? renderBasicModeGrid(basicRetestAvailable, basicLastTest)
+                      : renderWordModeGrid(retestAvailable, lastTest);
+
+    return ''
+      + '<h1 class="app-title">タイ単</h1>'
+      + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
+      + '<section class="card"><h2>練習する内容</h2><div class="section-toggle">'
+        + '<button class="btn list-btn '+(!isSentence && !isBasic?'selected':'')+'" data-action="select-section" data-section="word">単語</button>'
+        + '<button class="btn list-btn '+(isSentence?'selected':'')+'" data-action="select-section" data-section="sentence">短文</button>'
+        + '<button class="btn list-btn '+(isBasic?'selected':'')+'" data-action="select-section" data-section="basic">Basic</button>'
+      + '</div></section>'
+      + '<section class="card"><h2>'+unitPickerTitle+'</h2>'+unitPickerHtml+'</section>'
+      + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'+modeGridHtml+'</div></section>'
+      + (isSentence || isBasic ? '' : wordStatsHtml)
+      + (isBasic ? basicStatsHtml : '')
       + renderResetModal();
+  }
+
+  function renderWordModeGrid(retestAvailable, lastTest){
+    return ''
+      + '<div class="mode-group"><div class="mode-group-title">① 読み方(聞く)</div><div class="submode-row">'
+        + '<button class="btn small" data-action="start-reading" data-mode="jikkuri">じっくり</button>'
+        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="slow">スピード・ゆっくり</button>'
+        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="fast">スピード・はやい</button>'
+      + '</div></div>'
+      + '<div class="mode-group"><div class="mode-group-title">② タイピング練習</div>'
+        + '<label class="fast-toggle"><input type="checkbox" data-action="toggle-fastmode" '+(state.spellingFast?'checked':'')+' /> '
+        + 'はやいモード(基本・意味・音のみ対象/表示が一瞬で消えて'+Math.round(ANSWER_DEADLINE_MS/1000)+'秒以内に入力。音＋意味には非適用)</label>'
+        + '<div class="submode-row">'
+        + '<button class="btn small" data-action="start-spelling" data-submode="0">基本</button>'
+        + '<button class="btn small" data-action="start-spelling" data-submode="1">音＋意味</button>'
+        + '<button class="btn small" data-action="start-spelling" data-submode="3">音</button>'
+        + '<button class="btn small" data-action="start-spelling" data-submode="2">意味</button>'
+      + '</div></div>'
+      + '<button class="btn mode-btn" data-action="start-unittest">③ ミニテスト(20問)</button>'
+      + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ リトライ '
+        + (retestAvailable ? '('+lastTest.wordIds.length+'問)' : '(前回テスト待ち)') + '</button>'
+      + '<div class="mode-group"><div class="mode-group-title">⑤ まとめテスト</div><div class="submode-row">'
+        + '<button class="btn small" data-action="start-review" data-difficulty="normal">通常</button>'
+        + '<button class="btn small" data-action="start-review" data-difficulty="high">ハイレベル</button>'
+      + '</div></div>';
+  }
+
+  function renderSentenceModeGrid(){
+    if(sentenceListsLoaded.length===0){
+      return '<p class="muted">短文データを読み込み中、または未追加です。</p>';
+    }
+    return ''
+      + '<button class="btn mode-btn" data-action="start-sentence-blank">穴埋めタイピング</button>'
+      + '<div class="mode-group"><div class="mode-group-title">全文タイピング(難易度)</div><div class="submode-row">'
+        + '<button class="btn small" data-action="start-sentence-full" data-tier="0">0. 見本あり</button>'
+        + '<button class="btn small" data-action="start-sentence-full" data-tier="1">1. 音声+和訳あり</button>'
+        + '<button class="btn small" data-action="start-sentence-full" data-tier="2">2. 和訳のみ</button>'
+        + '<button class="btn small" data-action="start-sentence-full" data-tier="3">3. 音声のみ</button>'
+      + '</div></div>';
+  }
+
+  function renderBasicPicker(){
+    if(BASIC_WORDS.length===0){
+      return '<p class="muted">Basicデータを読み込み中、または未追加です。</p>';
+    }
+    var groupBtns = BASIC_GROUPS.map(function(g){
+      var sel = state.basicGroup === g.key ? ' selected' : '';
+      return '<button class="btn list-btn'+sel+'" data-action="select-basic-group" data-group="'+esc(g.key)+'">'+esc(g.key)+'</button>';
+    }).join('');
+    var html = '<div class="list-grid">'+groupBtns+'</div>';
+    var group = state.basicGroup ? BASIC_GROUPS.filter(function(g){ return g.key===state.basicGroup; })[0] : null;
+    if(group){
+      var catBtns = group.categories.map(function(cat){
+        var count = basicCategoryCount(cat);
+        var sel = state.selectedCategory === cat ? ' selected' : '';
+        return '<button class="btn small list-btn'+sel+(count===0?' disabled':'')+
+          '" data-action="select-basic-category" data-category="'+esc(cat)+'">'+esc(cat)+'('+count+')</button>';
+      }).join('');
+      html += '<div class="mode-group"><div class="mode-group-title">'+esc(group.key)+' のカテゴリ</div>'
+        + '<div class="submode-row">'+catBtns+'</div></div>';
+    }
+    return html;
+  }
+
+  function renderBasicModeGrid(retestAvailable, lastTest){
+    return renderWordModeGrid(retestAvailable, lastTest);
   }
 
   function renderResetModal(){
@@ -460,8 +979,9 @@
   }
 
   function renderReading(){
+    var isSpeed = state.readingMode === 'speed';
     if(state.checkpoint){
-      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2></div>'
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - '+esc(state.unitLabel)+'</h2></div>'
         + '<div class="card center-card"><p class="big-emoji">&#127880;</p>'
         + '<p>'+state.index+' / '+state.queue.length+' 語まで読みました!</p>'
         + '<div class="btn-row">'
@@ -471,21 +991,30 @@
     }
     var word = state.queue[state.index];
     if(!word){
-      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2></div>'
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - '+esc(state.unitLabel)+'</h2></div>'
         + '<div class="card center-card"><p class="big-emoji">&#127881;</p>'
-        + '<p>List '+state.list+' を読み終わりました!</p>'
+        + '<p>'+esc(state.unitLabel)+' を読み終わりました!</p>'
         + '<div class="btn-row">'
           + '<button class="btn" data-action="restart-reading">もう一度</button>'
           + '<button class="btn primary" data-action="go-home">ホームへ</button>'
         + '</div></div>';
     }
-    return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - List '+state.list+'</h2>'
+    var hints;
+    if(isSpeed){
+      hints = '<span>Space '+(state.paused?'再開':'一時停止')+'</span>'
+        + (state.paused ? '<span>&#8592; &#8594; 前後へ移動</span>' : '');
+    }else{
+      hints = '<span>Space 発音</span><span>Enter 次へ</span>';
+    }
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - '+esc(state.unitLabel)+'</h2>'
       + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
       + '<div class="card word-card">'
-        + '<div class="word">'+esc(word.word)+'</div>'
-        + '<div class="ja">'+esc(word.ja)+'</div>'
+        + '<div class="word">'+(isSpeed ? esc(word.word) : highlightedWordHtml(word.word))+'</div>'
+        + (isSpeed ? '' : '<div class="ja">'+esc(word.ja)+'</div>')
+        + (isSpeed ? '' : trickyNoteHtml(word.word))
+        + (isSpeed && state.paused ? '<p class="muted">一時停止中</p>' : '')
       + '</div>'
-      + '<div class="hint-row"><span>Space 発音</span><span>Enter 次へ</span></div>';
+      + '<div class="hint-row">'+hints+'</div>';
   }
 
   var TITLE_MAP = { spelling:'タイピング練習', unittest:'ミニテスト', retest:'リトライ', review:'まとめテスト' };
@@ -495,12 +1024,22 @@
     var total = state.queue.length;
     var title = TITLE_MAP[state.screen] || '';
     if(state.screen==='retest' && state.round>1) title += '('+state.round+'周目)';
-    var listLabel = state.list ? ' - List '+state.list : '';
+    var listLabel = state.unitLabel ? ' - '+state.unitLabel : '';
+
+    if(state.fastMode && state.revealPhase){
+      var revealHtml = state.revealShow==='spelling' ? '<div class="word">'+esc(word.word)+'</div>'
+                      : state.revealShow==='ja' ? '<div class="ja">'+esc(word.ja)+'</div>' : '';
+      return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(title)+esc(listLabel)+'</h2>'
+        + '<span class="progress-label">'+(state.index+1)+' / '+total+'</span></div>'
+        + '<div class="card word-card">'+revealHtml+'<p class="muted">よく見て覚えよう…</p></div>';
+    }
+
     var feedbackHtml = '';
     if(state.feedback){
       feedbackHtml = state.feedback.correct
         ? '<div class="feedback ok">&#127881; 正解!</div>'
-        : '<div class="feedback bad">正解は: <strong>'+esc(state.feedback.correctSpelling)+'</strong></div>';
+        : '<div class="feedback bad">正解は: <strong>'+highlightedWordHtml(state.feedback.correctSpelling)+'</strong></div>'
+          + trickyNoteHtml(state.feedback.correctSpelling);
     }
     var hints = [];
     if(state.allowBack) hints.push('<span>&#8592; 前へ</span>');
@@ -523,7 +1062,7 @@
   function renderSpellingCheckpoint(){
     var stats = state.checkpointStats || {correct:0,total:0};
     var pct = stats.total>0 ? Math.round((stats.correct/stats.total)*100) : 100;
-    return '<div class="topbar">'+homeBtnHtml()+'<h2>タイピング練習 - List '+state.list+'</h2></div>'
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>タイピング練習 - '+esc(state.unitLabel)+'</h2></div>'
       + '<div class="card center-card"><p class="big-emoji">&#127880;</p>'
       + '<p>'+state.index+' / '+state.queue.length+' 問まで終わりました!</p>'
       + '<p class="muted">この区切り: '+stats.correct+' / '+stats.total+' 問正解('+pct+'%)</p>'
@@ -563,6 +1102,74 @@
       + '</div>';
   }
 
+  function renderSentenceBlank(){
+    var item = state.queue[state.index];
+    var feedbackHtml = '';
+    if(state.feedback){
+      feedbackHtml = state.feedback.correct
+        ? '<div class="feedback ok">&#127881; 正解!</div>'
+        : '<div class="feedback bad">正解は: <strong>'+esc(state.feedback.correctWord)+'</strong></div>';
+    }
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>穴埋めタイピング - List '+state.list+'</h2>'
+      + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
+      + '<div class="card word-card">'
+        + '<div class="sentence-text">'+blankedSentenceHtml(item)+'</div>'
+        + '<div class="ja">'+esc(item.ja)+'</div>'
+        + '<button class="btn sound-btn" data-action="speak-sentence">&#128266; 聞く</button>'
+        + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="空欄の単語を入力してEnter" /></div>'
+        + feedbackHtml
+      + '</div>'
+      + '<div class="hint-row"><span>Space 発音</span><span>Enter 判定</span></div>';
+  }
+
+  function renderDiffHtml(perWord){
+    return perWord.map(function(w){
+      return '<span class="'+(w.ok?'diff-ok':'diff-bad')+'">'+esc(w.token || '&#12539;')+'</span>';
+    }).join(' ');
+  }
+
+  function renderSentenceFull(){
+    var item = state.queue[state.index];
+    var feedbackHtml = '';
+    if(state.feedback){
+      feedbackHtml = '<div class="diff-row">'+renderDiffHtml(state.feedback.perWord)+'</div>'
+        + '<div class="reference-sentence">正解: '+esc(state.feedback.correctSentence)+'</div>'
+        + (state.feedback.correct
+            ? '<div class="feedback ok">&#127881; 正解!</div>'
+            : '<div class="feedback bad">もう一度確認しよう</div>');
+    }
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>全文タイピング(段階'+state.tier+') - List '+state.list+'</h2>'
+      + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
+      + '<div class="card word-card">'
+        + (state.showSentence ? '<div class="sentence-text">'+esc(item.sentence)+'</div>' : '')
+        + (state.showJa ? '<div class="ja">'+esc(item.ja)+'</div>' : '')
+        + (state.showSound ? '<button class="btn sound-btn" data-action="speak-sentence">&#128266; 聞く</button>' : '')
+        + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="全文を入力してEnter" /></div>'
+        + feedbackHtml
+      + '</div>'
+      + '<div class="hint-row">'+(state.showSound?'<span>Space 発音</span>':'')+'<span>Enter 判定</span></div>';
+  }
+
+  function renderSentenceResult(){
+    var pct = state.total>0 ? Math.round((state.correctCount/state.total)*100) : 100;
+    var titleMap = { 'sentence-blank':'穴埋めタイピング結果', 'sentence-full':'全文タイピング結果' };
+    var wrongHtml = state.wrongItems.length
+      ? '<h3>間違えた文</h3><ul class="weak-list">' + state.wrongItems.map(function(it){
+          return '<li>'+esc(it.sentence)+'<span class="ja-small">'+esc(it.ja)+'</span></li>';
+        }).join('') + '</ul>'
+      : '<p class="big-emoji">&#127881; 全問正解!</p>';
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(titleMap[state.sourceMode]||'結果')+'</h2></div>'
+      + '<div class="card center-card">'
+        + '<p class="score">'+pct+'%</p>'
+        + '<p>'+state.correctCount+' / '+state.total+' 問正解</p>'
+        + wrongHtml
+        + '<div class="btn-row">'
+          + '<button class="btn" data-action="sentence-again">もう一度</button>'
+          + '<button class="btn primary" data-action="go-home">ホームへ</button>'
+        + '</div>'
+      + '</div>';
+  }
+
   function render(){
     var app = document.getElementById('app');
     var html;
@@ -572,6 +1179,9 @@
       case 'spelling': html = state.checkpoint ? renderSpellingCheckpoint() : renderPractice(); break;
       case 'unittest': case 'retest': case 'review': html = renderPractice(); break;
       case 'result': html = renderResult(); break;
+      case 'sentence-blank': html = renderSentenceBlank(); break;
+      case 'sentence-full': html = renderSentenceFull(); break;
+      case 'sentence-result': html = renderSentenceResult(); break;
       default: html = '<p style="text-align:center;padding-top:40px;">読み込み中...</p>';
     }
     app.innerHTML = html;
@@ -594,50 +1204,123 @@
         state.notice = null;
         render();
         break;
-      case 'start-reading':
+      case 'select-section':
+        state.homeSection = el.dataset.section;
+        if(state.homeSection==='sentence' && sentenceListsLoaded.indexOf(state.selectedList)===-1){
+          state.selectedList = null;
+        }
+        state.notice = null;
+        render();
+        break;
+      case 'select-basic-group':
+        state.basicGroup = el.dataset.group;
+        state.selectedCategory = null;
+        state.notice = null;
+        render();
+        break;
+      case 'select-basic-category':
+        state.selectedCategory = el.dataset.category;
+        state.notice = null;
+        render();
+        break;
+      case 'start-sentence-blank':
         if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
-        startReading(state.selectedList); render();
+        startSentenceBlank(state.selectedList);
+        break;
+      case 'start-sentence-full':
+        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+        startSentenceFull(state.selectedList, Number(el.dataset.tier));
+        break;
+      case 'speak-sentence': {
+        var sItem = currentSentenceItem();
+        if(sItem) speak(sItem.sentence);
+        break;
+      }
+      case 'sentence-again':
+        if(state.sourceMode==='sentence-full') startSentenceFull(state.list, state.tier);
+        else startSentenceBlank(state.list);
+        break;
+      case 'start-reading':
+        if(state.homeSection==='basic'){
+          if(!state.selectedCategory){ state.notice = 'カテゴリを選んでください'; render(); break; }
+          startReading(state.selectedCategory, el.dataset.mode, el.dataset.speed, 'basic');
+        }else{
+          if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+          startReading(state.selectedList, el.dataset.mode, el.dataset.speed);
+        }
+        break;
+      case 'toggle-fastmode':
+        state.spellingFast = !state.spellingFast;
+        render();
         break;
       case 'start-spelling':
-        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
-        startSpelling(state.selectedList, Number(el.dataset.submode)); render();
+        if(state.homeSection==='basic'){
+          if(!state.selectedCategory){ state.notice = 'カテゴリを選んでください'; render(); break; }
+          startSpelling(state.selectedCategory, Number(el.dataset.submode), state.spellingFast, 'basic');
+        }else{
+          if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+          startSpelling(state.selectedList, Number(el.dataset.submode), state.spellingFast);
+        }
         break;
       case 'start-unittest':
-        if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
-        startUnitTest(state.selectedList); render();
+        if(state.homeSection==='basic'){
+          if(!state.selectedCategory){ state.notice = 'カテゴリを選んでください'; render(); break; }
+          startUnitTest(state.selectedCategory, 'basic'); render();
+        }else{
+          if(!state.selectedList){ state.notice = 'List を選んでください'; render(); break; }
+          startUnitTest(state.selectedList); render();
+        }
         break;
-      case 'start-retest':
-        if(!startRetest()){ state.notice = 'まだミニテストの結果がありません'; render(); }
+      case 'start-retest': {
+        var retestSource = state.homeSection==='basic' ? 'basic' : 'word';
+        if(!startRetest(retestSource)){ state.notice = 'まだミニテストの結果がありません'; render(); }
         else render();
         break;
+      }
       case 'start-review':
-        startReview(); render();
+        startReview(el.dataset.difficulty || 'normal', state.homeSection==='basic' ? 'basic' : 'word');
         break;
       case 'go-home': {
-        var keepList = state.selectedList || state.list || null;
-        state = { screen:'home', selectedList: keepList, notice:null };
+        clearAllTimers();
+        var src = state.source || 'word';
+        var keepFast = state.spellingFast || false;
+        if(src === 'basic'){
+          var keepCategory = state.selectedCategory || state.list || null;
+          var keepGroup = state.basicGroup || (keepCategory ? groupForCategory(keepCategory) : null);
+          state = { screen:'home', selectedList:null, selectedCategory:keepCategory, basicGroup:keepGroup,
+            spellingFast:keepFast, notice:null, homeSection:'basic' };
+        }else{
+          var keepList = state.selectedList || state.list || null;
+          state = { screen:'home', selectedList:keepList, selectedCategory:null, basicGroup:null,
+            spellingFast:keepFast, notice:null, homeSection:'word' };
+        }
         render();
         break;
       }
       case 'restart-reading':
-        startReading(state.list); render();
+        startReading(state.list, state.readingMode, state.readingSpeed, state.source);
         break;
-      case 'go-retest':
-        if(!startRetest()){ state = { screen:'home', selectedList:null, notice:'リトライ対象がありません' }; }
+      case 'go-retest': {
+        var goRetestSource = state.source || 'word';
+        if(!startRetest(goRetestSource)){
+          state = { screen:'home', selectedList:null, notice:'リトライ対象がありません', homeSection: goRetestSource };
+        }
         render();
         break;
+      }
       case 'go-review-again':
-        startReview(); render();
+        startReview(state.reviewDifficulty || 'normal', state.source);
         break;
       case 'reading-continue':
         state.checkpoint = false;
-        render();
+        if(state.readingMode === 'speed') beginSpeedReadingWord();
+        else render();
         break;
       case 'spelling-continue':
         state.checkpointBaseTotal = state.total;
         state.checkpointBaseCorrect = state.correctCount;
         state.checkpoint = false;
-        render();
+        presentPracticeWord();
         break;
       case 'confirm-reset-all':
         state.confirmReset = 'all';
@@ -673,6 +1356,16 @@
   /* ---------- keyboard ---------- */
   document.addEventListener('keydown', function(e){
     if(state.screen==='reading'){
+      if(state.readingMode === 'speed' && !state.checkpoint){
+        if(e.code==='Space'){
+          e.preventDefault();
+          if(state.paused) resumeSpeedReading(); else pauseSpeedReading();
+          return;
+        }
+        if(state.paused && e.key==='ArrowLeft'){ e.preventDefault(); manualStepReading(-1); return; }
+        if(state.paused && e.key==='ArrowRight'){ e.preventDefault(); manualStepReading(1); return; }
+        return;
+      }
       if(e.code==='Space'){
         e.preventDefault();
         var w = state.queue[state.index];
@@ -710,6 +1403,28 @@
         e.preventDefault(); skipCurrent(); return;
       }
     }
+    if(state.screen==='sentence-blank' || state.screen==='sentence-full'){
+      var soundAvailable = state.screen==='sentence-blank' || state.showSound;
+      if(e.code==='Space' && soundAvailable){
+        e.preventDefault();
+        var sItem2 = state.queue[state.index];
+        if(sItem2) speak(sItem2.sentence);
+        return;
+      }
+      if(e.key==='Enter'){
+        e.preventDefault();
+        if(state.feedback){
+          if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer=null; }
+          if(state.screen==='sentence-blank') advanceSentenceBlank(); else advanceSentenceFull();
+        }else{
+          var sInput = document.getElementById('answerInput');
+          var sVal = sInput ? sInput.value : '';
+          if(sVal.trim()==='') return;
+          if(state.screen==='sentence-blank') submitSentenceBlank(sVal); else submitSentenceFull(sVal);
+        }
+        return;
+      }
+    }
   });
 
   /* ---------- init ---------- */
@@ -717,7 +1432,12 @@
     .then(function(r){ return r.json(); })
     .then(function(data){
       WORDS = data;
-      state = { screen:'home', selectedList:null, notice:null };
+      return Promise.all([loadSentenceLists(), loadBasicWords(), loadPhonics()]);
+    })
+    .then(function(){
+      sentenceListsLoaded.sort(function(a,b){ return a-b; });
+      state = { screen:'home', selectedList:null, selectedCategory:null, basicGroup:null,
+        spellingFast:false, notice:null, homeSection:'word' };
       render();
     })
     .catch(function(err){

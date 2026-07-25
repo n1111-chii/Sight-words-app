@@ -1,0 +1,380 @@
+[
+  {
+    "word": "a",
+    "sentence": "I see a dog.",
+    "ja": "私は犬を見ます。",
+    "blank_index": 2
+  },
+  {
+    "word": "an",
+    "sentence": "I see an apple.",
+    "ja": "私はりんごを見ます。",
+    "blank_index": 2
+  },
+  {
+    "word": "and",
+    "sentence": "You and I are here.",
+    "ja": "あなたと私はここにいます。",
+    "blank_index": 1
+  },
+  {
+    "word": "are",
+    "sentence": "You are my friend.",
+    "ja": "あなたは私の友達です。",
+    "blank_index": 1
+  },
+  {
+    "word": "as",
+    "sentence": "Do it as I say.",
+    "ja": "私が言う通りにやって。",
+    "blank_index": 2
+  },
+  {
+    "word": "at",
+    "sentence": "Look at the sky.",
+    "ja": "空を見て。",
+    "blank_index": 1
+  },
+  {
+    "word": "be",
+    "sentence": "I will be there.",
+    "ja": "私はそこに行きます。",
+    "blank_index": 2
+  },
+  {
+    "word": "been",
+    "sentence": "I have been here.",
+    "ja": "私はずっとここにいます。",
+    "blank_index": 2
+  },
+  {
+    "word": "but",
+    "sentence": "I like it, but it is big.",
+    "ja": "好きだけど、大きいです。",
+    "blank_index": 3
+  },
+  {
+    "word": "by",
+    "sentence": "Come by my house.",
+    "ja": "私の家に寄って。",
+    "blank_index": 1
+  },
+  {
+    "word": "could",
+    "sentence": "I could see it.",
+    "ja": "私はそれを見ることができました。",
+    "blank_index": 1
+  },
+  {
+    "word": "did",
+    "sentence": "What did you do?",
+    "ja": "あなたは何をしましたか?",
+    "blank_index": 1
+  },
+  {
+    "word": "do",
+    "sentence": "What do you like?",
+    "ja": "あなたは何が好きですか?",
+    "blank_index": 1
+  },
+  {
+    "word": "down",
+    "sentence": "Sit down here.",
+    "ja": "ここに座って。",
+    "blank_index": 1
+  },
+  {
+    "word": "each",
+    "sentence": "Each day is new.",
+    "ja": "毎日が新しい。",
+    "blank_index": 0
+  },
+  {
+    "word": "for",
+    "sentence": "This is for you.",
+    "ja": "これはあなたのためです。",
+    "blank_index": 2
+  },
+  {
+    "word": "from",
+    "sentence": "I am from Japan.",
+    "ja": "私は日本出身です。",
+    "blank_index": 2
+  },
+  {
+    "word": "had",
+    "sentence": "I had a book.",
+    "ja": "私は本を持っていました。",
+    "blank_index": 1
+  },
+  {
+    "word": "has",
+    "sentence": "She has a dog.",
+    "ja": "彼女は犬を飼っています。",
+    "blank_index": 1
+  },
+  {
+    "word": "have",
+    "sentence": "I have two hands.",
+    "ja": "私には手が2つあります。",
+    "blank_index": 1
+  },
+  {
+    "word": "her",
+    "sentence": "This is her book.",
+    "ja": "これは彼女の本です。",
+    "blank_index": 2
+  },
+  {
+    "word": "him",
+    "sentence": "I see him now.",
+    "ja": "私は今彼が見えます。",
+    "blank_index": 2
+  },
+  {
+    "word": "his",
+    "sentence": "This is his hat.",
+    "ja": "これは彼の帽子です。",
+    "blank_index": 2
+  },
+  {
+    "word": "how",
+    "sentence": "How are you?",
+    "ja": "元気ですか?",
+    "blank_index": 0
+  },
+  {
+    "word": "if",
+    "sentence": "Come if you can.",
+    "ja": "できるなら来て。",
+    "blank_index": 1
+  },
+  {
+    "word": "in",
+    "sentence": "The cat is in the box.",
+    "ja": "猫は箱の中にいます。",
+    "blank_index": 3
+  },
+  {
+    "word": "into",
+    "sentence": "Look into my eyes.",
+    "ja": "私の目を見て。",
+    "blank_index": 1
+  },
+  {
+    "word": "is",
+    "sentence": "This is my dog.",
+    "ja": "これは私の犬です。",
+    "blank_index": 1
+  },
+  {
+    "word": "it",
+    "sentence": "I like it a lot.",
+    "ja": "私はそれがとても好きです。",
+    "blank_index": 2
+  },
+  {
+    "word": "its",
+    "sentence": "The dog wags its tail.",
+    "ja": "犬はしっぽを振ります。",
+    "blank_index": 3
+  },
+  {
+    "word": "many",
+    "sentence": "I have many books.",
+    "ja": "私はたくさんの本を持っています。",
+    "blank_index": 2
+  },
+  {
+    "word": "may",
+    "sentence": "You may go now.",
+    "ja": "もう行っていいですよ。",
+    "blank_index": 1
+  },
+  {
+    "word": "more",
+    "sentence": "I want more time.",
+    "ja": "私はもっと時間が欲しいです。",
+    "blank_index": 2
+  },
+  {
+    "word": "my",
+    "sentence": "This is my house.",
+    "ja": "これは私の家です。",
+    "blank_index": 2
+  },
+  {
+    "word": "no",
+    "sentence": "I have no time.",
+    "ja": "私には時間がありません。",
+    "blank_index": 2
+  },
+  {
+    "word": "not",
+    "sentence": "This is not big.",
+    "ja": "これは大きくありません。",
+    "blank_index": 2
+  },
+  {
+    "word": "of",
+    "sentence": "This is a lot of water.",
+    "ja": "これはたくさんの水です。",
+    "blank_index": 4
+  },
+  {
+    "word": "on",
+    "sentence": "The cat is on the table.",
+    "ja": "猫はテーブルの上にいます。",
+    "blank_index": 3
+  },
+  {
+    "word": "or",
+    "sentence": "Do you want this or that?",
+    "ja": "これとあれ、どちらが欲しいですか?",
+    "blank_index": 4
+  },
+  {
+    "word": "other",
+    "sentence": "Look at the other side.",
+    "ja": "反対側を見て。",
+    "blank_index": 3
+  },
+  {
+    "word": "out",
+    "sentence": "Let's go out now.",
+    "ja": "今から外に出よう。",
+    "blank_index": 2
+  },
+  {
+    "word": "than",
+    "sentence": "This is bigger than that.",
+    "ja": "これはあれより大きいです。",
+    "blank_index": 3
+  },
+  {
+    "word": "that",
+    "sentence": "I like that book.",
+    "ja": "私はあの本が好きです。",
+    "blank_index": 2
+  },
+  {
+    "word": "the",
+    "sentence": "The sun is up.",
+    "ja": "太陽が昇っています。",
+    "blank_index": 0
+  },
+  {
+    "word": "their",
+    "sentence": "This is their house.",
+    "ja": "これは彼らの家です。",
+    "blank_index": 2
+  },
+  {
+    "word": "them",
+    "sentence": "I like them a lot.",
+    "ja": "私は彼らがとても好きです。",
+    "blank_index": 2
+  },
+  {
+    "word": "then",
+    "sentence": "First eat, then play.",
+    "ja": "まず食べて、それから遊んで。",
+    "blank_index": 2
+  },
+  {
+    "word": "there",
+    "sentence": "The book is there.",
+    "ja": "本はそこにあります。",
+    "blank_index": 3
+  },
+  {
+    "word": "these",
+    "sentence": "I like these books.",
+    "ja": "私はこれらの本が好きです。",
+    "blank_index": 2
+  },
+  {
+    "word": "they",
+    "sentence": "They are my friends.",
+    "ja": "彼らは私の友達です。",
+    "blank_index": 0
+  },
+  {
+    "word": "this",
+    "sentence": "This is my dog.",
+    "ja": "これは私の犬です。",
+    "blank_index": 0
+  },
+  {
+    "word": "to",
+    "sentence": "I want to go home.",
+    "ja": "私は家に帰りたいです。",
+    "blank_index": 2
+  },
+  {
+    "word": "was",
+    "sentence": "It was a long day.",
+    "ja": "長い一日でした。",
+    "blank_index": 1
+  },
+  {
+    "word": "we",
+    "sentence": "We are friends.",
+    "ja": "私たちは友達です。",
+    "blank_index": 0
+  },
+  {
+    "word": "were",
+    "sentence": "We were here first.",
+    "ja": "私たちが先にここにいました。",
+    "blank_index": 1
+  },
+  {
+    "word": "what",
+    "sentence": "What is your name?",
+    "ja": "あなたの名前は何ですか?",
+    "blank_index": 0
+  },
+  {
+    "word": "when",
+    "sentence": "Come when you can.",
+    "ja": "来られる時に来て。",
+    "blank_index": 1
+  },
+  {
+    "word": "which",
+    "sentence": "Which one do you like?",
+    "ja": "どちらが好きですか?",
+    "blank_index": 0
+  },
+  {
+    "word": "who",
+    "sentence": "Who is that?",
+    "ja": "あれは誰ですか?",
+    "blank_index": 0
+  },
+  {
+    "word": "will",
+    "sentence": "I will help you.",
+    "ja": "私はあなたを助けます。",
+    "blank_index": 1
+  },
+  {
+    "word": "with",
+    "sentence": "Come with me.",
+    "ja": "私と一緒に来て。",
+    "blank_index": 1
+  },
+  {
+    "word": "would",
+    "sentence": "I would like water.",
+    "ja": "私は水が欲しいです。",
+    "blank_index": 1
+  },
+  {
+    "word": "your",
+    "sentence": "This is your book.",
+    "ja": "これはあなたの本です。",
+    "blank_index": 2
+  }
+]

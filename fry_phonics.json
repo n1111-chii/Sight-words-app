@@ -1,0 +1,6002 @@
+[
+  {
+    "word": "a",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "about",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "all",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "am",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "an",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "and",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "are",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "as",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "at",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "be",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "been",
+    "tricky": true,
+    "highlight": "ee",
+    "note": "eeは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "but",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "by",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "called",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "can",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "come",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "could",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "day",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "did",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "do",
+    "tricky": true,
+    "highlight": "o",
+    "note": "oが長いu音(ウー)になる"
+  },
+  {
+    "word": "down",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "each",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "find",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "first",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "for",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "from",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "get",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "go",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "had",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "has",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "have",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "he",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "her",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "him",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "his",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "how",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "I",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "if",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "in",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "into",
+    "tricky": true,
+    "highlight": "o",
+    "note": "語末のoが長いu音(ウー)になる"
+  },
+  {
+    "word": "is",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "it",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "its",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "like",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "long",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "look",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "made",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "make",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "many",
+    "tricky": true,
+    "highlight": "a",
+    "note": "aが短いa音ではなくe音に近い発音になる"
+  },
+  {
+    "word": "may",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "more",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "my",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "no",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "not",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "now",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "number",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "of",
+    "tricky": true,
+    "highlight": "f",
+    "note": "語の終わりのfは「フ」ではなく濁って「ヴ」と読むよ"
+  },
+  {
+    "word": "on",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "one",
+    "tricky": true,
+    "highlight": null,
+    "note": "綴りと発音が一致しない特殊語(ワン)"
+  },
+  {
+    "word": "or",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "other",
+    "tricky": true,
+    "highlight": "o",
+    "note": "oが短いo音ではなくu音になる"
+  },
+  {
+    "word": "out",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "part",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "people",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "said",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "see",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "she",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "so",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "some",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "than",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "that",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "the",
+    "tricky": true,
+    "highlight": "e",
+    "note": "eが弱い曖昧母音(schwa)で発音される"
+  },
+  {
+    "word": "their",
+    "tricky": true,
+    "highlight": "ei",
+    "note": "eiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "them",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "then",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "there",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "these",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "they",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "this",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "time",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "to",
+    "tricky": true,
+    "highlight": "o",
+    "note": "oが長いu音(ウー)になる"
+  },
+  {
+    "word": "two",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "up",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "use",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "was",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "water",
+    "tricky": true,
+    "highlight": "a",
+    "note": "aがオ音に近い発音になる"
+  },
+  {
+    "word": "way",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "we",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "were",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "what",
+    "tricky": true,
+    "highlight": "a",
+    "note": "aが短いa音ではなくu音に近い発音になる"
+  },
+  {
+    "word": "when",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "which",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "who",
+    "tricky": true,
+    "highlight": "wh",
+    "note": "whは本当はwの音のはずだけど、hの音(フー)で読むよ"
+  },
+  {
+    "word": "will",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "with",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "words",
+    "tricky": true,
+    "highlight": "or",
+    "note": "orがr音化母音のer音になる"
+  },
+  {
+    "word": "would",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "write",
+    "tricky": true,
+    "highlight": "wr",
+    "note": "wrのwは発音しない黙字だよ。rの音だけで読むよ"
+  },
+  {
+    "word": "you",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "your",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "after",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "again",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "air",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "also",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "America",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "animal",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "another",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "answer",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "any",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "around",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ask",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "away",
+    "tricky": true,
+    "highlight": "aw",
+    "note": "awは本当は「オー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "back",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "because",
+    "tricky": true,
+    "highlight": "u",
+    "note": "母音+子音+eのルールなら「ウー」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "before",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "big",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "boy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "came",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "change",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "different",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "does",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "end",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "even",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "follow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "form",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "found",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "give",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "good",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "great",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "hand",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "help",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "here",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "home",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "house",
+    "tricky": true,
+    "highlight": "u",
+    "note": "母音+子音+eのルールなら「ウー」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "just",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "kind",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "know",
+    "tricky": true,
+    "highlight": "kn",
+    "note": "knのkは発音しない黙字だよ。nの音だけで読むよ"
+  },
+  {
+    "word": "land",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "large",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "learn",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "letter",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "line",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "little",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "live",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "man",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "me",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "means",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "men",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "most",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mother",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "move",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "much",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "must",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "name",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "need",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "new",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "off",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "old",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "only",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "our",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "over",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "page",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "picture",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "place",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "play",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "point",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "put",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "read",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "right",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "same",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "say",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sentence",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "set",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "should",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "show",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "small",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sound",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "spell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "still",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "study",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "such",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "take",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "things",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "think",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "three",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "through",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "too",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "try",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "turn",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "us",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "very",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "want",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "well",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "went",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "where",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "why",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "work",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "world",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "years",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "above",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "add",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "almost",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "along",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "always",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "began",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "begin",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "being",
+    "tricky": true,
+    "highlight": "ei",
+    "note": "eiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "below",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "between",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "book",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "both",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "car",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "carry",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "children",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "city",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "close",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "country",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "cut",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "don't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "earth",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "eat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "enough",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "every",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "example",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "eyes",
+    "tricky": true,
+    "highlight": "ey",
+    "note": "eyは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "face",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "family",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "far",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "father",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "feet",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "few",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "food",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "four",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "girl",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "got",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "group",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "grow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hard",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "head",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "hear",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "high",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "idea",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "important",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Indian",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "it's",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "keep",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "last",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "late",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "leave",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "left",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "let",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "life",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "light",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "list",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "might",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mile",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "miss",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mountains",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "near",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "never",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "next",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "night",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "often",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "once",
+    "tricky": true,
+    "highlight": null,
+    "note": "綴りと発音が一致しない特殊語(ワンス)"
+  },
+  {
+    "word": "open",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "own",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "paper",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "plant",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "real",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "river",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "run",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "saw",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "school",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sea",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "second",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "seem",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "side",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "something",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sometimes",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "song",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "soon",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "start",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "state",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stop",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "story",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "talk",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "those",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "thought",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "together",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "took",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tree",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "under",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "until",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "walk",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "watch",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "while",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "white",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "without",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "young",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "across",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "against",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "area",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "become",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "best",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "better",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "birds",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "black",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "body",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "certain",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "cold",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "color",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "complete",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "covered",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cried",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "didn't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dog",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "door",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "draw",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "during",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "early",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "easy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ever",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fall",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "farm",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fast",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "field",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "figure",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fire",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fish",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "five",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "friends",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ground",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "happened",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "heard",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "himself",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hold",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "horse",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hours",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "however",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "hundred",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "I'll",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "king",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "knew",
+    "tricky": true,
+    "highlight": "kn",
+    "note": "knのkは発音しない黙字だよ。nの音だけで読むよ"
+  },
+  {
+    "word": "listen",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "low",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "map",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mark",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "measure",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "money",
+    "tricky": true,
+    "highlight": "ey",
+    "note": "eyは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "morning",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "music",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "north",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "notice",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "numeral",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "order",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "passed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pattern",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "piece",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "plan",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "problem",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "products",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pulled",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "questions",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "reached",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "red",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "remember",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rock",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "room",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "seen",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "several",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ship",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "short",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "since",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sing",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "slowly",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "south",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "space",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stand",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "step",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sun",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sure",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "table",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "today",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "told",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "top",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "toward",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "town",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "travel",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "true",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "unit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "upon",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "usually",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "voice",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "vowel",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "war",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "waves",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "whole",
+    "tricky": true,
+    "highlight": "wh",
+    "note": "whは本当はwの音のはずだけど、ここではhの音(ホゥ)で読むよ"
+  },
+  {
+    "word": "wind",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wood",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "able",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ago",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "among",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ball",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "base",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "became",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "behind",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "boat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "box",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bread",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "bring",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "brought",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "building",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "built",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cannot",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "carefully",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "check",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "circle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "class",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "clear",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "common",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "contain",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "correct",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "course",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "dark",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "decided",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "deep",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "done",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "dry",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "English",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "equation",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "explain",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fact",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "feel",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "filled",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "finally",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fine",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fly",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "force",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "front",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "full",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "game",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "gave",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "government",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "green",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "half",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "heat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "heavy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hot",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "inches",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "include",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "inside",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "island",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "known",
+    "tricky": true,
+    "highlight": "kn",
+    "note": "knのkは発音しない黙字だよ。nの音だけで読むよ"
+  },
+  {
+    "word": "language",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "less",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "machine",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "material",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "minutes",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "note",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "nothing",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "noun",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "object",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ocean",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "oh",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pair",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "person",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "plane",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "power",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "produce",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "quickly",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ran",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rest",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "road",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "round",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rule",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "scientists",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shape",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shown",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "six",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "size",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "special",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stars",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stay",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stood",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "street",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "strong",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "surface",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "system",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ten",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "though",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "thousands",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "understand",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "verb",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wait",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "warm",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "week",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wheels",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "yes",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "yet",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "anything",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "arms",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "beautiful",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "believe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "beside",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bill",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "blue",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "brother",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "can't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cause",
+    "tricky": true,
+    "highlight": "u",
+    "note": "母音+子音+eのルールなら「ウー」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "cells",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "center",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "clothes",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dance",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "describe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "developed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "difference",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "direction",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "discovered",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "distance",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "divided",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "drive",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "drop",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "edge",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "eggs",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "energy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Europe",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "exercise",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "farmers",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "felt",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "finished",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "flowers",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "forest",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "general",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "gone",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "grass",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "happy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "heart",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "held",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "instruments",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "interest",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "job",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "kept",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lay",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "legs",
+    "tricky": true,
+    "highlight": "s",
+    "note": "語の終わりのsは「ス」ではなく濁って「ズ」と読むよ"
+  },
+  {
+    "word": "length",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "love",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "main",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "matter",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "meet",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "members",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "million",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mind",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "months",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "moon",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "paint",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "paragraph",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "past",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "perhaps",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "picked",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "present",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "probably",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "race",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rain",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "raised",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ready",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "reason",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "record",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "region",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "represent",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "return",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "root",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shall",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sign",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "simple",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "site",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sky",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "soft",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "square",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "store",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "subject",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "suddenly",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sum",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "summer",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "syllables",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "teacher",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "test",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "third",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "train",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wall",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "weather",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "west",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "whether",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wide",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wild",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "window",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "winter",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wish",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "written",
+    "tricky": true,
+    "highlight": "wr",
+    "note": "wrのwは発音しない黙字だよ。rの音だけで読むよ"
+  },
+  {
+    "word": "act",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Africa",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "age",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "already",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "although",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "amount",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "angle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "appear",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "baby",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bear",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "beat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bottom",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bright",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "broken",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "build",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "buy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "care",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "case",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "century",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "consonant",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "copy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "couldn't",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "count",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cross",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dictionary",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "died",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dress",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "either",
+    "tricky": true,
+    "highlight": "ei",
+    "note": "eiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "everyone",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "everything",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "exactly",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "factors",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fight",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fingers",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "floor",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fraction",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "free",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "French",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "gold",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hair",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "hill",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hole",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hope",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ice",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "instead",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "iron",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "jumped",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "killed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lake",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "laughed",
+    "tricky": true,
+    "highlight": "au",
+    "note": "auは本当は「オー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "lead",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "let's",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lot",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "melody",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "metal",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "method",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "middle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "milk",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "moment",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "nation",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "natural",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "outside",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "per",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "phrase",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "poor",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "possible",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pounds",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pushed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "quiet",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "quite",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "remain",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "result",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ride",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rolled",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sail",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "scale",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "section",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sleep",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "smiled",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "snow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "soil",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "solve",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "someone",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "son",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "speak",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "speed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "spring",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stone",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "surprise",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tall",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "temperature",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "themselves",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tiny",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "trip",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "type",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "village",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "within",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wonder",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "alone",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "art",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bad",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bank",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "break",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "brown",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "burning",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "business",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "captain",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "catch",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "caught",
+    "tricky": true,
+    "highlight": "au",
+    "note": "auは本当は「オー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "cents",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "child",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "choose",
+    "tricky": true,
+    "highlight": "o",
+    "note": "母音+子音+eのルールなら「オウ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "clean",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "climbed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cloud",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "coast",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "continued",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "control",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cool",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cost",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "decimal",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "desert",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "design",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "direct",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "drawing",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ears",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "east",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "else",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "engine",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "England",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "equal",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "experiment",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "express",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "feeling",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "flow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "foot",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "garden",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "gas",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "glass",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "God",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "grew",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "history",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "human",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hunting",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "increase",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "information",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "itself",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "joined",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "key",
+    "tricky": true,
+    "highlight": "ey",
+    "note": "eyは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "lady",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "law",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "least",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lost",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "maybe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mouth",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "party",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pay",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "period",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "plains",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "please",
+    "tricky": true,
+    "highlight": "a",
+    "note": "母音+子音+eのルールなら「エイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "practice",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "president",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "received",
+    "tricky": true,
+    "highlight": "ei",
+    "note": "eiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "report",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ring",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rise",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "row",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "save",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "seeds",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sent",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "separate",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "serve",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shouted",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "single",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "skin",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "statement",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stick",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "straight",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "strange",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "students",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "suppose",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "symbols",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "team",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "touch",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "trouble",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "uncle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "valley",
+    "tricky": true,
+    "highlight": "ey",
+    "note": "eyは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "visit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wear",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "whose",
+    "tricky": true,
+    "highlight": "wh",
+    "note": "whは本当はwの音のはずだけど、ここではhの音(ホゥ)で読むよ"
+  },
+  {
+    "word": "wire",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "woman",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wrote",
+    "tricky": true,
+    "highlight": "wr",
+    "note": "wrのwは発音しない黙字だよ。rの音だけで読むよ"
+  },
+  {
+    "word": "yard",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "you're",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "yourself",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "addition",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "army",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "belong",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "block",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "blood",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "blow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "board",
+    "tricky": true,
+    "highlight": "oa",
+    "note": "oaは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "bones",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "branches",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cattle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "chief",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "compare",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "compound",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "consider",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cook",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "corner",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "crops",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "crowd",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "current",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "doctor",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dollars",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "eight",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "electric",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "elements",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "enjoy",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "entered",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "except",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "exciting",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "expect",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "famous",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "fit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "flat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fruit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fun",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "guess",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hit",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "indicate",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "industry",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "insects",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "interesting",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Japanese",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lie",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "lifted",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "loud",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "major",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mall",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "meat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "mine",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "modern",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "movement",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "necessary",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "observe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "park",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "particular",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "planets",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "poem",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pole",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "position",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "process",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "property",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "provide",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rather",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rhythm",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rich",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "safe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sand",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "science",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "send",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sense",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "seven",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sharp",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shoulder",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "sight",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "silent",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "soldiers",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "spot",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "spread",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "stream",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "string",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "suggested",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "supply",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "swim",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "terms",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "thick",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "thin",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "thus",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tied",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tone",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "trade",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tube",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "value",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wash",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wasn't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "weight",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wife",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wings",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "won't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "action",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "actually",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "adjective",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "afraid",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "agreed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "ahead",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "allow",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "apple",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "arrived",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "born",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "bought",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "British",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "capital",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "chance",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "chart",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "church",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "column",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "company",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "conditions",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "corn",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cotton",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "cows",
+    "tricky": true,
+    "highlight": "ow",
+    "note": "owは本当は「オウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "create",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "dead",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "deal",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "death",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "details",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "determine",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "difficult",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "division",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "doesn't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "effect",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "entire",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "especially",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "evening",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "experience",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "factories",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fair",
+    "tricky": true,
+    "highlight": "ai",
+    "note": "aiは本当は「エイ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "fear",
+    "tricky": true,
+    "highlight": "ea",
+    "note": "eaは本当は「イー」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "fig",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "forward",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "France",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "fresh",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Greek",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "gun",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "hoe",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "huge",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "isn't",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "led",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "level",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "located",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "march",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "match",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "molecules",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "northern",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "nose",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "office",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "opposite",
+    "tricky": true,
+    "highlight": "i",
+    "note": "母音+子音+eのルールなら「アイ」と伸ばす音になるはずだけど、この単語では違う音で読むよ"
+  },
+  {
+    "word": "oxygen",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "plural",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "prepared",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "pretty",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "printed",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "radio",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "repeated",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rope",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "rose",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "score",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "seat",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "settled",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shoes",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "shop",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "similar",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sir",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sister",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "smell",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "solution",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "southern",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "steel",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "stretched",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "substances",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "suffix",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "sugar",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "tools",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "total",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "track",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "triangle",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "truck",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "underline",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "various",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "view",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "Washington",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "we'll",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "western",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "win",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "women",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "workers",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  },
+  {
+    "word": "wouldn't",
+    "tricky": true,
+    "highlight": "ou",
+    "note": "ouは本当は「アウ」と読むことが多いけど、この単語では違う音になるよ"
+  },
+  {
+    "word": "wrong",
+    "tricky": true,
+    "highlight": "wr",
+    "note": "wrのwは発音しない黙字だよ。rの音だけで読むよ"
+  },
+  {
+    "word": "yellow",
+    "tricky": false,
+    "highlight": null,
+    "note": ""
+  }
+]

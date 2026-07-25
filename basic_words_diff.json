@@ -1,0 +1,1472 @@
+[
+  {
+    "word": "zero",
+    "ja": "0",
+    "category": "数"
+  },
+  {
+    "word": "nine",
+    "ja": "9",
+    "category": "数"
+  },
+  {
+    "word": "eleven",
+    "ja": "11",
+    "category": "数"
+  },
+  {
+    "word": "twelve",
+    "ja": "12",
+    "category": "数"
+  },
+  {
+    "word": "thirteen",
+    "ja": "13",
+    "category": "数"
+  },
+  {
+    "word": "fourteen",
+    "ja": "14",
+    "category": "数"
+  },
+  {
+    "word": "fifteen",
+    "ja": "15",
+    "category": "数"
+  },
+  {
+    "word": "sixteen",
+    "ja": "16",
+    "category": "数"
+  },
+  {
+    "word": "seventeen",
+    "ja": "17",
+    "category": "数"
+  },
+  {
+    "word": "eighteen",
+    "ja": "18",
+    "category": "数"
+  },
+  {
+    "word": "nineteen",
+    "ja": "19",
+    "category": "数"
+  },
+  {
+    "word": "twenty",
+    "ja": "20",
+    "category": "数"
+  },
+  {
+    "word": "thirty",
+    "ja": "30",
+    "category": "数"
+  },
+  {
+    "word": "forty",
+    "ja": "40",
+    "category": "数"
+  },
+  {
+    "word": "fifty",
+    "ja": "50",
+    "category": "数"
+  },
+  {
+    "word": "sixty",
+    "ja": "60",
+    "category": "数"
+  },
+  {
+    "word": "seventy",
+    "ja": "70",
+    "category": "数"
+  },
+  {
+    "word": "eighty",
+    "ja": "80",
+    "category": "数"
+  },
+  {
+    "word": "ninety",
+    "ja": "90",
+    "category": "数"
+  },
+  {
+    "word": "fourth",
+    "ja": "4番目",
+    "category": "数"
+  },
+  {
+    "word": "fifth",
+    "ja": "5番目",
+    "category": "数"
+  },
+  {
+    "word": "sixth",
+    "ja": "6番目",
+    "category": "数"
+  },
+  {
+    "word": "seventh",
+    "ja": "7番目",
+    "category": "数"
+  },
+  {
+    "word": "eighth",
+    "ja": "8番目",
+    "category": "数"
+  },
+  {
+    "word": "ninth",
+    "ja": "9番目",
+    "category": "数"
+  },
+  {
+    "word": "tenth",
+    "ja": "10番目",
+    "category": "数"
+  },
+  {
+    "word": "minute",
+    "ja": "分",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "month",
+    "ja": "月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "year",
+    "ja": "年",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Monday",
+    "ja": "月曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Tuesday",
+    "ja": "火曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Wednesday",
+    "ja": "水曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Thursday",
+    "ja": "木曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Friday",
+    "ja": "金曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Saturday",
+    "ja": "土曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "Sunday",
+    "ja": "日曜日",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "January",
+    "ja": "1月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "February",
+    "ja": "2月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "March",
+    "ja": "3月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "April",
+    "ja": "4月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "May",
+    "ja": "5月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "June",
+    "ja": "6月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "July",
+    "ja": "7月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "August",
+    "ja": "8月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "September",
+    "ja": "9月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "October",
+    "ja": "10月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "November",
+    "ja": "11月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "December",
+    "ja": "12月",
+    "category": "時間・日・月"
+  },
+  {
+    "word": "autumn",
+    "ja": "秋",
+    "category": "季節・方角"
+  },
+  {
+    "word": "orange",
+    "ja": "オレンジ色",
+    "category": "色"
+  },
+  {
+    "word": "pink",
+    "ja": "ピンク",
+    "category": "色"
+  },
+  {
+    "word": "purple",
+    "ja": "紫色",
+    "category": "色"
+  },
+  {
+    "word": "rectangle",
+    "ja": "長方形",
+    "category": "形"
+  },
+  {
+    "word": "diamond",
+    "ja": "ひし形",
+    "category": "形"
+  },
+  {
+    "word": "star",
+    "ja": "星形",
+    "category": "形"
+  },
+  {
+    "word": "grandfather",
+    "ja": "祖父",
+    "category": "人"
+  },
+  {
+    "word": "grandmother",
+    "ja": "祖母",
+    "category": "人"
+  },
+  {
+    "word": "friend",
+    "ja": "友達",
+    "category": "人"
+  },
+  {
+    "word": "eye",
+    "ja": "目",
+    "category": "体"
+  },
+  {
+    "word": "ear",
+    "ja": "耳",
+    "category": "体"
+  },
+  {
+    "word": "teeth",
+    "ja": "歯",
+    "category": "体"
+  },
+  {
+    "word": "knee",
+    "ja": "ひざ",
+    "category": "体"
+  },
+  {
+    "word": "leg",
+    "ja": "あし",
+    "category": "体"
+  },
+  {
+    "word": "toe",
+    "ja": "つま先",
+    "category": "体"
+  },
+  {
+    "word": "elementary school",
+    "ja": "小学校",
+    "category": "学校"
+  },
+  {
+    "word": "junior high school",
+    "ja": "中学校",
+    "category": "学校"
+  },
+  {
+    "word": "high school",
+    "ja": "高等学校",
+    "category": "学校"
+  },
+  {
+    "word": "arts and crafts",
+    "ja": "図画工作",
+    "category": "学校"
+  },
+  {
+    "word": "calligraphy",
+    "ja": "習字",
+    "category": "学校"
+  },
+  {
+    "word": "home economics",
+    "ja": "家庭科",
+    "category": "学校"
+  },
+  {
+    "word": "math",
+    "ja": "算数",
+    "category": "学校"
+  },
+  {
+    "word": "moral education",
+    "ja": "道徳",
+    "category": "学校"
+  },
+  {
+    "word": "P.E.",
+    "ja": "体育",
+    "category": "学校"
+  },
+  {
+    "word": "social studies",
+    "ja": "社会科",
+    "category": "学校"
+  },
+  {
+    "word": "classroom",
+    "ja": "教室",
+    "category": "学校"
+  },
+  {
+    "word": "computer room",
+    "ja": "コンピュータールーム",
+    "category": "学校"
+  },
+  {
+    "word": "cooking room",
+    "ja": "家庭科室",
+    "category": "学校"
+  },
+  {
+    "word": "entrance",
+    "ja": "昇降口",
+    "category": "学校"
+  },
+  {
+    "word": "gym",
+    "ja": "体育館",
+    "category": "学校"
+  },
+  {
+    "word": "library",
+    "ja": "図書室",
+    "category": "学校"
+  },
+  {
+    "word": "playground",
+    "ja": "校庭",
+    "category": "学校"
+  },
+  {
+    "word": "restroom",
+    "ja": "トイレ",
+    "category": "学校"
+  },
+  {
+    "word": "crayon",
+    "ja": "クレヨン",
+    "category": "学校"
+  },
+  {
+    "word": "eraser",
+    "ja": "消しゴム",
+    "category": "学校"
+  },
+  {
+    "word": "glue stick",
+    "ja": "スティックのり",
+    "category": "学校"
+  },
+  {
+    "word": "ink",
+    "ja": "インク",
+    "category": "学校"
+  },
+  {
+    "word": "magnet",
+    "ja": "じしゃく",
+    "category": "学校"
+  },
+  {
+    "word": "marker",
+    "ja": "マーカー",
+    "category": "学校"
+  },
+  {
+    "word": "notebook",
+    "ja": "ノート",
+    "category": "学校"
+  },
+  {
+    "word": "pen",
+    "ja": "ペン",
+    "category": "学校"
+  },
+  {
+    "word": "pencil",
+    "ja": "鉛筆",
+    "category": "学校"
+  },
+  {
+    "word": "pencil case",
+    "ja": "筆箱",
+    "category": "学校"
+  },
+  {
+    "word": "ruler",
+    "ja": "定規",
+    "category": "学校"
+  },
+  {
+    "word": "scissors",
+    "ja": "はさみ",
+    "category": "学校"
+  },
+  {
+    "word": "stapler",
+    "ja": "ホッチキス",
+    "category": "学校"
+  },
+  {
+    "word": "entrance ceremony",
+    "ja": "入学式",
+    "category": "学校"
+  },
+  {
+    "word": "field trip",
+    "ja": "遠足",
+    "category": "学校"
+  },
+  {
+    "word": "graduation ceremony",
+    "ja": "卒業式",
+    "category": "学校"
+  },
+  {
+    "word": "sports festival",
+    "ja": "運動会",
+    "category": "学校"
+  },
+  {
+    "word": "swimming meet",
+    "ja": "水泳大会",
+    "category": "学校"
+  },
+  {
+    "word": "sport",
+    "ja": "スポーツ",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "soccer",
+    "ja": "サッカー",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "baseball",
+    "ja": "野球",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "basketball",
+    "ja": "バスケットボール",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "volleyball",
+    "ja": "バレーボール",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "dodgeball",
+    "ja": "ドッジボール",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "swimming",
+    "ja": "水泳",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "table tennis",
+    "ja": "卓球",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "badminton",
+    "ja": "バドミントン",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "tennis",
+    "ja": "テニス",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "marathon",
+    "ja": "マラソン",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "gymnastics",
+    "ja": "体操",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "cycling",
+    "ja": "サイクリング",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "rugby",
+    "ja": "ラグビー",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "football",
+    "ja": "フットボール",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "racket",
+    "ja": "ラケット",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "camping",
+    "ja": "キャンプ",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "fishing",
+    "ja": "魚釣り",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "hiking",
+    "ja": "ハイキング",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "jogging",
+    "ja": "ジョギング",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "jump rope",
+    "ja": "なわとび",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "reading",
+    "ja": "読書",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "shopping",
+    "ja": "買い物",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "piano",
+    "ja": "ピアノ",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "guitar",
+    "ja": "ギター",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "violin",
+    "ja": "バイオリン",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "drum",
+    "ja": "ドラム",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "recorder",
+    "ja": "リコーダー",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "vacation",
+    "ja": "休暇",
+    "category": "スポーツ・趣味"
+  },
+  {
+    "word": "elephant",
+    "ja": "象",
+    "category": "動物"
+  },
+  {
+    "word": "panda",
+    "ja": "パンダ",
+    "category": "動物"
+  },
+  {
+    "word": "lion",
+    "ja": "ライオン",
+    "category": "動物"
+  },
+  {
+    "word": "pig",
+    "ja": "ぶた",
+    "category": "動物"
+  },
+  {
+    "word": "monkey",
+    "ja": "さる",
+    "category": "動物"
+  },
+  {
+    "word": "mouse",
+    "ja": "ねずみ",
+    "category": "動物"
+  },
+  {
+    "word": "chicken",
+    "ja": "にわとり",
+    "category": "動物"
+  },
+  {
+    "word": "gorilla",
+    "ja": "ゴリラ",
+    "category": "動物"
+  },
+  {
+    "word": "sheep",
+    "ja": "ひつじ",
+    "category": "動物"
+  },
+  {
+    "word": "tiger",
+    "ja": "とら",
+    "category": "動物"
+  },
+  {
+    "word": "rabbit",
+    "ja": "うさぎ",
+    "category": "動物"
+  },
+  {
+    "word": "koala",
+    "ja": "コアラ",
+    "category": "動物"
+  },
+  {
+    "word": "duck",
+    "ja": "あひる",
+    "category": "動物"
+  },
+  {
+    "word": "fox",
+    "ja": "きつね",
+    "category": "動物"
+  },
+  {
+    "word": "frog",
+    "ja": "かえる",
+    "category": "動物"
+  },
+  {
+    "word": "snake",
+    "ja": "へび",
+    "category": "動物"
+  },
+  {
+    "word": "wolf",
+    "ja": "おおかみ",
+    "category": "動物"
+  },
+  {
+    "word": "goat",
+    "ja": "ヤギ",
+    "category": "動物"
+  },
+  {
+    "word": "ant",
+    "ja": "あり",
+    "category": "動物"
+  },
+  {
+    "word": "cow",
+    "ja": "牛",
+    "category": "動物"
+  },
+  {
+    "word": "spider",
+    "ja": "くも",
+    "category": "動物"
+  },
+  {
+    "word": "zebra",
+    "ja": "しまうま",
+    "category": "動物"
+  },
+  {
+    "word": "banana",
+    "ja": "バナナ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "strawberry",
+    "ja": "いちご",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "grape",
+    "ja": "ぶどう",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "orange",
+    "ja": "オレンジ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "melon",
+    "ja": "メロン",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "pineapple",
+    "ja": "パイナップル",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "lemon",
+    "ja": "レモン",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "watermelon",
+    "ja": "すいか",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "vegetable",
+    "ja": "野菜",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "tomato",
+    "ja": "トマト",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "carrot",
+    "ja": "にんじん",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "onion",
+    "ja": "たまねぎ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "potato",
+    "ja": "じゃがいも",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "cucumber",
+    "ja": "きゅうり",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "cabbage",
+    "ja": "キャベツ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "mushroom",
+    "ja": "きのこ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "breakfast",
+    "ja": "朝食",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "lunch",
+    "ja": "昼食",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "dinner",
+    "ja": "夕食",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "rice",
+    "ja": "米・ごはん",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "egg",
+    "ja": "卵",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "sandwich",
+    "ja": "サンドイッチ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "pizza",
+    "ja": "ピザ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "hamburger",
+    "ja": "ハンバーガー",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "salad",
+    "ja": "サラダ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "soup",
+    "ja": "スープ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "dessert",
+    "ja": "デザート",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "ice cream",
+    "ja": "アイスクリーム",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "cake",
+    "ja": "ケーキ",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "chocolate",
+    "ja": "チョコレート",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "juice",
+    "ja": "ジュース",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "coffee",
+    "ja": "コーヒー",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "tea",
+    "ja": "紅茶",
+    "category": "食べ物・飲み物"
+  },
+  {
+    "word": "Brazil",
+    "ja": "ブラジル",
+    "category": "国"
+  },
+  {
+    "word": "Britain",
+    "ja": "イギリス",
+    "category": "国"
+  },
+  {
+    "word": "Canada",
+    "ja": "カナダ",
+    "category": "国"
+  },
+  {
+    "word": "China",
+    "ja": "中国",
+    "category": "国"
+  },
+  {
+    "word": "Egypt",
+    "ja": "エジプト",
+    "category": "国"
+  },
+  {
+    "word": "Germany",
+    "ja": "ドイツ",
+    "category": "国"
+  },
+  {
+    "word": "India",
+    "ja": "インド",
+    "category": "国"
+  },
+  {
+    "word": "Italy",
+    "ja": "イタリア",
+    "category": "国"
+  },
+  {
+    "word": "Japan",
+    "ja": "日本",
+    "category": "国"
+  },
+  {
+    "word": "Kenya",
+    "ja": "ケニア",
+    "category": "国"
+  },
+  {
+    "word": "Russia",
+    "ja": "ロシア",
+    "category": "国"
+  },
+  {
+    "word": "Singapore",
+    "ja": "シンガポール",
+    "category": "国"
+  },
+  {
+    "word": "Spain",
+    "ja": "スペイン",
+    "category": "国"
+  },
+  {
+    "word": "Thailand",
+    "ja": "タイ",
+    "category": "国"
+  },
+  {
+    "word": "Vietnam",
+    "ja": "ベトナム",
+    "category": "国"
+  },
+  {
+    "word": "Mexico",
+    "ja": "メキシコ",
+    "category": "国"
+  },
+  {
+    "word": "police officer",
+    "ja": "警察官",
+    "category": "仕事"
+  },
+  {
+    "word": "fire fighter",
+    "ja": "消防士",
+    "category": "仕事"
+  },
+  {
+    "word": "dentist",
+    "ja": "歯科医師",
+    "category": "仕事"
+  },
+  {
+    "word": "pilot",
+    "ja": "パイロット",
+    "category": "仕事"
+  },
+  {
+    "word": "bus driver",
+    "ja": "バスの運転手",
+    "category": "仕事"
+  },
+  {
+    "word": "farmer",
+    "ja": "農場経営者",
+    "category": "仕事"
+  },
+  {
+    "word": "artist",
+    "ja": "芸術家",
+    "category": "仕事"
+  },
+  {
+    "word": "astronaut",
+    "ja": "宇宙飛行士",
+    "category": "仕事"
+  },
+  {
+    "word": "vet",
+    "ja": "獣医師",
+    "category": "仕事"
+  },
+  {
+    "word": "singer",
+    "ja": "歌手",
+    "category": "仕事"
+  },
+  {
+    "word": "queen",
+    "ja": "女王",
+    "category": "仕事"
+  },
+  {
+    "word": "hospital",
+    "ja": "病院",
+    "category": "施設"
+  },
+  {
+    "word": "police station",
+    "ja": "警察署",
+    "category": "施設"
+  },
+  {
+    "word": "fire station",
+    "ja": "消防署",
+    "category": "施設"
+  },
+  {
+    "word": "post office",
+    "ja": "郵便局",
+    "category": "施設"
+  },
+  {
+    "word": "station",
+    "ja": "駅",
+    "category": "施設"
+  },
+  {
+    "word": "library",
+    "ja": "図書館",
+    "category": "施設"
+  },
+  {
+    "word": "museum",
+    "ja": "博物館",
+    "category": "施設"
+  },
+  {
+    "word": "zoo",
+    "ja": "動物園",
+    "category": "施設"
+  },
+  {
+    "word": "aquarium",
+    "ja": "水族館",
+    "category": "施設"
+  },
+  {
+    "word": "amusement park",
+    "ja": "遊園地",
+    "category": "施設"
+  },
+  {
+    "word": "convenience store",
+    "ja": "コンビニ",
+    "category": "施設"
+  },
+  {
+    "word": "supermarket",
+    "ja": "スーパーマーケット",
+    "category": "施設"
+  },
+  {
+    "word": "department store",
+    "ja": "デパート",
+    "category": "施設"
+  },
+  {
+    "word": "restaurant",
+    "ja": "レストラン",
+    "category": "施設"
+  },
+  {
+    "word": "bookstore",
+    "ja": "書店",
+    "category": "施設"
+  },
+  {
+    "word": "gas station",
+    "ja": "ガソリンスタンド",
+    "category": "施設"
+  },
+  {
+    "word": "shrine",
+    "ja": "神社",
+    "category": "施設"
+  },
+  {
+    "word": "temple",
+    "ja": "寺",
+    "category": "施設"
+  },
+  {
+    "word": "castle",
+    "ja": "城",
+    "category": "施設"
+  },
+  {
+    "word": "beach",
+    "ja": "浜辺",
+    "category": "自然"
+  },
+  {
+    "word": "mountain",
+    "ja": "山",
+    "category": "自然"
+  },
+  {
+    "word": "flower",
+    "ja": "花",
+    "category": "自然"
+  },
+  {
+    "word": "rainbow",
+    "ja": "にじ",
+    "category": "自然"
+  },
+  {
+    "word": "birthday",
+    "ja": "誕生日",
+    "category": "生活"
+  },
+  {
+    "word": "festival",
+    "ja": "祭り",
+    "category": "生活"
+  },
+  {
+    "word": "bus",
+    "ja": "バス",
+    "category": "生活"
+  },
+  {
+    "word": "taxi",
+    "ja": "タクシー",
+    "category": "生活"
+  },
+  {
+    "word": "bicycle",
+    "ja": "自転車",
+    "category": "生活"
+  },
+  {
+    "word": "desk",
+    "ja": "机",
+    "category": "生活"
+  },
+  {
+    "word": "chair",
+    "ja": "椅子",
+    "category": "生活"
+  },
+  {
+    "word": "TV",
+    "ja": "テレビ",
+    "category": "生活"
+  },
+  {
+    "word": "bath",
+    "ja": "風呂",
+    "category": "生活"
+  },
+  {
+    "word": "cap",
+    "ja": "帽子",
+    "category": "生活"
+  },
+  {
+    "word": "shirt",
+    "ja": "シャツ",
+    "category": "生活"
+  },
+  {
+    "word": "sweater",
+    "ja": "セーター",
+    "category": "生活"
+  },
+  {
+    "word": "pants",
+    "ja": "ズボン",
+    "category": "生活"
+  },
+  {
+    "word": "boots",
+    "ja": "ブーツ",
+    "category": "生活"
+  },
+  {
+    "word": "bag",
+    "ja": "かばん",
+    "category": "生活"
+  },
+  {
+    "word": "umbrella",
+    "ja": "かさ",
+    "category": "生活"
+  },
+  {
+    "word": "clock",
+    "ja": "時計",
+    "category": "生活"
+  },
+  {
+    "word": "telephone",
+    "ja": "電話",
+    "category": "生活"
+  },
+  {
+    "word": "computer",
+    "ja": "コンピューター",
+    "category": "生活"
+  },
+  {
+    "word": "cup",
+    "ja": "カップ",
+    "category": "生活"
+  },
+  {
+    "word": "dish",
+    "ja": "皿",
+    "category": "生活"
+  },
+  {
+    "word": "calendar",
+    "ja": "カレンダー",
+    "category": "生活"
+  },
+  {
+    "word": "newspaper",
+    "ja": "新聞",
+    "category": "生活"
+  },
+  {
+    "word": "card",
+    "ja": "カード",
+    "category": "生活"
+  },
+  {
+    "word": "fireworks",
+    "ja": "花火",
+    "category": "生活"
+  },
+  {
+    "word": "homework",
+    "ja": "宿題",
+    "category": "生活"
+  },
+  {
+    "word": "afternoon",
+    "ja": "午後",
+    "category": "生活"
+  },
+  {
+    "word": "tomorrow",
+    "ja": "明日",
+    "category": "生活"
+  },
+  {
+    "word": "drink",
+    "ja": "飲む",
+    "category": "動詞"
+  },
+  {
+    "word": "jump",
+    "ja": "ジャンプする",
+    "category": "動詞"
+  },
+  {
+    "word": "teach",
+    "ja": "教える",
+    "category": "動詞"
+  },
+  {
+    "word": "brush",
+    "ja": "みがく",
+    "category": "動詞"
+  },
+  {
+    "word": "ski",
+    "ja": "スキーをする",
+    "category": "動詞"
+  },
+  {
+    "word": "skate",
+    "ja": "スケートをする",
+    "category": "動詞"
+  },
+  {
+    "word": "nice",
+    "ja": "すてきな",
+    "category": "形容詞"
+  },
+  {
+    "word": "wonderful",
+    "ja": "すばらしい",
+    "category": "形容詞"
+  },
+  {
+    "word": "fantastic",
+    "ja": "すばらしい",
+    "category": "形容詞"
+  },
+  {
+    "word": "sorry",
+    "ja": "すまないと思って",
+    "category": "形容詞"
+  },
+  {
+    "word": "sad",
+    "ja": "悲しい",
+    "category": "形容詞"
+  },
+  {
+    "word": "sleepy",
+    "ja": "ねむい",
+    "category": "形容詞"
+  },
+  {
+    "word": "tired",
+    "ja": "つかれた",
+    "category": "形容詞"
+  },
+  {
+    "word": "hungry",
+    "ja": "空腹の",
+    "category": "形容詞"
+  },
+  {
+    "word": "busy",
+    "ja": "いそがしい",
+    "category": "形容詞"
+  },
+  {
+    "word": "friendly",
+    "ja": "友好的な",
+    "category": "形容詞"
+  },
+  {
+    "word": "gentle",
+    "ja": "やさしい",
+    "category": "形容詞"
+  },
+  {
+    "word": "brave",
+    "ja": "勇かんな",
+    "category": "形容詞"
+  },
+  {
+    "word": "delicious",
+    "ja": "とてもおいしい",
+    "category": "形容詞"
+  },
+  {
+    "word": "sweet",
+    "ja": "あまい",
+    "category": "形容詞"
+  },
+  {
+    "word": "salty",
+    "ja": "塩からい",
+    "category": "形容詞"
+  },
+  {
+    "word": "sour",
+    "ja": "すっぱい",
+    "category": "形容詞"
+  },
+  {
+    "word": "cloudy",
+    "ja": "くもりの",
+    "category": "形容詞"
+  },
+  {
+    "word": "rainy",
+    "ja": "雨降りの",
+    "category": "形容詞"
+  },
+  {
+    "word": "snowy",
+    "ja": "雪降りの",
+    "category": "形容詞"
+  },
+  {
+    "word": "sunny",
+    "ja": "晴れた",
+    "category": "形容詞"
+  },
+  {
+    "word": "hi",
+    "ja": "やあ",
+    "category": "その他"
+  },
+  {
+    "word": "hello",
+    "ja": "こんにちは",
+    "category": "その他"
+  },
+  {
+    "word": "wow",
+    "ja": "わあ",
+    "category": "その他"
+  },
+  {
+    "word": "OK",
+    "ja": "いいよ",
+    "category": "その他"
+  },
+  {
+    "word": "bye",
+    "ja": "さようなら",
+    "category": "その他"
+  },
+  {
+    "word": "goodbye",
+    "ja": "さようなら",
+    "category": "その他"
+  }
+]

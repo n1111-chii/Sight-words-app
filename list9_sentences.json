@@ -1,0 +1,38 @@
+[
+  {
+    "word": "except",
+    "sentence": "Everyone is here except him.",
+    "ja": "彼以外みんなここにいます。",
+    "blank_index": 3
+  },
+  {
+    "word": "mine",
+    "sentence": "This book is mine.",
+    "ja": "この本は私のものです。",
+    "blank_index": 3
+  },
+  {
+    "word": "rather",
+    "sentence": "I would rather stay home.",
+    "ja": "私はむしろ家にいたいです。",
+    "blank_index": 2
+  },
+  {
+    "word": "thus",
+    "sentence": "It rained; thus, we stayed home.",
+    "ja": "雨が降ったので、私たちは家にいました。",
+    "blank_index": 2
+  },
+  {
+    "word": "wasn't",
+    "sentence": "It wasn't my fault.",
+    "ja": "それは私のせいではありませんでした。",
+    "blank_index": 1
+  },
+  {
+    "word": "won't",
+    "sentence": "I won't be late.",
+    "ja": "私は遅刻しません。",
+    "blank_index": 1
+  }
+]
