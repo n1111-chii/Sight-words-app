@@ -855,6 +855,11 @@
     "category": "食べ物・飲み物"
   },
   {
+    "word": "bread",
+    "ja": "パン",
+    "category": "食べ物・飲み物"
+  },
+  {
     "word": "egg",
     "ja": "卵",
     "category": "食べ物・飲み物"
@@ -1468,5 +1473,10 @@
     "word": "goodbye",
     "ja": "さようなら",
     "category": "その他"
+  },
+  {
+    "word": "its",
+    "ja": "それの",
+    "category": "代名詞"
   }
 ]

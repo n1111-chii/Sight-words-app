@@ -62,6 +62,12 @@
   .reference-sentence{margin-top:8px;color:var(--muted);font-size:.95rem;}
   .tricky-highlight{color:var(--accent);font-weight:900;}
   .tricky-note{margin-top:10px;font-size:.85rem;color:#7a5b00;background:#fff3cd;padding:8px 12px;border-radius:12px;display:inline-block;}
+  .search-input{width:100%;font-size:1rem;padding:12px 14px;border-radius:14px;border:2px solid #dfe3f7;outline:none;}
+  .search-input:focus{border-color:var(--primary);}
+  .search-results{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto;}
+  .search-result{width:100%;text-align:left;background:#f7f8ff;border:none;border-radius:12px;padding:10px 12px;cursor:pointer;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .search-result:active{transform:scale(0.98);}
+  .search-result-label{margin-left:auto;font-size:.75rem;color:var(--muted);}
   .summary-row{display:flex;gap:14px;justify-content:space-around;margin-bottom:14px;flex-wrap:wrap;}
   .stat{text-align:center;}
   .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--primary);}
@@ -332,6 +338,24 @@
   }
   function unitLabelFor(source, unit){
     return source === 'basic' ? String(unit) : ('List ' + unit);
+  }
+
+  function searchAllWords(query){
+    var qRaw = String(query).trim();
+    if(!qRaw) return [];
+    var q = qRaw.toLowerCase();
+    var results = [];
+    WORDS.forEach(function(w){
+      if(w.word.toLowerCase().indexOf(q)!==-1 || w.ja.indexOf(qRaw)!==-1){
+        results.push({ word:w.word, ja:w.ja, source:'word', unit:w.list, label:'単語 List '+w.list });
+      }
+    });
+    BASIC_WORDS.forEach(function(w){
+      if(w.word.toLowerCase().indexOf(q)!==-1 || w.ja.indexOf(qRaw)!==-1){
+        results.push({ word:w.word, ja:w.ja, source:'basic', unit:w.category, label:'Basic: '+w.category });
+      }
+    });
+    return results;
   }
 
   /* ---------- basic (school words diff) data ---------- */
@@ -883,9 +907,24 @@
                       : isBasic ? renderBasicModeGrid(basicRetestAvailable, basicLastTest)
                       : renderWordModeGrid(retestAvailable, lastTest);
 
+    var searchResults = searchAllWords(state.searchQuery || '');
+    var SEARCH_CAP = 20;
+    var searchHtml = '<section class="card"><h2>単語をさがす</h2>'
+      + '<input id="searchInput" class="search-input" type="text" placeholder="英単語 or 日本語の意味で検索" value="'+esc(state.searchQuery||'')+'" autocomplete="off" />'
+      + (searchResults.length ? (
+          '<ul class="search-results">' + searchResults.slice(0,SEARCH_CAP).map(function(r){
+            return '<li><button class="search-result" data-action="search-jump" data-source="'+r.source+'" data-unit="'+esc(String(r.unit))+'">'
+              + '<strong>'+esc(r.word)+'</strong><span class="ja-small">'+esc(r.ja)+'</span><span class="search-result-label">'+esc(r.label)+'</span>'
+            + '</button></li>';
+          }).join('') + '</ul>'
+          + (searchResults.length>SEARCH_CAP ? '<p class="muted">他 '+(searchResults.length-SEARCH_CAP)+' 件 — もう少し絞り込んでみてください</p>' : '')
+        ) : (state.searchQuery ? '<p class="muted">見つかりませんでした</p>' : ''))
+    + '</section>';
+
     return ''
       + '<h1 class="app-title">タイ単</h1>'
       + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
+      + searchHtml
       + '<section class="card"><h2>練習する内容</h2><div class="section-toggle">'
         + '<button class="btn list-btn '+(!isSentence && !isBasic?'selected':'')+'" data-action="select-section" data-section="word">単語</button>'
         + '<button class="btn list-btn '+(isSentence?'selected':'')+'" data-action="select-section" data-section="sentence">短文</button>'
@@ -901,9 +940,9 @@
   function renderWordModeGrid(retestAvailable, lastTest){
     return ''
       + '<div class="mode-group"><div class="mode-group-title">① 読み方(聞く)</div><div class="submode-row">'
-        + '<button class="btn small" data-action="start-reading" data-mode="jikkuri">じっくり</button>'
-        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="slow">スピード・ゆっくり</button>'
-        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="fast">スピード・はやい</button>'
+        + '<button class="btn small" data-action="start-reading" data-mode="jikkuri">基本</button>'
+        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="slow">ゆっくり</button>'
+        + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="fast">はやい</button>'
       + '</div></div>'
       + '<div class="mode-group"><div class="mode-group-title">② タイピング練習</div>'
         + '<label class="fast-toggle"><input type="checkbox" data-action="toggle-fastmode" '+(state.spellingFast?'checked':'')+' /> '
@@ -1188,6 +1227,12 @@
     app.innerHTML = html;
     var input = document.getElementById('answerInput');
     if(input) input.focus();
+    var searchInput = document.getElementById('searchInput');
+    if(searchInput){
+      searchInput.focus();
+      var v = searchInput.value;
+      searchInput.setSelectionRange(v.length, v.length);
+    }
   }
 
   function currentPracticeWord(){
@@ -1203,6 +1248,18 @@
       case 'select-list':
         state.selectedList = Number(el.dataset.list);
         state.notice = null;
+        render();
+        break;
+      case 'search-jump':
+        state.searchQuery = '';
+        if(el.dataset.source === 'basic'){
+          state.selectedCategory = el.dataset.unit;
+          state.basicGroup = groupForCategory(el.dataset.unit);
+          state.homeSection = 'basic';
+        }else{
+          state.selectedList = Number(el.dataset.unit);
+          state.homeSection = 'word';
+        }
         render();
         break;
       case 'select-section':
@@ -1289,11 +1346,11 @@
           var keepCategory = state.selectedCategory || state.list || null;
           var keepGroup = state.basicGroup || (keepCategory ? groupForCategory(keepCategory) : null);
           state = { screen:'home', selectedList:null, selectedCategory:keepCategory, basicGroup:keepGroup,
-            spellingFast:keepFast, notice:null, homeSection:'basic' };
+            spellingFast:keepFast, notice:null, homeSection:'basic', searchQuery:'' };
         }else{
           var keepList = state.selectedList || state.list || null;
           state = { screen:'home', selectedList:keepList, selectedCategory:null, basicGroup:null,
-            spellingFast:keepFast, notice:null, homeSection:'word' };
+            spellingFast:keepFast, notice:null, homeSection:'word', searchQuery:'' };
         }
         render();
         break;
@@ -1304,7 +1361,7 @@
       case 'go-retest': {
         var goRetestSource = state.source || 'word';
         if(!startRetest(goRetestSource)){
-          state = { screen:'home', selectedList:null, notice:'リトライ対象がありません', homeSection: goRetestSource };
+          state = { screen:'home', selectedList:null, notice:'リトライ対象がありません', homeSection: goRetestSource, searchQuery:'' };
         }
         render();
         break;
@@ -1351,6 +1408,14 @@
         if(w) speak(w.word);
         break;
       }
+    }
+  });
+
+  /* ---------- search input ---------- */
+  document.getElementById('app').addEventListener('input', function(e){
+    if(e.target && e.target.id === 'searchInput'){
+      state.searchQuery = e.target.value;
+      render();
     }
   });
 
@@ -1437,7 +1502,7 @@
     .then(function(){
       sentenceListsLoaded.sort(function(a,b){ return a-b; });
       state = { screen:'home', selectedList:null, selectedCategory:null, basicGroup:null,
-        spellingFast:false, notice:null, homeSection:'word' };
+        spellingFast:false, notice:null, homeSection:'word', searchQuery:'' };
       render();
     })
     .catch(function(err){
