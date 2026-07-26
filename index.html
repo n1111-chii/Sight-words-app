@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="タイ単">
 <meta name="theme-color" content="#5b7fff">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
 <title>タイ単</title>
 <style>
   :root{
@@ -1585,6 +1590,14 @@
         '<p style="text-align:center;padding-top:40px;">単語データの読み込みに失敗しました: '+esc(String(err))+'</p>';
     });
 })();
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('service-worker.js').catch(function(err){
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
 </script>
 </body>
 </html>
