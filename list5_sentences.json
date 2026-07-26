@@ -49,14 +49,14 @@
   },
   {
     "word": "yet",
-    "sentence": "I have not eaten yet.",
-    "ja": "私はまだ食べていません。",
+    "sentence": "I have not started yet.",
+    "ja": "私はまだ始めていません。",
     "blank_index": 4
   },
   {
     "word": "yes",
-    "sentence": "Yes, I like it.",
-    "ja": "はい、私はそれが好きです。",
+    "sentence": "Yes, I like cats.",
+    "ja": "はい、私は猫が好きです。",
     "blank_index": 0
   }
 ]

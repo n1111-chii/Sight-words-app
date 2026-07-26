@@ -1,8 +1,8 @@
 [
   {
     "word": "above",
-    "sentence": "The bird is above the tree.",
-    "ja": "鳥は木の上にいます。",
+    "sentence": "The cat is above the box.",
+    "ja": "猫は箱の上にいます。",
     "blank_index": 3
   },
   {
@@ -31,8 +31,8 @@
   },
   {
     "word": "between",
-    "sentence": "Sit between us.",
-    "ja": "私たちの間に座って。",
+    "sentence": "Come between us.",
+    "ja": "私たちの間に来て。",
     "blank_index": 1
   },
   {

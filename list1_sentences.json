@@ -1,20 +1,20 @@
 [
   {
     "word": "a",
-    "sentence": "I see a dog.",
-    "ja": "私は犬を見ます。",
+    "sentence": "I see a cat.",
+    "ja": "私は猫を見ます。",
     "blank_index": 2
   },
   {
     "word": "an",
-    "sentence": "I see an apple.",
-    "ja": "私はりんごを見ます。",
+    "sentence": "I have an apple.",
+    "ja": "私はりんごを持っています。",
     "blank_index": 2
   },
   {
     "word": "and",
-    "sentence": "You and I are here.",
-    "ja": "あなたと私はここにいます。",
+    "sentence": "You and I are friends.",
+    "ja": "あなたと私は友達です。",
     "blank_index": 1
   },
   {
@@ -31,8 +31,8 @@
   },
   {
     "word": "at",
-    "sentence": "Look at the sky.",
-    "ja": "空を見て。",
+    "sentence": "Look at the stars.",
+    "ja": "星を見て。",
     "blank_index": 1
   },
   {
@@ -61,8 +61,8 @@
   },
   {
     "word": "could",
-    "sentence": "I could see it.",
-    "ja": "私はそれを見ることができました。",
+    "sentence": "I could see the birds.",
+    "ja": "私は鳥たちを見ることができました。",
     "blank_index": 1
   },
   {
@@ -79,8 +79,8 @@
   },
   {
     "word": "down",
-    "sentence": "Sit down here.",
-    "ja": "ここに座って。",
+    "sentence": "Come down here.",
+    "ja": "ここに降りてきて。",
     "blank_index": 1
   },
   {
@@ -175,8 +175,8 @@
   },
   {
     "word": "its",
-    "sentence": "The dog wags its tail.",
-    "ja": "犬はしっぽを振ります。",
+    "sentence": "The dog has its way.",
+    "ja": "犬にはやり方があります。",
     "blank_index": 3
   },
   {
@@ -247,8 +247,8 @@
   },
   {
     "word": "than",
-    "sentence": "This is bigger than that.",
-    "ja": "これはあれより大きいです。",
+    "sentence": "This is more than that.",
+    "ja": "これはあれより多いです。",
     "blank_index": 3
   },
   {
@@ -304,6 +304,12 @@
     "sentence": "This is my dog.",
     "ja": "これは私の犬です。",
     "blank_index": 0
+  },
+  {
+    "word": "time",
+    "sentence": "It is time to eat.",
+    "ja": "食べる時間です。",
+    "blank_index": 2
   },
   {
     "word": "to",

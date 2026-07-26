@@ -121,8 +121,8 @@
   },
   {
     "word": "over",
-    "sentence": "The bird flew over the tree.",
-    "ja": "鳥は木の上を飛びました。",
+    "sentence": "The cat jumped over the box.",
+    "ja": "猫は箱の上を飛び越えました。",
     "blank_index": 3
   },
   {

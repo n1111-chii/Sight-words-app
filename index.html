@@ -1124,7 +1124,8 @@
 
   function renderDiffHtml(perWord){
     return perWord.map(function(w){
-      return '<span class="'+(w.ok?'diff-ok':'diff-bad')+'">'+esc(w.token || '&#12539;')+'</span>';
+      var display = w.token ? esc(w.token) : '(空欄)';
+      return '<span class="'+(w.ok?'diff-ok':'diff-bad')+'">'+display+'</span>';
     }).join(' ');
   }
 
@@ -1147,7 +1148,7 @@
         + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="全文を入力してEnter" /></div>'
         + feedbackHtml
       + '</div>'
-      + '<div class="hint-row">'+(state.showSound?'<span>Space 発音</span>':'')+'<span>Enter 判定</span></div>';
+      + '<div class="hint-row"><span>Enter 判定</span></div>';
   }
 
   function renderSentenceResult(){
@@ -1404,8 +1405,7 @@
       }
     }
     if(state.screen==='sentence-blank' || state.screen==='sentence-full'){
-      var soundAvailable = state.screen==='sentence-blank' || state.showSound;
-      if(e.code==='Space' && soundAvailable){
+      if(e.code==='Space' && state.screen==='sentence-blank'){
         e.preventDefault();
         var sItem2 = state.queue[state.index];
         if(sItem2) speak(sItem2.sentence);

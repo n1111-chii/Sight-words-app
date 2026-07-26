@@ -1,8 +1,8 @@
 [
   {
     "word": "already",
-    "sentence": "I have already eaten.",
-    "ja": "私はもう食べました。",
+    "sentence": "I have already finished.",
+    "ja": "私はもう終えました。",
     "blank_index": 2
   },
   {
@@ -25,8 +25,8 @@
   },
   {
     "word": "everyone",
-    "sentence": "Everyone likes the song.",
-    "ja": "みんながその歌を好きです。",
+    "sentence": "Everyone likes the game.",
+    "ja": "みんながそのゲームを好きです。",
     "blank_index": 0
   },
   {
@@ -55,8 +55,8 @@
   },
   {
     "word": "per",
-    "sentence": "It costs one dollar per day.",
-    "ja": "1日につき1ドルかかります。",
+    "sentence": "I go there once per week.",
+    "ja": "私は週に1度そこに行きます。",
     "blank_index": 4
   },
   {
@@ -73,14 +73,14 @@
   },
   {
     "word": "themselves",
-    "sentence": "The kids made it themselves.",
-    "ja": "子供たちは自分たちでそれを作りました。",
+    "sentence": "The children did it themselves.",
+    "ja": "子供たちは自分たちでそれをやりました。",
     "blank_index": 4
   },
   {
     "word": "within",
-    "sentence": "I will be back within an hour.",
-    "ja": "1時間以内に戻ります。",
+    "sentence": "I will come back within a day.",
+    "ja": "私は1日以内に戻ります。",
     "blank_index": 4
   }
 ]

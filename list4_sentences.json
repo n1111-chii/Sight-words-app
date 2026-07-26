@@ -1,14 +1,14 @@
 [
   {
     "word": "across",
-    "sentence": "I swam across the river.",
-    "ja": "私は川を泳いで渡りました。",
+    "sentence": "I ran across the river.",
+    "ja": "私は川を走って渡りました。",
     "blank_index": 2
   },
   {
     "word": "against",
-    "sentence": "Don't lean against the door.",
-    "ja": "ドアにもたれかからないで。",
+    "sentence": "Don't stand against the door.",
+    "ja": "ドアに寄りかからないで。",
     "blank_index": 2
   },
   {
@@ -19,14 +19,14 @@
   },
   {
     "word": "didn't",
-    "sentence": "I didn't see him.",
-    "ja": "私は彼を見ませんでした。",
+    "sentence": "I didn't see the dog.",
+    "ja": "私は犬を見ませんでした。",
     "blank_index": 1
   },
   {
     "word": "during",
-    "sentence": "I slept during the movie.",
-    "ja": "私は映画の間眠っていました。",
+    "sentence": "I rest during the trip.",
+    "ja": "私は旅行の間休みます。",
     "blank_index": 2
   },
   {
@@ -79,14 +79,14 @@
   },
   {
     "word": "usually",
-    "sentence": "I usually wake up early.",
-    "ja": "私はたいてい早起きします。",
+    "sentence": "I usually eat rice.",
+    "ja": "私はたいていご飯を食べます。",
     "blank_index": 1
   },
   {
     "word": "whole",
-    "sentence": "I ate the whole cake.",
-    "ja": "私はケーキを丸ごと食べました。",
+    "sentence": "I want the whole apple.",
+    "ja": "私はりんごを丸ごと欲しいです。",
     "blank_index": 3
   }
 ]
