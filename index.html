@@ -182,6 +182,16 @@
   var LAST_TEST_KEY = 'swa_last_unit_test';
   var BASIC_LAST_TEST_KEY = 'basic_last_unit_test';
 
+  /* 単位の数え方を「List1-10(100語)」から「100の位+List1-4(25語)」に変更したため、
+     単語セクションの直前テスト記録(④リトライ用)だけ一度きり無効化する。
+     学習記録(swa_progress等)には触れない。 */
+  (function migrateUnitScheme(){
+    if(localStorage.getItem('swa_unit_scheme') !== '25'){
+      localStorage.removeItem(LAST_TEST_KEY);
+      localStorage.setItem('swa_unit_scheme', '25');
+    }
+  })();
+
   function loadProgress(){
     try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
     catch(e){ return {}; }
@@ -318,14 +328,21 @@
     return picked;
   }
 
-  function wordsForList(listNum){
-    return WORDS.filter(function(w){ return w.list===listNum; }).sort(function(a,b){ return a.id-b.id; });
+  function quarterOfId(id){ return Math.floor(((id-1)%100)/25) + 1; }
+  function encodeWordUnit(hundred, quarter){ return (hundred-1)*4 + quarter; }
+  function decodeWordUnit(unit){
+    return { hundred: Math.floor((unit-1)/4) + 1, quarter: ((unit-1)%4) + 1 };
+  }
+  function wordsForQuarter(unit){
+    var d = decodeWordUnit(unit);
+    return WORDS.filter(function(w){ return w.list===d.hundred && quarterOfId(w.id)===d.quarter; })
+      .sort(function(a,b){ return a.id-b.id; });
   }
   function wordsForCategory(cat){
     return BASIC_WORDS.filter(function(w){ return w.category===cat; }).sort(function(a,b){ return a.id-b.id; });
   }
   function wordsForUnit(source, unit){
-    return source === 'basic' ? wordsForCategory(unit) : wordsForList(unit);
+    return source === 'basic' ? wordsForCategory(unit) : wordsForQuarter(unit);
   }
   function basicCategoryCount(cat){
     return BASIC_WORDS.filter(function(w){ return w.category===cat; }).length;
@@ -337,7 +354,9 @@
     return null;
   }
   function unitLabelFor(source, unit){
-    return source === 'basic' ? String(unit) : ('List ' + unit);
+    if(source === 'basic') return String(unit);
+    var d = decodeWordUnit(unit);
+    return (d.hundred*100) + ' の List' + d.quarter;
   }
 
   function searchAllWords(query){
@@ -347,7 +366,8 @@
     var results = [];
     WORDS.forEach(function(w){
       if(w.word.toLowerCase().indexOf(q)!==-1 || w.ja.indexOf(qRaw)!==-1){
-        results.push({ word:w.word, ja:w.ja, source:'word', unit:w.list, label:'単語 List '+w.list });
+        var unit = encodeWordUnit(w.list, quarterOfId(w.id));
+        results.push({ word:w.word, ja:w.ja, source:'word', unit:unit, label:unitLabelFor('word', unit)+'('+w.id+'番目)' });
       }
     });
     BASIC_WORDS.forEach(function(w){
@@ -435,7 +455,7 @@
   var state = { screen:'loading' };
   var pendingAdvanceTimer = null;
 
-  var SEGMENT_SIZE = 20;
+  var SEGMENT_SIZE = 25;
 
   /* ---------- timers (pausable/cancelable) ---------- */
   var READING_SPEED_SLOW_MS = 3500;
@@ -572,7 +592,7 @@
   }
   function startUnitTest(list, source){
     source = source || 'word';
-    var pool = shuffle(wordsForUnit(source, list)).slice(0,20);
+    var pool = shuffle(wordsForUnit(source, list)).slice(0,25);
     state = {
       screen:'unittest', list:list, source:source, unitLabel: unitLabelFor(source, list),
       queue:pool, index:0, feedback:null,
@@ -604,7 +624,7 @@
     var high = difficulty === 'high';
     state = {
       screen:'review', list:null, source:source, unitLabel:null,
-      queue: pickReviewWords(20, source), index:0, feedback:null,
+      queue: pickReviewWords(25, source), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
       allowBack:false, allowSkip:false,
       showJa: !high, showSound: !high, showSpelling: high,
@@ -620,7 +640,7 @@
     clearAllTimers();
     state = {
       screen:'sentence-blank', list:list,
-      queue: shuffle(sentencesForList(list)), index:0,
+      queue: shuffle(sentencesForList(list)).slice(0,25), index:0,
       feedback:null, correctCount:0, total:0, wrongItems:[]
     };
     render();
@@ -675,7 +695,7 @@
     var flags = SENTENCE_FULL_TIERS[tier] || SENTENCE_FULL_TIERS[0];
     state = {
       screen:'sentence-full', list:list, tier:tier,
-      queue: shuffle(sentencesForList(list)), index:0,
+      queue: shuffle(sentencesForList(list)).slice(0,25), index:0,
       feedback:null, correctCount:0, total:0, wrongItems:[],
       showSentence: flags.showSentence, showJa: flags.showJa, showSound: flags.showSound
     };
@@ -832,11 +852,11 @@
     saveProgress();
     localStorage.removeItem(LAST_TEST_KEY);
   }
-  function resetListProgress(listNum){
-    wordsForList(listNum).forEach(function(w){ delete progress[w.word]; });
+  function resetListProgress(unitNum){
+    wordsForUnit('word', unitNum).forEach(function(w){ delete progress[w.word]; });
     saveProgress();
     var last = loadLastUnitTest();
-    if(last && last.listId === listNum){
+    if(last && last.listId === unitNum){
       localStorage.removeItem(LAST_TEST_KEY);
     }
   }
@@ -876,8 +896,8 @@
       + '</section>'
       + '<section class="card"><h2>データのリセット</h2>'
         + '<div class="btn-row">'
-          + '<button class="btn '+(state.selectedList?'':'disabled')+'" data-action="confirm-reset-list">この Listをリセット'
-            + (state.selectedList ? '(List '+state.selectedList+')' : '') + '</button>'
+          + '<button class="btn '+(state.selectedList?'':'disabled')+'" data-action="confirm-reset-list">この25語をリセット'
+            + (state.selectedList ? '('+unitLabelFor('word', state.selectedList)+')' : '') + '</button>'
           + '<button class="btn" data-action="confirm-reset-all">全データをリセット</button>'
         + '</div>'
       + '</section>';
@@ -901,8 +921,10 @@
         + basicWeakHtml
       + '</section>';
 
-    var unitPickerTitle = isBasic ? 'グループを選ぶ' : 'Listを選ぶ';
-    var unitPickerHtml = isBasic ? renderBasicPicker() : ('<div class="list-grid">'+listBtns+'</div>');
+    var unitPickerTitle = isBasic ? 'グループを選ぶ' : isSentence ? 'Listを選ぶ' : '100の位を選ぶ';
+    var unitPickerHtml = isBasic ? renderBasicPicker()
+                        : isSentence ? ('<div class="list-grid">'+listBtns+'</div>')
+                        : renderWordPicker();
     var modeGridHtml = isSentence ? renderSentenceModeGrid()
                       : isBasic ? renderBasicModeGrid(basicRetestAvailable, basicLastTest)
                       : renderWordModeGrid(retestAvailable, lastTest);
@@ -953,7 +975,7 @@
         + '<button class="btn small" data-action="start-spelling" data-submode="3">音</button>'
         + '<button class="btn small" data-action="start-spelling" data-submode="2">意味</button>'
       + '</div></div>'
-      + '<button class="btn mode-btn" data-action="start-unittest">③ ミニテスト(20問)</button>'
+      + '<button class="btn mode-btn" data-action="start-unittest">③ ミニテスト(25問)</button>'
       + '<button class="btn mode-btn '+(retestAvailable?'':'disabled')+'" data-action="start-retest">④ リトライ '
         + (retestAvailable ? '('+lastTest.wordIds.length+'問)' : '(前回テスト待ち)') + '</button>'
       + '<div class="mode-group"><div class="mode-group-title">⑤ まとめテスト</div><div class="submode-row">'
@@ -974,6 +996,28 @@
         + '<button class="btn small" data-action="start-sentence-full" data-tier="2">2. 和訳のみ</button>'
         + '<button class="btn small" data-action="start-sentence-full" data-tier="3">3. 音声のみ</button>'
       + '</div></div>';
+  }
+
+  function renderWordPicker(){
+    var hundredBtns = '';
+    for(var h=1; h<=10; h++){
+      var sel = state.selectedHundred===h ? ' selected' : '';
+      hundredBtns += '<button class="btn list-btn'+sel+'" data-action="select-hundred" data-hundred="'+h+'">'+(h*100)+'</button>';
+    }
+    var html = '<div class="list-grid">'+hundredBtns+'</div>';
+    if(state.selectedHundred){
+      var quarterBtns = '';
+      for(var q=1; q<=4; q++){
+        var unit = encodeWordUnit(state.selectedHundred, q);
+        var qsel = state.selectedList===unit ? ' selected' : '';
+        quarterBtns += '<button class="btn small list-btn'+qsel+'" data-action="select-quarter" data-quarter="'+q+'">List'+q+'</button>';
+      }
+      html += '<div class="mode-group"><div class="mode-group-title">'+(state.selectedHundred*100)+' の中の List</div>'
+        + '<div class="submode-row">'+quarterBtns+'</div>'
+        + (state.selectedList ? '<div style="margin-top:10px;"><button class="btn small ghost" data-action="view-wordlist">&#128269; この25語を見る</button></div>' : '')
+      + '</div>';
+    }
+    return html;
   }
 
   function renderBasicPicker(){
@@ -1005,7 +1049,7 @@
 
   function renderResetModal(){
     if(!state.confirmReset) return '';
-    var label = state.confirmReset === 'all' ? '全データ' : ('List '+state.confirmReset.list);
+    var label = state.confirmReset === 'all' ? '全データ' : unitLabelFor('word', state.confirmReset.list);
     return '<div class="modal-overlay">'
       + '<div class="modal-box">'
         + '<p>'+esc(label)+'の記録を本当にリセットしますか?<br>元に戻せません。</p>'
@@ -1141,6 +1185,15 @@
       + '</div>';
   }
 
+  function renderWordlist(){
+    var words = wordsForUnit('word', state.selectedList);
+    var label = unitLabelFor('word', state.selectedList);
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>単語一覧 - '+esc(label)+'</h2></div>'
+      + '<div class="card"><ul class="weak-list">' + words.map(function(w){
+          return '<li>'+esc(w.word)+'<span class="ja-small">'+esc(w.ja)+'</span></li>';
+        }).join('') + '</ul></div>';
+  }
+
   function renderSentenceBlank(){
     var item = state.queue[state.index];
     var feedbackHtml = '';
@@ -1215,6 +1268,7 @@
     var html;
     switch(state.screen){
       case 'home': html = renderHome(); break;
+      case 'wordlist': html = renderWordlist(); break;
       case 'reading': html = renderReading(); break;
       case 'spelling': html = state.checkpoint ? renderSpellingCheckpoint() : renderPractice(); break;
       case 'unittest': case 'retest': case 'review': html = renderPractice(); break;
@@ -1250,6 +1304,22 @@
         state.notice = null;
         render();
         break;
+      case 'select-hundred':
+        state.selectedHundred = Number(el.dataset.hundred);
+        state.selectedList = null;
+        state.notice = null;
+        render();
+        break;
+      case 'select-quarter':
+        state.selectedList = encodeWordUnit(state.selectedHundred, Number(el.dataset.quarter));
+        state.notice = null;
+        render();
+        break;
+      case 'view-wordlist':
+        if(!state.selectedList){ break; }
+        state.screen = 'wordlist';
+        render();
+        break;
       case 'search-jump':
         state.searchQuery = '';
         if(el.dataset.source === 'basic'){
@@ -1258,6 +1328,7 @@
           state.homeSection = 'basic';
         }else{
           state.selectedList = Number(el.dataset.unit);
+          state.selectedHundred = decodeWordUnit(state.selectedList).hundred;
           state.homeSection = 'word';
         }
         render();
@@ -1265,6 +1336,9 @@
       case 'select-section':
         state.homeSection = el.dataset.section;
         if(state.homeSection==='sentence' && sentenceListsLoaded.indexOf(state.selectedList)===-1){
+          state.selectedList = null;
+        }
+        if(state.homeSection==='word' && !state.selectedHundred){
           state.selectedList = null;
         }
         state.notice = null;
@@ -1349,7 +1423,8 @@
             spellingFast:keepFast, notice:null, homeSection:'basic', searchQuery:'' };
         }else{
           var keepList = state.selectedList || state.list || null;
-          state = { screen:'home', selectedList:keepList, selectedCategory:null, basicGroup:null,
+          var keepHundred = state.selectedHundred || (keepList ? decodeWordUnit(keepList).hundred : null);
+          state = { screen:'home', selectedList:keepList, selectedCategory:null, basicGroup:null, selectedHundred:keepHundred,
             spellingFast:keepFast, notice:null, homeSection:'word', searchQuery:'' };
         }
         render();
@@ -1501,7 +1576,7 @@
     })
     .then(function(){
       sentenceListsLoaded.sort(function(a,b){ return a-b; });
-      state = { screen:'home', selectedList:null, selectedCategory:null, basicGroup:null,
+      state = { screen:'home', selectedList:null, selectedCategory:null, basicGroup:null, selectedHundred:null,
         spellingFast:false, notice:null, homeSection:'word', searchQuery:'' };
       render();
     })
