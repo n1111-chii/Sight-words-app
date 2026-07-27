@@ -146,12 +146,13 @@
   }
 
   /* ---------- speech ---------- */
-  function speak(word){
-    if(!('speechSynthesis' in window)) return;
+  function speak(word, onEnd){
+    if(!('speechSynthesis' in window)){ if(onEnd) onEnd(); return; }
     window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(word);
     utter.lang = 'en-US';
     utter.rate = 0.9;
+    if(onEnd){ utter.onend = onEnd; utter.onerror = onEnd; }
     window.speechSynthesis.speak(utter);
   }
 
@@ -463,7 +464,7 @@
   var SEGMENT_SIZE = 25;
 
   /* ---------- timers (pausable/cancelable) ---------- */
-  var READING_SPEED_SLOW_MS = 3500;
+  var READING_SLOW_GAP_MS = 700; /* 「ゆっくり」モード: 発音終了後、次の単語に進むまでの間 */
   var READING_SPEED_FAST_MS = 1300;
   var SPELLING_REVEAL_MS = 1800;
   var REVIEW_FLASH_MS = 1300;
@@ -543,12 +544,28 @@
   }
   function beginSpeedReadingWord(){
     if(readingAutoTimer){ readingAutoTimer.cancel(); readingAutoTimer = null; }
+    state.readingToken = (state.readingToken || 0) + 1;
+    var token = state.readingToken;
     var word = state.queue[state.index];
+    state.awaitingGapStart = false;
     render();
     if(!word) return;
-    if(state.readingSpeed === 'slow') speak(word.word);
-    var dur = state.readingSpeed === 'slow' ? READING_SPEED_SLOW_MS : READING_SPEED_FAST_MS;
-    readingAutoTimer = makeTimer(dur, function(){
+    if(state.readingSpeed === 'slow'){
+      speak(word.word, function(){
+        if(state.readingToken !== token) return;
+        if(state.paused){ state.awaitingGapStart = true; return; }
+        startSlowGapTimer(token);
+      });
+    }else{
+      readingAutoTimer = makeTimer(READING_SPEED_FAST_MS, function(){
+        readingAutoTimer = null;
+        advanceReadingWord();
+      });
+    }
+  }
+  function startSlowGapTimer(token){
+    readingAutoTimer = makeTimer(READING_SLOW_GAP_MS, function(){
+      if(state.readingToken !== token) return;
       readingAutoTimer = null;
       advanceReadingWord();
     });
@@ -567,6 +584,12 @@
   }
   function resumeSpeedReading(){
     state.paused = false;
+    if(state.awaitingGapStart){
+      state.awaitingGapStart = false;
+      startSlowGapTimer(state.readingToken);
+      render();
+      return;
+    }
     if(readingAutoTimer){ readingAutoTimer.resume(); render(); }
     else beginSpeedReadingWord();
   }
@@ -970,7 +993,7 @@
         + '<button class="btn small" data-action="start-reading" data-mode="jikkuri">基本</button>'
         + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="slow">ゆっくり</button>'
         + '<button class="btn small" data-action="start-reading" data-mode="speed" data-speed="fast">はやい</button>'
-      + '</div></div>'
+      + '</div><p class="fast-toggle">はやい(音声なし・見て読む練習)</p></div>'
       + '<div class="mode-group"><div class="mode-group-title">② タイピング練習</div>'
         + '<label class="fast-toggle"><input type="checkbox" data-action="toggle-fastmode" '+(state.spellingFast?'checked':'')+' /> '
         + 'はやいモード(基本・意味・音のみ対象/表示が一瞬で消えて'+Math.round(ANSWER_DEADLINE_MS/1000)+'秒以内に入力。音＋意味には非適用)</label>'
