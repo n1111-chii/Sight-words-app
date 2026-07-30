@@ -42,6 +42,18 @@
 - アイコン(`icons/icon-192.png`・`icon-512.png`・`apple-touch-icon.png`)はテーマカラー背景+「単」の文字によるプレースホルダー(PowerShellの`System.Drawing`で生成)。後で本番アイコンに差し替え可能
 - **iPad Safari実機での「ホーム画面に追加」時の表示・フルスクリーン起動・機内モードでの動作、および実機での音声再生確認は未実施**(自分の環境では検証不可、要ユーザー確認)
 
+### 短文音声(Gemini TTS「Leda」)
+- 依頼書`kuroko_tts_generation.md`→ 声質確認の結果`kuroko_hybrid_audio.md`でハイブリッド構成に決定:
+  **単語(サイトワード1000語+Basic296語)は従来通りWeb Speech APIのまま**(Ledaは単語単体だと不自然になることが確認された)。**短文199文だけLeda音声に切り替える**。
+- `generate_audio.py`(新規): `.env`の`GEMINI_API_KEY`を使い、`list1〜10_sentences.json`の199文をGemini TTS(モデル`gemini-2.5-flash-preview-tts`、声`Leda`)で生成し、`ffmpeg`でmp3化して`/audio/sentence_list<N>_<slug(word)>.mp3`に保存。既存ファイルはスキップするので**再実行可能**(中断しても続きから進む)。`--limit N`で件数を絞ったテスト実行、`--manifest-only`でAPIを呼ばず`audio-manifest.json`だけ再生成できる
+- **2026-07-29時点で199文中188文が生成済み・コミット済み**。残り11文(list9〜10の一部)は**Gemini TTSの1日100リクエスト上限**により保留中。未生成分はWeb Speech APIへ自動フォールバックするため、アプリの動作自体には支障なし。クォータ回復後に`python generate_audio.py`→`git add audio/ audio-manifest.json`→追加コミットで埋める予定
+- 判明した制約: このモデル(`gemini-2.5-flash-preview-tts`)には「1分10リクエスト」「1日100リクエスト」の上限がある(有料枠でも)。スクリプトの呼び出し間隔は6.5秒に設定済み、`RESOURCE_EXHAUSTED`時は65秒待ってリトライする実装にしてある
+- 判明した罠: 命令文っぽい短文(例:"Do it as I say.")をモデルが「指示」と誤解し、音声ではなくテキストで応答して`400 INVALID_ARGUMENT`になることがある。対策として発話テキストの前に`"Say in a natural, neutral tone: "`という読み上げ専用タスクだと明示するプレフィックスを付けて解決済み(修正後は該当エラー再発なし)
+- `index.html`: 短文セクションの🔊ボタン・Spaceキー再生を`speakSentenceItem(item)`(生成済みmp3を`Audio`要素で再生、無ければ`speak()`=Web Speech APIにフォールバック)に変更済み。**単語側の再生ロジックは無変更**(Leda化を一度試みたが依頼書により撤回)
+- `service-worker.js`: `CACHE_VERSION`を`v2`に上げ、`audio-manifest.json`を読んで短文音声を1件ずつ個別にキャッシュ(1件失敗しても他は継続、install自体は失敗しない設計)。ブラウザで188件のキャッシュ・オフライン再生・未生成分のフォールバックを確認済み
+- 音声フォルダの総サイズ: **188ファイルで約1.9MB**(想定よりかなり軽量)
+- APIキーは`.env`(`GEMINI_API_KEY`)で管理、`.gitignore`済み。**GitHub上の全コミット履歴・現在のリモートツリーを直接確認し、キーが一切公開されていないことを確認済み**(2026-07-29、ユーザーからの安全確認依頼に対応)
+
 ## 未完成の機能・既知の課題
 
 - **Basic用のリセットUI**が無い(短文の進捗も同様)。単語セクションの「データのリセット」はList/全データ対応だが、Basic・短文の進捗を消す手段が今のところ無い。
@@ -51,10 +63,11 @@
 
 ## 次にやるべきこと
 
-1. **iPad実機でのPWA動作確認**(ホーム画面追加・フルスクリーン起動・機内モード・音声再生)— ユーザー側での実施が必要
-2. プレースホルダーアイコンを本番用デザインに差し替え(要望が出たら)
-3. Basic・短文セクションのリセットUI追加を検討(要望が出たら)
-4. 短文データとfry_words.jsonの整合性(itsの扱いなど)について、方針が固まれば短文データ側を調整
+1. **【最優先・進行中】短文Leda音声の生成を再開**: Gemini TTSの1日100リクエスト上限が回復したら`python generate_audio.py`を実行し、残り109文を生成。全199文揃ったら`index.html`/`service-worker.js`/`generate_audio.py`/`audio/`一式をまとめてコミット(pushは都度確認)
+2. **iPad実機でのPWA動作確認**(ホーム画面追加・フルスクリーン起動・機内モード・音声再生)— ユーザー側での実施が必要
+3. プレースホルダーアイコンを本番用デザインに差し替え(要望が出たら)
+4. Basic・短文セクションのリセットUI追加を検討(要望が出たら)
+5. 短文データとfry_words.jsonの整合性(itsの扱いなど)について、方針が固まれば短文データ側を調整
 
 ## 重要な設計判断
 

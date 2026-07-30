@@ -156,6 +156,20 @@
     window.speechSynthesis.speak(utter);
   }
 
+  /* 短文セクションのみ、事前生成したLeda音声(mp3)を再生する。
+     単語単体の発音はLedaだと不自然になることが確認されたため、単語はWeb Speech APIのまま。 */
+  function slugify(text){
+    return String(text).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+  }
+  function sentenceAudioPath(item){
+    return 'audio/sentence_list' + item.list + '_' + slugify(item.word) + '.mp3';
+  }
+  function speakSentenceItem(item){
+    var audio = new Audio(sentenceAudioPath(item));
+    audio.onerror = function(){ speak(item.sentence); };
+    audio.play().catch(function(){ speak(item.sentence); });
+  }
+
   /* ---------- audio feedback (game-ish beep) ---------- */
   var audioCtx = null;
   function getAudioCtx(){
@@ -1393,7 +1407,7 @@
         break;
       case 'speak-sentence': {
         var sItem = currentSentenceItem();
-        if(sItem) speak(sItem.sentence);
+        if(sItem) speakSentenceItem(sItem);
         break;
       }
       case 'sentence-again':
@@ -1576,7 +1590,7 @@
       if(e.code==='Space' && state.screen==='sentence-blank'){
         e.preventDefault();
         var sItem2 = state.queue[state.index];
-        if(sItem2) speak(sItem2.sentence);
+        if(sItem2) speakSentenceItem(sItem2);
         return;
       }
       if(e.key==='Enter'){
