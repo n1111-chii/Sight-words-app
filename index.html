@@ -639,7 +639,7 @@
       screen:'unittest', list:list, source:source, unitLabel: unitLabelFor(source, list),
       queue:pool, index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
-      allowBack:false, allowSkip:false, showJa:true, showSound:true
+      allowBack:true, allowSkip:true, showJa:true, showSound:true
     };
   }
   function startRetest(source){
@@ -655,7 +655,7 @@
       screen:'retest', list:last.listId, source:source, unitLabel: unitLabelFor(source, last.listId),
       queue: shuffle(words), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
-      allowBack:false, allowSkip:false, showJa:true, showSound:true,
+      allowBack:true, allowSkip:true, showJa:true, showSound:true,
       round:1, maxRounds:5, roundWrong:[]
     };
     return true;
@@ -668,7 +668,7 @@
       screen:'review', list:null, source:source, unitLabel:null,
       queue: pickReviewWords(25, source), index:0, feedback:null,
       correctCount:0, total:0, wrongWords:[],
-      allowBack:false, allowSkip:false,
+      allowBack:true, allowSkip:true,
       showJa: !high, showSound: !high, showSpelling: high,
       fastMode: high, revealShow: high ? 'spelling' : null, revealPhase:false,
       revealDurationMs: REVIEW_FLASH_MS,
@@ -854,6 +854,11 @@
   }
   function skipCurrent(){
     if(!state.allowSkip) return;
+    var skipped = state.queue[state.index];
+    if(skipped){
+      state.wrongWords.push(skipped);
+      if(state.screen==='retest') state.roundWrong.push(skipped);
+    }
     state.feedback = null;
     state.index++;
     if(triggerSpellingCheckpointIfNeeded()) return;
@@ -885,6 +890,11 @@
     if(state.index < state.queue.length && state.index % SEGMENT_SIZE === 0){
       state.checkpoint = true;
     }
+    render();
+  }
+  function prevReadingWord(){
+    if(state.index<=0) return;
+    state.index--;
     render();
   }
 
@@ -1129,7 +1139,9 @@
       hints = '<span>Space '+(state.paused?'再開':'一時停止')+'</span>'
         + (state.paused ? '<span>&#8592; &#8594; 前後へ移動</span>' : '');
     }else{
-      hints = '<span>Space 発音</span><span>Enter 次へ</span>';
+      hints = (state.index>0 ? '<button class="btn small ghost" data-action="reading-prev">&#8592; 前へ</button>' : '')
+        + '<span>Space 発音</span>'
+        + '<button class="btn small ghost" data-action="reading-next">次へ &#8594;</button>';
     }
     return '<div class="topbar">'+homeBtnHtml()+'<h2>読み方(聞く) - '+esc(state.unitLabel)+'</h2>'
       + '<span class="progress-label">'+(state.index+1)+' / '+state.queue.length+'</span></div>'
@@ -1167,10 +1179,10 @@
           + trickyNoteHtml(state.feedback.correctSpelling);
     }
     var hints = [];
-    if(state.allowBack) hints.push('<span>&#8592; 前へ</span>');
+    if(state.allowBack) hints.push('<button class="btn small ghost" data-action="go-back">&#8592; 前へ</button>');
     if(state.showSound) hints.push('<span>Space 発音</span>');
     hints.push('<span>Enter 判定</span>');
-    if(state.allowSkip) hints.push('<span>&#8594; スキップ</span>');
+    if(state.allowSkip) hints.push('<button class="btn small ghost" data-action="skip-current">&#8594; スキップ</button>');
 
     return '<div class="topbar">'+homeBtnHtml()+'<h2>'+esc(title)+esc(listLabel)+'</h2>'
       + '<span class="progress-label">'+(state.index+1)+' / '+total+'</span></div>'
@@ -1525,6 +1537,18 @@
         if(w) speak(w.word);
         break;
       }
+      case 'go-back':
+        goBack();
+        break;
+      case 'skip-current':
+        skipCurrent();
+        break;
+      case 'reading-prev':
+        prevReadingWord();
+        break;
+      case 'reading-next':
+        nextReadingWord();
+        break;
     }
   });
 
@@ -1556,6 +1580,12 @@
       }else if(e.key==='Enter'){
         e.preventDefault();
         nextReadingWord();
+      }else if(e.key==='ArrowLeft'){
+        e.preventDefault();
+        prevReadingWord();
+      }else if(e.key==='ArrowRight'){
+        e.preventDefault();
+        nextReadingWord();
       }
       return;
     }
@@ -1579,10 +1609,10 @@
         }
         return;
       }
-      if(state.screen==='spelling' && e.key==='ArrowLeft'){
+      if(state.allowBack && e.key==='ArrowLeft'){
         e.preventDefault(); goBack(); return;
       }
-      if(state.screen==='spelling' && e.key==='ArrowRight'){
+      if(state.allowSkip && e.key==='ArrowRight'){
         e.preventDefault(); skipCurrent(); return;
       }
     }
