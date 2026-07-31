@@ -846,13 +846,37 @@
     presentPracticeWord();
   }
 
+  function isSentenceScreen(){
+    return state.screen==='sentence-blank' || state.screen==='sentence-full';
+  }
   function goBack(){
+    if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer=null; }
+    if(isSentenceScreen()){
+      if(state.index<=0) return;
+      state.feedback = null;
+      state.index--;
+      render();
+      return;
+    }
     if(!state.allowBack || state.index<=0) return;
     state.feedback = null;
     state.index--;
     presentPracticeWord();
   }
   function skipCurrent(){
+    if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer=null; }
+    if(isSentenceScreen()){
+      var sItem = state.queue[state.index];
+      if(sItem) state.wrongItems.push(sItem);
+      state.feedback = null;
+      state.index++;
+      if(state.index >= state.queue.length){
+        if(state.screen==='sentence-blank') finishSentenceBlank(); else finishSentenceFull();
+        return;
+      }
+      render();
+      return;
+    }
     if(!state.allowSkip) return;
     var skipped = state.queue[state.index];
     if(skipped){
@@ -1265,7 +1289,11 @@
         + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="空欄の単語を入力してEnter" /></div>'
         + feedbackHtml
       + '</div>'
-      + '<div class="hint-row"><span>Space 発音</span><span>Enter 判定</span></div>';
+      + '<div class="hint-row">'
+        + (state.index>0 ? '<button class="btn small ghost" data-action="go-back">&#8592; 前へ</button>' : '')
+        + '<span>Space 発音</span><span>Enter 判定</span>'
+        + '<button class="btn small ghost" data-action="skip-current">&#8594; スキップ</button>'
+      + '</div>';
   }
 
   function renderDiffHtml(perWord){
@@ -1294,7 +1322,11 @@
         + '<div><input id="answerInput" class="answer-input" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="全文を入力してEnter" /></div>'
         + feedbackHtml
       + '</div>'
-      + '<div class="hint-row"><span>Enter 判定</span></div>';
+      + '<div class="hint-row">'
+        + (state.index>0 ? '<button class="btn small ghost" data-action="go-back">&#8592; 前へ</button>' : '')
+        + '<span>Enter 判定</span>'
+        + '<button class="btn small ghost" data-action="skip-current">&#8594; スキップ</button>'
+      + '</div>';
   }
 
   function renderSentenceResult(){
@@ -1636,6 +1668,8 @@
         }
         return;
       }
+      if(e.key==='ArrowLeft'){ e.preventDefault(); goBack(); return; }
+      if(e.key==='ArrowRight'){ e.preventDefault(); skipCurrent(); return; }
     }
   });
 
