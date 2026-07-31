@@ -1,8 +1,9 @@
 "use strict";
 
-/* データファイルを追加・更新したら CACHE_VERSION を上げる。
-   activate時に古いバージョンのキャッシュは自動削除される。 */
-var CACHE_VERSION = 'v2';
+/* CACHE_VERSION は音声(audio/)ファイルの世代管理にのみ使う(activate時に
+   古いバージョンのキャッシュを自動削除)。index.html・JSON等はfetch時に
+   ネットワーク優先で取得するため、この値を上げなくても更新は反映される。 */
+var CACHE_VERSION = 'v3';
 var CACHE_NAME = 'taitan-cache-' + CACHE_VERSION;
 
 var PRECACHE_URLS = [
@@ -58,16 +59,38 @@ self.addEventListener('activate', function(event){
 
 self.addEventListener('fetch', function(event){
   if(event.request.method !== 'GET') return;
+
+  /* 音声(audio/)は生成後に内容が変わらないため、キャッシュ優先のままでよい
+     (通信量を減らせる)。 */
+  if(event.request.url.indexOf('/audio/') !== -1){
+    event.respondWith(
+      caches.match(event.request).then(function(cached){
+        if(cached) return cached;
+        return fetch(event.request).then(function(response){
+          if(response && response.ok){
+            var copy = response.clone();
+            caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, copy); });
+          }
+          return response;
+        });
+      })
+    );
+    return;
+  }
+
+  /* index.html・JSON・アイコン等はネットワーク優先。
+     オンラインなら常に最新版を取得し、取得できた分をキャッシュに保存し直す。
+     オフライン時のみキャッシュにフォールバックする。 */
   event.respondWith(
-    caches.match(event.request).then(function(cached){
-      if(cached) return cached;
-      return fetch(event.request).then(function(response){
-        if(response && response.ok){
-          var copy = response.clone();
-          caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, copy); });
-        }
-        return response;
-      }).catch(function(){
+    fetch(event.request).then(function(response){
+      if(response && response.ok){
+        var copy = response.clone();
+        caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, copy); });
+      }
+      return response;
+    }).catch(function(){
+      return caches.match(event.request).then(function(cached){
+        if(cached) return cached;
         if(event.request.mode === 'navigate') return caches.match('./index.html');
       });
     })
