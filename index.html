@@ -84,6 +84,14 @@
   .weak-list li{background:#fff0f3;border-radius:12px;padding:8px 12px;font-weight:700;}
   .ja-small{display:block;font-weight:400;font-size:.8rem;color:var(--muted);}
   .muted{color:var(--muted);}
+  .progress-bar-outer{background:#eef1ff;border-radius:8px;height:10px;overflow:hidden;margin:6px 0;}
+  .progress-bar-inner{background:var(--primary);height:100%;transition:width .3s ease;}
+  .typing-stat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+  .typing-stat-list li{display:flex;align-items:center;justify-content:space-between;background:#f7f8ff;border-radius:12px;padding:8px 12px;}
+  .typing-stat-list li.weak-key{background:#fff0f3;}
+  .typing-char{font-size:clamp(4rem,20vw,7rem);font-weight:800;text-align:center;letter-spacing:.05em;color:var(--text);}
+  .typing-char.ok{color:var(--good);}
+  .typing-char.bad{color:var(--bad);}
   .topbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
   .topbar h2{margin:0;flex:1;font-size:1.2rem;}
   .progress-label{font-weight:700;color:var(--muted);}
@@ -311,6 +319,125 @@
 
   function poolFor(source){ return source === 'basic' ? BASIC_WORDS : WORDS; }
   function progressStoreFor(source){ return source === 'basic' ? basicProgress : progress; }
+
+  /* ---------- typing drill (position drill, keyboard-position muscle memory) ---------- */
+  var TYPING_PROGRESS_KEY = 'typing_drill_progress';
+  var typingProgress = loadTypingProgress();
+
+  var TYPING_STAGES = [
+    { key:'home',   label:'ホームポジション', chars:['a','s','d','f','g','h','j','k','l',';'] },
+    { key:'top',    label:'上段',           chars:['q','w','e','r','t','y','u','i','o','p'] },
+    { key:'bottom', label:'下段',           chars:['z','x','c','v','b','n','m',',','.','/'] }
+  ];
+  var TYPING_MASTERY_MIN_ATTEMPTS = 5;
+  var TYPING_MASTERY_ACCURACY = 0.9;
+  var TYPING_MASTERY_REACTION_MS = 1500;
+  var TYPING_REVIEW_RATIO = 0.3;
+  var TYPING_ROUND_STREAK_TARGET = 3;
+  var TYPING_RETRY_WITHIN = 3; /* 不正解キーは次の3問以内に優先再出題 */
+
+  function loadTypingProgress(){
+    try{ return JSON.parse(localStorage.getItem(TYPING_PROGRESS_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveTypingProgress(){
+    localStorage.setItem(TYPING_PROGRESS_KEY, JSON.stringify(typingProgress));
+  }
+  function defaultKeyStat(){
+    return { attempts:0, correct:0, avgReactionMs:null, lastMistakeAt:null, masteryStatus:'locked' };
+  }
+  function getKeyStat(key){
+    if(!typingProgress[key]) typingProgress[key] = defaultKeyStat();
+    return typingProgress[key];
+  }
+  function keyAccuracy(stat){
+    return stat.attempts>0 ? stat.correct/stat.attempts : 0;
+  }
+  function isKeyMastered(stat){
+    return stat.masteryStatus === 'mastered';
+  }
+  function recomputeMastery(stat){
+    if(stat.attempts >= TYPING_MASTERY_MIN_ATTEMPTS &&
+       keyAccuracy(stat) >= TYPING_MASTERY_ACCURACY &&
+       stat.avgReactionMs !== null && stat.avgReactionMs <= TYPING_MASTERY_REACTION_MS){
+      stat.masteryStatus = 'mastered';
+    }else{
+      stat.masteryStatus = 'learning';
+    }
+  }
+  function recordTypingAttempt(key, isCorrect, reactionMs){
+    var stat = getKeyStat(key);
+    stat.attempts++;
+    if(isCorrect){
+      stat.correct++;
+      var sample = reactionMs;
+      stat.avgReactionMs = (stat.avgReactionMs === null) ? sample : (stat.avgReactionMs*0.7 + sample*0.3);
+    }else{
+      stat.lastMistakeAt = Date.now();
+      typingRetryQueue.push({ key:key, dueInAttempts: TYPING_RETRY_WITHIN });
+    }
+    recomputeMastery(stat);
+    saveTypingProgress();
+  }
+  function unlockedStageIndex(){
+    for(var i=0;i<TYPING_STAGES.length;i++){
+      var allMastered = TYPING_STAGES[i].chars.every(function(c){ return isKeyMastered(getKeyStat(c)); });
+      if(!allMastered) return i;
+    }
+    return TYPING_STAGES.length - 1;
+  }
+  function activeKeysForStage(stageIndex){
+    return TYPING_STAGES[stageIndex].chars.filter(function(c){ return !isKeyMastered(getKeyStat(c)); });
+  }
+  function reviewKeys(stageIndex){
+    var keys = [];
+    for(var i=0;i<=stageIndex;i++){
+      TYPING_STAGES[i].chars.forEach(function(c){ if(isKeyMastered(getKeyStat(c))) keys.push(c); });
+    }
+    return keys;
+  }
+  function keyWeight(key){
+    var stat = getKeyStat(key);
+    var acc = stat.attempts>0 ? keyAccuracy(stat) : 0.5; /* 未挑戦は中間値扱い */
+    var reactionPenalty = stat.avgReactionMs ? Math.max(0, (stat.avgReactionMs - TYPING_MASTERY_REACTION_MS)/500) : 0;
+    return 1 + (1-acc)*4 + reactionPenalty;
+  }
+  function weightedPick(keys){
+    var weights = keys.map(keyWeight);
+    var total = weights.reduce(function(a,b){ return a+b; }, 0);
+    var r = Math.random()*total;
+    for(var i=0;i<keys.length;i++){
+      r -= weights[i];
+      if(r<=0) return keys[i];
+    }
+    return keys[keys.length-1];
+  }
+  var typingRetryQueue = [];
+  function pickNextTypingKey(){
+    /* 直近ミスしたキーの優先再出題(dueInAttemptsが0になったら最優先) */
+    for(var i=0;i<typingRetryQueue.length;i++){
+      typingRetryQueue[i].dueInAttempts--;
+    }
+    var dueIdx = typingRetryQueue.findIndex(function(r){ return r.dueInAttempts<=0; });
+    if(dueIdx !== -1){
+      var due = typingRetryQueue.splice(dueIdx,1)[0];
+      return due.key;
+    }
+    var stageIndex = unlockedStageIndex();
+    var active = activeKeysForStage(stageIndex);
+    var review = reviewKeys(stageIndex).filter(function(k){ return active.indexOf(k)===-1; });
+    /* 現在の段が全マスター済みなら、その段自体もreview対象にできるようactiveが空でもreviewから出す */
+    if(active.length===0 && review.length===0){
+      /* 全キーマスター済み(最終段クリア): 全キーからランダム復習 */
+      var all = TYPING_STAGES.reduce(function(acc,s){ return acc.concat(s.chars); }, []);
+      return weightedPick(all);
+    }
+    if(active.length>0 && review.length>0 && Math.random() < TYPING_REVIEW_RATIO){
+      return weightedPick(review);
+    }
+    if(active.length>0) return weightedPick(active);
+    return weightedPick(review);
+  }
 
   function computeSummary(source){
     source = source || 'word';
@@ -925,6 +1052,61 @@
     render();
   }
 
+  /* ---------- typing drill flow ---------- */
+  function startTypingDrill(){
+    clearAllTimers();
+    typingRetryQueue = [];
+    state = {
+      screen:'typing-drill', currentKey:null, roundStreak:0,
+      shownAt:0, feedback:null, sessionCorrect:0, sessionTotal:0,
+      showFirstTimeHint: !localStorage.getItem('typing_drill_seen_hint')
+    };
+    localStorage.setItem('typing_drill_seen_hint', '1');
+    presentTypingChar();
+  }
+  function presentTypingChar(){
+    state.currentKey = pickNextTypingKey();
+    state.roundStreak = 0;
+    state.feedback = null;
+    state.shownAt = Date.now();
+    render();
+  }
+  function submitTypingKey(pressedKey){
+    if(!state.currentKey) return;
+    var reactionMs = Date.now() - state.shownAt;
+    var isCorrect = pressedKey === state.currentKey;
+    recordTypingAttempt(state.currentKey, isCorrect, reactionMs);
+    state.sessionTotal++;
+    if(isCorrect){
+      state.sessionCorrect++;
+      state.roundStreak++;
+      state.feedback = 'ok';
+      if(state.roundStreak >= TYPING_ROUND_STREAK_TARGET){
+        state.currentKey = null; /* 遷移中の二重入力を無視するため一旦クリア */
+        render();
+        if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer = null; }
+        pendingAdvanceTimer = setTimeout(function(){
+          pendingAdvanceTimer = null;
+          presentTypingChar();
+        }, 500);
+        return;
+      }
+      state.shownAt = Date.now();
+      render();
+    }else{
+      state.roundStreak = 0;
+      state.feedback = 'bad';
+      render();
+      if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer = null; }
+      pendingAdvanceTimer = setTimeout(function(){
+        pendingAdvanceTimer = null;
+        state.feedback = null;
+        state.shownAt = Date.now();
+        render();
+      }, 600);
+    }
+  }
+
   /* ---------- reset ---------- */
   function resetAllProgress(){
     progress = {};
@@ -939,6 +1121,11 @@
       localStorage.removeItem(LAST_TEST_KEY);
     }
   }
+  function resetTypingProgress(){
+    typingProgress = {};
+    saveTypingProgress();
+    typingRetryQueue = [];
+  }
 
   /* ---------- rendering ---------- */
   function homeBtnHtml(){
@@ -951,6 +1138,7 @@
     var retestAvailable = !!(lastTest && lastTest.wordIds && lastTest.wordIds.length>0);
     var isSentence = state.homeSection === 'sentence';
     var isBasic = state.homeSection === 'basic';
+    var isTyping = state.homeSection === 'typing';
     var listBtns = '';
     for(var n=1;n<=10;n++){
       var locked = isSentence && sentenceListsLoaded.indexOf(n)===-1;
@@ -1025,15 +1213,18 @@
     return ''
       + '<h1 class="app-title">タイ単</h1>'
       + (state.notice ? '<div class="notice">'+esc(state.notice)+'</div>' : '')
-      + searchHtml
+      + (isTyping ? '' : searchHtml)
       + '<section class="card"><h2>練習する内容</h2><div class="section-toggle">'
-        + '<button class="btn list-btn '+(!isSentence && !isBasic?'selected':'')+'" data-action="select-section" data-section="word">単語</button>'
+        + '<button class="btn list-btn '+(!isSentence && !isBasic && !isTyping?'selected':'')+'" data-action="select-section" data-section="word">単語</button>'
         + '<button class="btn list-btn '+(isSentence?'selected':'')+'" data-action="select-section" data-section="sentence">短文</button>'
         + '<button class="btn list-btn '+(isBasic?'selected':'')+'" data-action="select-section" data-section="basic">Basic</button>'
+        + '<button class="btn list-btn '+(isTyping?'selected':'')+'" data-action="select-section" data-section="typing">タイピング</button>'
       + '</div></section>'
-      + '<section class="card"><h2>'+unitPickerTitle+'</h2>'+unitPickerHtml+'</section>'
-      + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'+modeGridHtml+'</div></section>'
-      + (isSentence || isBasic ? '' : wordStatsHtml)
+      + (isTyping ? renderTypingHome() : (
+          '<section class="card"><h2>'+unitPickerTitle+'</h2>'+unitPickerHtml+'</section>'
+          + '<section class="card"><h2>モードを選ぶ</h2><div class="mode-grid">'+modeGridHtml+'</div></section>'
+        ))
+      + (isSentence || isBasic || isTyping ? '' : wordStatsHtml)
       + (isBasic ? basicStatsHtml : '')
       + renderResetModal();
   }
@@ -1126,9 +1317,52 @@
     return renderWordModeGrid(retestAvailable, lastTest);
   }
 
+  function renderTypingHome(){
+    var stageIndex = unlockedStageIndex();
+    var stagesHtml = TYPING_STAGES.map(function(stage, i){
+      var masteredCount = stage.chars.filter(function(c){ return isKeyMastered(getKeyStat(c)); }).length;
+      var pct = Math.round(masteredCount/stage.chars.length*100);
+      var locked = i > stageIndex;
+      return '<div class="mode-group"><div class="mode-group-title">'+esc(stage.label)+(locked?'(未解放)':'')+'</div>'
+        + '<div class="progress-bar-outer"><div class="progress-bar-inner" style="width:'+pct+'%"></div></div>'
+        + '<p class="muted">'+masteredCount+' / '+stage.chars.length+' キー習得('+pct+'%)</p>'
+      + '</div>';
+    }).join('');
+
+    var knownKeys = TYPING_STAGES.slice(0, stageIndex+1).reduce(function(acc,s){ return acc.concat(s.chars); }, []);
+    var statRows = knownKeys.map(function(k){
+      var stat = getKeyStat(k);
+      var accPct = stat.attempts>0 ? Math.round(keyAccuracy(stat)*100) : null;
+      var weak = stat.attempts>0 && !isKeyMastered(stat) &&
+        (keyAccuracy(stat) < TYPING_MASTERY_ACCURACY || (stat.avgReactionMs && stat.avgReactionMs > TYPING_MASTERY_REACTION_MS));
+      var detail = stat.attempts>0
+        ? (accPct+'% ・ '+(stat.avgReactionMs ? Math.round(stat.avgReactionMs)+'ms' : '-'))
+        : '未挑戦';
+      return '<li'+(weak?' class="weak-key"':'')+'>'
+        + '<strong>'+esc(k)+'</strong>'
+        + '<span class="ja-small">'+detail+(isKeyMastered(stat) ? ' ・ 習得済み' : '')+'</span>'
+      + '</li>';
+    }).join('');
+
+    return ''
+      + '<section class="card"><h2>段階の進み具合</h2>' + stagesHtml + '</section>'
+      + '<section class="card center-card">'
+        + '<button class="btn primary mode-btn" data-action="start-typing-drill">はじめる</button>'
+        + '<p class="muted">外付けキーボードをつないで、画面を見ながら手元は見ずに打とう</p>'
+      + '</section>'
+      + '<section class="card"><h2>キーごとの成績(保護者向け)</h2>'
+        + (statRows ? '<ul class="typing-stat-list">'+statRows+'</ul>' : '<p class="muted">まだ記録がありません。</p>')
+      + '</section>'
+      + '<section class="card"><h2>データのリセット</h2><div class="btn-row">'
+        + '<button class="btn" data-action="confirm-reset-typing">タイピング記録をリセット</button>'
+      + '</div></section>';
+  }
+
   function renderResetModal(){
     if(!state.confirmReset) return '';
-    var label = state.confirmReset === 'all' ? '全データ' : unitLabelFor('word', state.confirmReset.list);
+    var label = state.confirmReset === 'all' ? '全データ'
+              : state.confirmReset === 'typing' ? 'タイピングドリル'
+              : unitLabelFor('word', state.confirmReset.list);
     return '<div class="modal-overlay">'
       + '<div class="modal-box">'
         + '<p>'+esc(label)+'の記録を本当にリセットしますか?<br>元に戻せません。</p>'
@@ -1352,6 +1586,19 @@
       + '</div>';
   }
 
+  function renderTypingDrill(){
+    var charClass = state.feedback==='ok' ? 'ok' : state.feedback==='bad' ? 'bad' : '';
+    var pct = state.sessionTotal>0 ? Math.round(state.sessionCorrect/state.sessionTotal*100) : 100;
+    return '<div class="topbar">'+homeBtnHtml()+'<h2>タイピング基礎ドリル</h2>'
+      + '<span class="progress-label">連続 '+state.roundStreak+' / '+TYPING_ROUND_STREAK_TARGET+'</span></div>'
+      + (state.showFirstTimeHint ? '<div class="notice">キーボードを見ずに打とう!</div>' : '')
+      + '<div class="card word-card">'
+        + '<div class="typing-char '+charClass+'">'+esc(state.currentKey)+'</div>'
+        + (state.feedback==='bad' ? '<p class="feedback bad">もう一度!</p>' : '')
+      + '</div>'
+      + '<p class="muted center-card">今回のセッション: '+state.sessionCorrect+' / '+state.sessionTotal+'('+pct+'%)</p>';
+  }
+
   function render(){
     var app = document.getElementById('app');
     var html;
@@ -1365,6 +1612,7 @@
       case 'sentence-blank': html = renderSentenceBlank(); break;
       case 'sentence-full': html = renderSentenceFull(); break;
       case 'sentence-result': html = renderSentenceResult(); break;
+      case 'typing-drill': html = renderTypingDrill(); break;
       default: html = '<p style="text-align:center;padding-top:40px;">読み込み中...</p>';
     }
     app.innerHTML = html;
@@ -1501,8 +1749,17 @@
       case 'start-review':
         startReview(el.dataset.difficulty || 'normal', state.homeSection==='basic' ? 'basic' : 'word');
         break;
+      case 'start-typing-drill':
+        startTypingDrill();
+        break;
       case 'go-home': {
         clearAllTimers();
+        if(state.screen === 'typing-drill'){
+          state = { screen:'home', selectedList:null, selectedCategory:null, basicGroup:null, selectedHundred:null,
+            spellingFast:false, notice:null, homeSection:'typing', searchQuery:'' };
+          render();
+          break;
+        }
         var src = state.source || 'word';
         var keepFast = state.spellingFast || false;
         if(src === 'basic'){
@@ -1553,6 +1810,10 @@
         state.confirmReset = { list: state.selectedList };
         render();
         break;
+      case 'confirm-reset-typing':
+        state.confirmReset = 'typing';
+        render();
+        break;
       case 'reset-cancel':
         state.confirmReset = null;
         render();
@@ -1560,6 +1821,8 @@
       case 'reset-confirm':
         if(state.confirmReset === 'all'){
           resetAllProgress();
+        }else if(state.confirmReset === 'typing'){
+          resetTypingProgress();
         }else if(state.confirmReset && state.confirmReset.list){
           resetListProgress(state.confirmReset.list);
         }
@@ -1597,6 +1860,14 @@
 
   /* ---------- keyboard ---------- */
   document.addEventListener('keydown', function(e){
+    if(state.screen==='typing-drill'){
+      if(e.metaKey || e.ctrlKey || e.altKey) return;
+      var pressedKey = e.key.length===1 ? e.key.toLowerCase() : null;
+      if(!pressedKey) return;
+      e.preventDefault();
+      submitTypingKey(pressedKey);
+      return;
+    }
     if(state.screen==='reading'){
       if(state.readingMode === 'speed' && !state.checkpoint){
         if(e.code==='Space'){
