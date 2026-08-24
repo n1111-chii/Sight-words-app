@@ -16,8 +16,11 @@
     --bg1:#eef3ff; --bg2:#fff2f8; --primary:#5b7fff; --primary-dark:#3f5fe0;
     --accent:#ff8fa3; --good:#2fb768; --bad:#ef5757; --text:#2b2d42;
     --card-bg:#ffffff; --muted:#8a8fa3; --radius:20px;
+    /* 全体の文字サイズはここ1箇所で一元管理(他のCSSはすべてrem基準なので連動する) */
+    --font-scale: 1.2;
   }
   *{box-sizing:border-box;}
+  html{font-size:calc(16px * var(--font-scale));}
   html,body{margin:0;padding:0;}
   body{
     min-height:100vh;
