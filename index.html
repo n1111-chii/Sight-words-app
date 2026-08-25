@@ -223,6 +223,17 @@
     }
   })();
 
+  /* fry_words.json/basic_words_diff.jsonを学校配布物の並び順に合わせて全面差し替えたため、
+     単語ID(id)の意味が変わった。④リトライの一時ポインタ(id参照)だけ一度きり無効化する。
+     学習記録(swa_progress/basic_progress)には触れない(単語文字列キーなので自動で引き継がれる)。 */
+  (function migrateWordDataVersion(){
+    if(localStorage.getItem('swa_word_data_version') !== '2026-08-fry-order'){
+      localStorage.removeItem(LAST_TEST_KEY);
+      localStorage.removeItem(BASIC_LAST_TEST_KEY);
+      localStorage.setItem('swa_word_data_version', '2026-08-fry-order');
+    }
+  })();
+
   function loadProgress(){
     try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
     catch(e){ return {}; }
