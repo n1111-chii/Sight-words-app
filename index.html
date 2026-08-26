@@ -514,10 +514,16 @@
     }
     return null;
   }
+  /* 学校のプリントは「300から」=301〜400番目、のように区切りの開始番号(0,100,200,...900)
+     で呼ぶ。1番目の区切りだけ「0」ではなく「1」と表記する(「1から」の方が自然なため)。
+     hundred(1-10)は内部的なList番号(1=1〜100番目, 2=101〜200番目, ...)。 */
+  function hundredLabel(hundred){
+    return hundred===1 ? '1' : String((hundred-1)*100);
+  }
   function unitLabelFor(source, unit){
     if(source === 'basic') return String(unit);
     var d = decodeWordUnit(unit);
-    return (d.hundred*100) + ' の List' + d.quarter;
+    return hundredLabel(d.hundred) + ' の List' + d.quarter;
   }
 
   function searchAllWords(query){
@@ -1283,7 +1289,7 @@
     var hundredBtns = '';
     for(var h=1; h<=10; h++){
       var sel = state.selectedHundred===h ? ' selected' : '';
-      hundredBtns += '<button class="btn list-btn'+sel+'" data-action="select-hundred" data-hundred="'+h+'">'+(h*100)+'</button>';
+      hundredBtns += '<button class="btn list-btn'+sel+'" data-action="select-hundred" data-hundred="'+h+'">'+hundredLabel(h)+'</button>';
     }
     var html = '<div class="list-grid">'+hundredBtns+'</div>';
     if(state.selectedHundred){
@@ -1293,7 +1299,7 @@
         var qsel = state.selectedList===unit ? ' selected' : '';
         quarterBtns += '<button class="btn small list-btn'+qsel+'" data-action="select-quarter" data-quarter="'+q+'">List'+q+'</button>';
       }
-      html += '<div class="mode-group"><div class="mode-group-title">'+(state.selectedHundred*100)+' の中の List</div>'
+      html += '<div class="mode-group"><div class="mode-group-title">'+hundredLabel(state.selectedHundred)+' の中の List</div>'
         + '<div class="submode-row">'+quarterBtns+'</div>'
         + (state.selectedList ? '<div style="margin-top:10px;"><button class="btn small ghost" data-action="view-wordlist">&#128269; この25語を見る</button></div>' : '')
       + '</div>';
