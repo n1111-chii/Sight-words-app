@@ -2,8 +2,11 @@
 
 /* CACHE_VERSION は音声(audio/)ファイルの世代管理にのみ使う(activate時に
    古いバージョンのキャッシュを自動削除)。index.html・JSON等はfetch時に
-   ネットワーク優先で取得するため、この値を上げなくても更新は反映される。 */
-var CACHE_VERSION = 'v3';
+   ネットワーク優先で取得するため、この値を上げなくても更新は反映される。
+   (v4: ネットワーク優先のfetch()がブラウザの標準HTTPキャッシュ
+   (GitHub PagesはCache-Control: max-age=600を返す)を素通りせず本当に
+   ネットワークへ問い合わせるよう、cache:'no-store'を明示するよう修正) */
+var CACHE_VERSION = 'v4';
 var CACHE_NAME = 'taitan-cache-' + CACHE_VERSION;
 
 var PRECACHE_URLS = [
@@ -32,8 +35,10 @@ var PRECACHE_URLS = [
 self.addEventListener('install', function(event){
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache){
-      return cache.addAll(PRECACHE_URLS).then(function(){
-        return fetch('./audio-manifest.json')
+      /* 'reload'指定でブラウザの標準HTTPキャッシュを無視し、必ずネットワークから取得する */
+      var precacheRequests = PRECACHE_URLS.map(function(url){ return new Request(url, { cache: 'reload' }); });
+      return cache.addAll(precacheRequests).then(function(){
+        return fetch('./audio-manifest.json', { cache: 'no-store' })
           .then(function(r){ return r.ok ? r.json() : []; })
           .catch(function(){ return []; });
       }).then(function(audioUrls){
@@ -80,9 +85,11 @@ self.addEventListener('fetch', function(event){
 
   /* index.html・JSON・アイコン等はネットワーク優先。
      オンラインなら常に最新版を取得し、取得できた分をキャッシュに保存し直す。
-     オフライン時のみキャッシュにフォールバックする。 */
+     オフライン時のみキャッシュにフォールバックする。
+     cache:'no-store'を指定し、ブラウザの標準HTTPキャッシュ(GitHub Pagesの
+     Cache-Control: max-age=600等)を無視して必ずネットワークに問い合わせる。 */
   event.respondWith(
-    fetch(event.request).then(function(response){
+    fetch(event.request, { cache: 'no-store' }).then(function(response){
       if(response && response.ok){
         var copy = response.clone();
         caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, copy); });

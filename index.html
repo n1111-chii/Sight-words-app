@@ -552,7 +552,7 @@
   ];
   var BASIC_WORDS = [];
   function loadBasicWords(){
-    return fetch('basic_words_diff.json')
+    return fetch('basic_words_diff.json', { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(data){
         data.forEach(function(w, i){ w.id = i + 1; });
@@ -564,7 +564,7 @@
   /* ---------- phonics (tricky word) data ---------- */
   var PHONICS = {};
   function loadPhonics(){
-    return fetch('fry_phonics.json')
+    return fetch('fry_phonics.json', { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(data){
         data.forEach(function(p){ PHONICS[p.word.toLowerCase()] = p; });
@@ -599,7 +599,7 @@
   }
   function loadSentenceLists(){
     return Promise.all(SENTENCE_LIST_MANIFEST.map(function(listNum){
-      return fetch('list'+listNum+'_sentences.json')
+      return fetch('list'+listNum+'_sentences.json', { cache: 'no-store' })
         .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
         .then(function(data){
           data.forEach(function(item){ item.list = listNum; });
@@ -1959,7 +1959,7 @@
   });
 
   /* ---------- init ---------- */
-  fetch('fry_words.json')
+  fetch('fry_words.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
     .then(function(data){
       WORDS = data;
@@ -1979,7 +1979,12 @@
 
 if('serviceWorker' in navigator){
   window.addEventListener('load', function(){
-    navigator.serviceWorker.register('service-worker.js').catch(function(err){
+    navigator.serviceWorker.register('service-worker.js').then(function(reg){
+      /* ブラウザの自動更新チェック(数時間〜1日おき)を待たず、
+         毎回のページ読み込み時に新しいservice-worker.jsが無いか即確認する。
+         これにより「更新したのに反映されない」を起きにくくする。 */
+      reg.update().catch(function(){ /* オフライン等は無視 */ });
+    }).catch(function(err){
       console.warn('Service worker registration failed:', err);
     });
   });
