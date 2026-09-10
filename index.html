@@ -167,6 +167,27 @@
     window.speechSynthesis.speak(utter);
   }
 
+  /* タイピングポジションドリル用: 短いブザー音(不正解時)をWeb Audio APIでその場で
+     合成する。音声ファイルを用意する必要がなく、キー入力(ユーザー操作)直後に呼ぶので
+     ブラウザの自動再生制限にも引っかからない。 */
+  var typingAudioCtx = null;
+  function playBuzzer(){
+    try{
+      if(!typingAudioCtx){ typingAudioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+      var ctx = typingAudioCtx;
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.value = 200;
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.15);
+    }catch(e){}
+  }
+
   /* 短文セクションのみ、事前生成したLeda音声(mp3)を再生する。
      単語単体の発音はLedaだと不自然になることが確認されたため、単語はWeb Speech APIのまま。 */
   function slugify(text){
@@ -346,6 +367,22 @@
   var TYPING_REVIEW_RATIO = 0.3;
   var TYPING_ROUND_STREAK_TARGET = 3;
   var TYPING_RETRY_WITHIN = 3; /* 不正解キーは次の3問以内に優先再出題 */
+
+  /* 記号キーは文字そのままだと読み上げエンジンが無音・変な発音になるため名称に変換する。
+     アルファベットはそのまま渡せば英語音声がアルファベット読みしてくれる。 */
+  var TYPING_KEY_SPEECH_NAMES = { ';':'semicolon', ',':'comma', '.':'period', '/':'slash' };
+  function typingKeySpeechText(key){
+    return TYPING_KEY_SPEECH_NAMES[key] || key;
+  }
+  var TYPING_SOUND_KEY = 'typing_drill_sound_enabled';
+  function loadTypingSoundEnabled(){
+    var v = localStorage.getItem(TYPING_SOUND_KEY);
+    return v === null ? true : v === '1';
+  }
+  function saveTypingSoundEnabled(enabled){
+    localStorage.setItem(TYPING_SOUND_KEY, enabled ? '1' : '0');
+  }
+  var typingSoundEnabled = loadTypingSoundEnabled();
 
   function loadTypingProgress(){
     try{ return JSON.parse(localStorage.getItem(TYPING_PROGRESS_KEY)) || {}; }
@@ -1087,6 +1124,7 @@
     state.feedback = null;
     state.shownAt = Date.now();
     render();
+    if(typingSoundEnabled) speak(typingKeySpeechText(state.currentKey));
   }
   function submitTypingKey(pressedKey){
     if(!state.currentKey) return;
@@ -1114,6 +1152,7 @@
       state.roundStreak = 0;
       state.feedback = 'bad';
       render();
+      playBuzzer();
       if(pendingAdvanceTimer){ clearTimeout(pendingAdvanceTimer); pendingAdvanceTimer = null; }
       pendingAdvanceTimer = setTimeout(function(){
         pendingAdvanceTimer = null;
@@ -1364,6 +1403,8 @@
     return ''
       + '<section class="card"><h2>段階の進み具合</h2>' + stagesHtml + '</section>'
       + '<section class="card center-card">'
+        + '<label class="fast-toggle"><input type="checkbox" data-action="toggle-typing-sound" '+(typingSoundEnabled?'checked':'')+' /> '
+        + '音声で読み上げる(目を閉じて練習できる・不正解時はブー音)</label>'
         + '<button class="btn primary mode-btn" data-action="start-typing-drill">はじめる</button>'
         + '<p class="muted">外付けキーボードをつないで、画面を見ながら手元は見ずに打とう</p>'
       + '</section>'
@@ -1768,6 +1809,11 @@
         break;
       case 'start-typing-drill':
         startTypingDrill();
+        break;
+      case 'toggle-typing-sound':
+        typingSoundEnabled = !typingSoundEnabled;
+        saveTypingSoundEnabled(typingSoundEnabled);
+        render();
         break;
       case 'go-home': {
         clearAllTimers();
